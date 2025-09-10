@@ -1,0 +1,61 @@
+.titleAndCarruselProperties{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerProperties{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    width: 90%;
+}
+
+.titleAndCarruselProperties h1{
+    color: rgba(179, 75, 0, 1);
+    width: fit-content;
+    margin-left: 10px;
+}
+
+.priceAndCartButtonProperties{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.priceAndCartButtonProperties span{
+    font-size: 50px;
+}
+
+.priceAndCartButtonProperties span, .cartButtonProperties, titleAndCarruselProperties, .descriptionProperties h2, .descriptionProperties span{
+    font-family: 'Arial';
+}
+
+.cartButtonProperties{
+    background-color: rgba(0, 23, 211, 1);
+    width: 270px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 25px;
+}
+
+.descriptionProperties h2, .titleAndCarruselProperties h1 {
+    font-size: 40px;
+}
+
+.descriptionProperties h2{
+    font-weight: normal;
+}
+
+.descriptionProperties span{
+    font-size: 22px;
+}
+
+.descriptionProperties{
+    width: 800px;
+    height: fit-content;
+}
