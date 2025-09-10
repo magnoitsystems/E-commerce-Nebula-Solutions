@@ -4,7 +4,9 @@ import styles from "./Carrusel.module.css";
 function Carrusel(){
     const images = [
         "/carruselImages/comboMaybeline.jpg",
-        "/carruselImages/comboMaybeline.jpg"
+        "/carruselImages/comboMaybeline2.jpg",
+        "/carruselImages/comboMaybeline3.jpg",
+
     ]
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);

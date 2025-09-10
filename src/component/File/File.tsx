@@ -14,7 +14,8 @@ function File(){
                 <button className={styles.cartButtonProperties}>Agregar al carrito <img src={"/icons/carritoIcon.png"}/></button>
             </div>
             <div className={styles.descriptionProperties}>
-                <h2>Descripción</h2>
+                <span className={styles.titleDescriptionProperties}>Descripción</span>
+                <div className={styles.underlineProperties}/>
                 <span>Un set pensado para que tengas el tono justo en cada momento. Los colores van desde nudes suaves hasta intensos vibrantes, todos con buena pigmentación y una textura cómoda que no reseca.
                 Se aplican fácil, se fijan rápido y duran varias horas.
                 Podés usarlos solos o mezclarlos entre sí para looks más creativos.

@@ -29,7 +29,7 @@
     font-size: 50px;
 }
 
-.priceAndCartButtonProperties span, .cartButtonProperties, titleAndCarruselProperties, .descriptionProperties h2, .descriptionProperties span{
+.priceAndCartButtonProperties span, .cartButtonProperties, titleAndCarruselProperties, titleDescriptionProperties, .descriptionProperties span{
     font-family: 'Arial';
 }
 
@@ -43,19 +43,25 @@
     font-size: 25px;
 }
 
-.descriptionProperties h2, .titleAndCarruselProperties h1 {
+.titleAndCarruselProperties h1 {
     font-size: 40px;
 }
 
-.descriptionProperties h2{
+.titleDescriptionProperties{
     font-weight: normal;
+    font-size: 30px;
+    color: rgba(179, 75, 0, 1);
 }
 
-.descriptionProperties span{
-    font-size: 22px;
+.underlineProperties{
+    width: 100%;
+    background-color: rgba(179, 75, 0, 1);
+    margin-bottom: 10px;
+    height: 2px;
 }
 
 .descriptionProperties{
     width: 800px;
     height: fit-content;
+    margin-top: 40px;
 }
