@@ -1,9 +1,11 @@
 import File from "../src/component/File/File.tsx";
 import './App.css'
+import Footer from "./component/Footer/Footer.tsx";
 
 function App() {
   return (
-    <File/>
+    // <File/>
+    <Footer></Footer>
   )
 }
 

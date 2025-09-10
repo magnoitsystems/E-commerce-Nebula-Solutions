@@ -1,0 +1,186 @@
+/* Footer.module.css */
+
+.footerContainer {
+  margin: 0 10px 10px 10px;
+  background-color: #FE6A00;
+  border-radius: 24px;
+  padding: 32px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.footerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.logoText {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.socialSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.socialText {
+  font-size: 14px;
+  color: white;
+  margin: 0;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.socialIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
+  gap: 40px;
+}
+
+.footerSection h3,
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sectionTitle:hover {
+  color: #ffb896;
+}
+
+.aboutText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksList li {
+  margin-bottom: 8px;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.link:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.contactInfo {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contactInfo p {
+  margin: 0 0 4px 0;
+}
+
+.ctaSection {
+  text-align: right;
+}
+
+.ctaText {
+  margin-bottom: 20px;
+}
+
+.ctaText h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: white;
+}
+
+.ctaText p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.emailButton {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.emailButton:hover {
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .footerHeader {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .ctaSection {
+    text-align: center;
+  }
+  
+  .footerContainer {
+    padding: 24px;
+    margin: 0 5px 5px 5px;
+  }
+}
