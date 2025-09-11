@@ -4,8 +4,10 @@ import Footer from "./component/Footer/Footer.tsx";
 
 function App() {
   return (
-    // <File/>
-    <Footer></Footer>
+      <>
+        {/*<File/>*/}
+        <Footer></Footer>
+      </>
   )
 }
 
