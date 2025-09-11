@@ -1,0 +1,59 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: -25px;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  padding: 5px 40px;
+  transform: rotate(-45deg);
+  font-size: 14px;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.prices {
+  margin-top: 4px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #ddd;
+  font-size: 14px;
+}
+
+.newPrice {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
