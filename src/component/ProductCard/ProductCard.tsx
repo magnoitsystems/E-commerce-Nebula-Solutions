@@ -19,7 +19,7 @@ export default function ProductCard({ product }: Props) {
   return (
     <div className={styles.card}>
       {discountPercent && (
-        <div className={styles.badge}>{discountPercent}%</div>
+        <div className={styles.discountBadge}>{discountPercent}%</div>
       )}
       <img src={image} alt={name} className={styles.image} />
 

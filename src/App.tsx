@@ -20,6 +20,12 @@ function App() {
       image: "/test-images/maybelline-combo.jpg",
       price: 15000,
     },
+    {
+      id: 3,
+      name: "Sombras de ojos",
+      image: "/test-images/maybelline-combo.jpg",
+      price: 20000,
+    },
   ];
 
   return (
