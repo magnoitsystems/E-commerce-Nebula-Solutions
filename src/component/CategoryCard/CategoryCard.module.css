@@ -113,38 +113,44 @@
   fill: #2da64f;
 }
 
-/* BOTÓN "Nueva categoria" — fuera del grid, alineado verticalmente con la PRIMER FILA */
+/* BOTÓN "Nueva categoria" estilo plano como en la captura */
 .addBtn {
   position: absolute;
-  right: 0; /* pegado al borde derecho del gridWrapper */
-  /* colocamos el top en el centro de la primera fila: (card_height / 2) - (button_height / 2) */
+  right: 0;
   top: calc((var(--card-height) / 2));
-  transform: translateY(-50%); /* centra respecto a su propia altura */
-  height: var(--add-btn-height);
+  transform: translateY(-50%);
+  
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0 1rem;
-  border-radius: 8px;
-  border: 1px solid #FFB078;
-  background: #fff;
-  cursor: pointer;
-  font-weight: 600;
+  justify-content: center;
+  gap: 0.4rem;
+
+  padding: 0.4rem 1rem;
+  min-height: var(--add-btn-height);
+
+  font-size: 0.95rem;
+  font-weight: 500;
   color: #1f1f1f;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
+  background: #fafafa; /* fondo clarito */
+  border: 1px solid #C25B00; /* borde naranja */
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
 }
 
-/* svg inside add button */
-.addBtn svg {
-  width: 18px;
-  height: 18px;
-  fill: #1f1f1f;
+/* símbolo "+" */
+.plus {
+  font-weight: 700; /* más grueso */
+  font-size: 1.05rem;
 }
 
-/* Hover estados */
+/* hover */
 .addBtn:hover {
-  background: #fff7f0;
+  background: #fff2e9; /* leve anaranjado claro */
 }
+
 
 .iconBtn:hover {
   transform: translateY(-2px);
