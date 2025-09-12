@@ -14,7 +14,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   color: #1f1f1f;
-  margin: 0 0 2rem 2rem; /* Más margen izquierdo y abajo */
+  margin: 0 0 2rem 2rem;
   text-align: left;
 }
 
@@ -23,7 +23,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 3rem; /* Aumentado de 2rem a 3rem para más separación */
+  gap: 3rem; 
   width: 100%;
 }
 
@@ -39,7 +39,7 @@
 .card {
   position: relative;
   background-color: #FFB078;
-  padding: 0.8rem 2rem; /* Más padding horizontal para hacerlas más largas */
+  padding: 0.8rem 2rem; 
   border-radius: 10px;
   font-weight: 700;
   font-size: 1rem;
@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 180px; /* Más ancho */
+  min-width: 180px;
   min-height: var(--card-height);
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   width: 100%;
