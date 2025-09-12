@@ -1,13 +1,34 @@
 import Carrusel from "./Carrusel/Carrusel.tsx";
 import styles from "./File.module.css";
 import Commentary from "./Commentary/Commentary.tsx";
+import {useState} from "react";
 
-function File(){
+type TechnicalSheetProps = {
+    mode: 'view' | 'create' | 'edit';
+};
+
+function File({ mode }: TechnicalSheetProps){
+    const [isEditing, setIsEditing] = useState(false);
+
+    const isEmptyFile = mode === "create";
+    const isEditableFile = mode === "edit";
+
+    const showPenForEdit = () => {
+        setIsEditing(true);
+    }
     return(
         <div className={styles.containerProperties}>
             <div className={styles.titleAndCarruselProperties}>
-                <h1>Combo labiales Maybeline NY</h1>
-                <Carrusel/>
+                <div className={styles.titleAndEditButtonProperties}>
+                    {/*{isEditing && (*/}
+
+                    {/*)}*/}
+                    <h1>Combo labiales Maybeline NY</h1>
+                    {isEditableFile || isEmptyFile && (
+                        <button onClick={showPenForEdit}><img src={"/icons/editButtonIcon.png"} alt={"Botón para eidtar"} width={35} height={35}/></button>
+                    )}
+                </div>
+                <Carrusel isEditableFile={isEditableFile} isEmptyFile={isEmptyFile}/>
             </div>
             <div className={styles.priceAndCartButtonProperties}>
                 <span>$10.000</span>

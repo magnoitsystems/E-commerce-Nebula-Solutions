@@ -1,0 +1,96 @@
+.card {
+  position: relative;
+    overflow: visible;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 340px; 
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px); 
+}
+
+.image {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover;
+  display: block;
+}
+
+.discountBadge {
+  position: absolute;
+  top: -2px;       /* sobresale */
+  left: -25px;      /* sobresale */
+  background: #ff7300;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 20px;
+  transform: rotate(-45deg);
+  z-index: 20;      /* más alto que todo */
+  
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35); /* efecto flotado */
+}
+
+
+
+.discountBadge::before,
+.discountBadge::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.discountBadge::before {
+  left: 0;
+  border-width: 6px 6px 0 0;
+  border-color: #b33c00 transparent transparent transparent; /* “pliegue” izquierdo */
+}
+
+.discountBadge::after {
+  right: 0;
+  border-width: 6px 0 0 6px;
+  border-color: #b33c00 transparent transparent transparent; /* “pliegue” derecho */
+}
+
+
+.info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.prices {
+  margin-top: 4px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #ddd;
+  font-size: 14px;
+}
+
+.newPrice {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}

@@ -3,6 +3,18 @@
     flex-direction: column;
 }
 
+.titleAndCarruselProperties button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.titleAndEditButtonProperties{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .containerProperties{
     display: flex;
     flex-direction: column;

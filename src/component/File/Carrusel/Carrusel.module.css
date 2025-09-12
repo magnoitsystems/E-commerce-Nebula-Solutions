@@ -62,6 +62,9 @@
     width: 10px;
     height: 10px;
     border: none;
-    background-color: rgba(255, 176, 120, 1);
     cursor: pointer;
+}
+
+.notIndexProperties{
+    background-color: rgba(255, 176, 120, 1) !important;
 }
