@@ -1,5 +1,6 @@
 // import File from "../src/component/File/File.tsx";
 import './App.css'
+import CategoryCard from './component/CategoryCard/CategoryCard.tsx';
 import Footer from "./component/Footer/Footer.tsx";
 import ProductGrid from './component/ProductCard/ProductGrid.tsx';
 
@@ -31,6 +32,7 @@ function App() {
   return (
     // <File/>
     <main>
+      <CategoryCard></CategoryCard>
       <ProductGrid products={products} />
       <Footer></Footer>
     </main>

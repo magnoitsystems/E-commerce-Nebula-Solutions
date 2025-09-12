@@ -1,82 +1,186 @@
+/* VARIABLES: ajustalas si querés mover verticalmente el botón */
+:root {
+  /* altura objetivo de las cards (usada para alinear verticalmente el botón) */
+  --card-height: 56px;
+  /* altura del botón (para centrar correctamente) */
+  --add-btn-height: 44px;
+}
+
+/* Wrapper general */
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
 }
 
+/* Título alineado a la izquierda */
 .title {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin: 0 0 0.8rem 0;
+  text-align: left;
 }
 
+/* gridWrapper: centro el grid y dejo espacio a la derecha para el botón absoluto */
+.gridWrapper {
+  position: relative;
+  max-width: 1100px; /* ancho del "área" donde el grid queda centrado */
+  margin: 0 auto;
+  padding-right: 180px; /* espacio para que el grid no quede bajo el botón */
+  /* variables locales (puedes ajustar) */
+  --card-height: 56px;
+  --add-btn-height: 44px;
+}
+
+/* Grid de cards (centrado dentro de gridWrapper) */
 .container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(160px, 1fr)); /* 5 por fila */
+  gap: 3rem; /* mayor separación entre cards */
+  justify-items: center;
+  align-items: start;
+  width: 100%;
 }
 
+/* Card */
 .card {
   position: relative;
   background-color: #FFB078;
-  padding: 0.6rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.6rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
   display: flex;
   align-items: center;
-  font-weight: bold;
-  color: white;
+  justify-content: center;
+  min-width: 140px;
+  min-height: var(--card-height); /* altura fija para alinear el botón */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
+/* Nombre centrado */
 .name {
-  margin-right: 2rem;
+  text-align: center;
 }
 
+/* Acciones (iconos) */
 .actions {
   position: absolute;
   top: -10px;
   right: -10px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
+/* Base de los botones circulitos */
 .iconBtn {
   background: white;
-  border: 1px solid #ccc;
   border-radius: 50%;
-  padding: 2px;
+  padding: 4px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
-.iconBtn:hover {
-  background: #ffe0cc;
-}
-
+/* tamaño de los svgs dentro */
 .iconBtn svg {
   width: 16px;
   height: 16px;
-  fill: #1f1f1f;
 }
 
+/* Eliminar: borde e ícono en rojo */
+.deleteBtn {
+  border: 2px solid #e94b4b;
+}
+
+.deleteBtn svg {
+  fill: #e94b4b;
+}
+
+/* Editar: borde e ícono en verde */
+.editBtn {
+  border: 2px solid #2da64f;
+}
+
+.editBtn svg {
+  fill: #2da64f;
+}
+
+/* BOTÓN "Nueva categoria" — fuera del grid, alineado verticalmente con la PRIMER FILA */
 .addBtn {
-  display: flex;
+  position: absolute;
+  right: 0; /* pegado al borde derecho del gridWrapper */
+  /* colocamos el top en el centro de la primera fila: (card_height / 2) - (button_height / 2) */
+  top: calc((var(--card-height) / 2));
+  transform: translateY(-50%); /* centra respecto a su propia altura */
+  height: var(--add-btn-height);
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: transparent;
+  gap: 0.6rem;
+  padding: 0 1rem;
+  border-radius: 8px;
   border: 1px solid #FFB078;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
+  background: #fff;
   cursor: pointer;
-  transition: background 0.2s ease;
+  font-weight: 600;
+  color: #1f1f1f;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-.addBtn:hover {
-  background: #fff0e6;
-}
-
+/* svg inside add button */
 .addBtn svg {
   width: 18px;
   height: 18px;
   fill: #1f1f1f;
+}
+
+/* Hover estados */
+.addBtn:hover {
+  background: #fff7f0;
+}
+
+.iconBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive: reducir columnas en pantallas chicas */
+@media (max-width: 1100px) {
+  .container {
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+  }
+  .gridWrapper {
+    padding-right: 120px;
+  }
+  .addBtn {
+    right: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    grid-template-columns: repeat(1, minmax(140px, 1fr));
+  }
+  /* en mobile el botón puede pasar a la parte superior si no hay espacio */
+  .addBtn {
+    position: static;
+    transform: none;
+    margin-top: 0.6rem;
+    display: inline-flex;
+  }
+  .gridWrapper {
+    padding-right: 0;
+  }
 }
