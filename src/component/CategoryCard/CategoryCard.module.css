@@ -1,0 +1,82 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  background-color: #FFB078;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+.name {
+  margin-right: 2rem;
+}
+
+.actions {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.iconBtn {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.iconBtn:hover {
+  background: #ffe0cc;
+}
+
+.iconBtn svg {
+  width: 16px;
+  height: 16px;
+  fill: #1f1f1f;
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid #FFB078;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addBtn:hover {
+  background: #fff0e6;
+}
+
+.addBtn svg {
+  width: 18px;
+  height: 18px;
+  fill: #1f1f1f;
+}
