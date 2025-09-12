@@ -1,18 +1,14 @@
-/* VARIABLES: ajustalas si querés mover verticalmente el botón */
+
 :root {
-  /* altura objetivo de las cards (usada para alinear verticalmente el botón) */
   --card-height: 56px;
-  /* altura del botón (para centrar correctamente) */
   --add-btn-height: 44px;
 }
 
-/* Wrapper general */
 .wrapper {
   padding: 1rem;
   width: 100%;
 }
 
-/* Título alineado a la izquierda */
 .title {
   font-size: 1.6rem;
   font-weight: 700;
@@ -21,28 +17,24 @@
   text-align: left;
 }
 
-/* gridWrapper: centro el grid y dejo espacio a la derecha para el botón absoluto */
 .gridWrapper {
   position: relative;
-  max-width: 1100px; /* ancho del "área" donde el grid queda centrado */
+  max-width: 1100px;
   margin: 0 auto;
-  padding-right: 180px; /* espacio para que el grid no quede bajo el botón */
-  /* variables locales (puedes ajustar) */
+  padding-right: 180px; 
   --card-height: 56px;
   --add-btn-height: 44px;
 }
 
-/* Grid de cards (centrado dentro de gridWrapper) */
 .container {
   display: grid;
-  grid-template-columns: repeat(5, minmax(160px, 1fr)); /* 5 por fila */
-  gap: 3rem; /* mayor separación entre cards */
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
+  gap: 3rem; 
   justify-items: center;
   align-items: start;
   width: 100%;
 }
 
-/* Card */
 .card {
   position: relative;
   background-color: #FFB078;
@@ -55,16 +47,14 @@
   align-items: center;
   justify-content: center;
   min-width: 140px;
-  min-height: var(--card-height); /* altura fija para alinear el botón */
+  min-height: var(--card-height);
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* Nombre centrado */
 .name {
   text-align: center;
 }
 
-/* Acciones (iconos) */
 .actions {
   position: absolute;
   top: -10px;
@@ -74,7 +64,6 @@
   gap: 6px;
 }
 
-/* Base de los botones circulitos */
 .iconBtn {
   background: white;
   border-radius: 50%;
@@ -89,13 +78,11 @@
   border: 1px solid rgba(0,0,0,0.06);
 }
 
-/* tamaño de los svgs dentro */
 .iconBtn svg {
   width: 16px;
   height: 16px;
 }
 
-/* Eliminar: borde e ícono en rojo */
 .deleteBtn {
   border: 2px solid #e94b4b;
 }
@@ -104,7 +91,6 @@
   fill: #e94b4b;
 }
 
-/* Editar: borde e ícono en verde */
 .editBtn {
   border: 2px solid #2da64f;
 }
@@ -113,7 +99,6 @@
   fill: #2da64f;
 }
 
-/* BOTÓN "Nueva categoria" estilo plano como en la captura */
 .addBtn {
   position: absolute;
   right: 0;
@@ -132,23 +117,21 @@
   font-weight: 500;
   color: #1f1f1f;
 
-  background: #fafafa; /* fondo clarito */
-  border: 1px solid #C25B00; /* borde naranja */
+  background: #fafafa; 
+  border: 1px solid #C25B00; 
   border-radius: 6px;
   cursor: pointer;
 
   transition: background 0.2s ease;
 }
 
-/* símbolo "+" */
 .plus {
-  font-weight: 700; /* más grueso */
+  font-weight: 700; 
   font-size: 1.05rem;
 }
 
-/* hover */
 .addBtn:hover {
-  background: #fff2e9; /* leve anaranjado claro */
+  background: #fff2e9; 
 }
 
 
@@ -156,7 +139,6 @@
   transform: translateY(-2px);
 }
 
-/* Responsive: reducir columnas en pantallas chicas */
 @media (max-width: 1100px) {
   .container {
     grid-template-columns: repeat(4, minmax(140px, 1fr));
@@ -179,7 +161,6 @@
   .container {
     grid-template-columns: repeat(1, minmax(140px, 1fr));
   }
-  /* en mobile el botón puede pasar a la parte superior si no hay espacio */
   .addBtn {
     position: static;
     transform: none;

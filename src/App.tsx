@@ -32,7 +32,7 @@ function App() {
   return (
     // <File/>
     <main>
-      <CategoryCard></CategoryCard>
+      {/* <CategoryCard></CategoryCard> */}
       <ProductGrid products={products} />
       <Footer></Footer>
     </main>

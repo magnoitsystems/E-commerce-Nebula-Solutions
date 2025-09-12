@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import styles from "./CategoryCard.module.css";
-// Opcional: importar otros pesos
 import '@fontsource/open-sans/600.css';
 import '@fontsource/open-sans/700.css';
 
@@ -48,9 +47,6 @@ export default function CategoryList() {
                 Categorias
             </h3>
 
-
-            {/* gridWrapper: contiene el grid (centrado) y el botón (absoluto a la derecha,
-          alineado verticalmente con la primera fila por CSS variables) */}
             <div className={styles.gridWrapper}>
                 <div className={styles.container}>
                     {categories.map((cat) => (
@@ -88,8 +84,6 @@ export default function CategoryList() {
                     ))}
                 </div>
 
-                {/* botón fuera del grid, ABSOLUTO a la derecha del gridWrapper */}
-                {/* botón fuera del grid, ABSOLUTO a la derecha del gridWrapper */}
                 <button className={styles.addBtn} onClick={handleAdd} aria-label="Nueva categoría">
                     Nueva categoria
                     <span className={styles.plus}>+</span>
