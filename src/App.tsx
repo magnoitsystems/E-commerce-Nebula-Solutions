@@ -4,6 +4,7 @@ import ProductList from './component/AdminProductsCard/ProductList.tsx';
 import CategoryCard from './component/CategoryCard/CategoryCard.tsx';
 import Footer from "./component/Footer/Footer.tsx";
 import ProductGrid from './component/ProductCard/ProductGrid.tsx';
+import PurchaseList from './component/PurchaseList/PurchaseList.tsx';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
     <main>
       {/* <CategoryCard></CategoryCard>
       <ProductList></ProductList> */}
+      <PurchaseList></PurchaseList>
       <ProductGrid products={products} />
       <Footer></Footer>
     </main>
