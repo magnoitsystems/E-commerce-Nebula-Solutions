@@ -1,53 +1,56 @@
+@import '@fontsource/open-sans/600.css';
+@import '@fontsource/open-sans/700.css';
+
 .card {
   display: flex;
-  align-items: center;
-  background-color: #1c1c1c;
+  align-items: flex-start;
+  background-color: #1e1e1e;
   color: #fff;
   border-radius: 6px;
-  padding: 10px;
-  margin-bottom: 12px;
-  justify-content: space-between;
+  padding: 10px 15px;
+  margin-bottom: 14px;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
 }
 
 .image {
-  width: 80px;
-  height: 80px;
+  width: 385px;   /* 👈 tamaño Figma */
+  height: 160px;  /* 👈 tamaño Figma */
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
 }
 
 .info {
   flex: 1;
-  margin-left: 12px;
+  margin-left: 16px;
+  padding-right: 120px; /* espacio para que no pise el precio */
 }
 
 .status {
-  font-weight: bold;
-}
-
-.delivered {
-  color: #ff6600; /* naranja como en el ejemplo */
-}
-
-.inProgress {
-  color: #0099ff;
-}
-
-.cancelled {
-  color: #ff3333;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #ff6600; /* siempre naranja */
+  font-size: 26px; /* 👈 tamaño Figma */
 }
 
 .date {
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 24px; /* 👈 tamaño Figma */
+  margin-bottom: 6px;
 }
 
 .details {
-  font-size: 0.85rem;
-  color: #bbb;
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.3;
 }
 
 .price {
-  font-size: 1.1rem;
-  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 30px; /* grande como Figma */
+  font-weight: 700;
   white-space: nowrap;
 }
