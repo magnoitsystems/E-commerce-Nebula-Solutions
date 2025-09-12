@@ -18,40 +18,25 @@ export default function ProductList() {
             id: 1, 
             name: "Combo labiales Maybeline NY", 
             category: "Maquillaje",
-            image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop&crop=center"
+            image: "/test-images/maybelline-combo.jpg"
         },
         { 
             id: 2, 
             name: "Combo labiales Maybeline NY", 
             category: "Maquillaje",
-            image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop&crop=center"
+            image: "/test-images/maybelline-combo.jpg"
         },
     ]);
 
     const handleDelete = (id: number) => {
-        setProducts(products.filter((p) => p.id !== id));
     };
 
     const handleEdit = (id: number) => {
-        const newName = prompt("Editar producto:");
-        if (newName) {
-            setProducts(
-                products.map((p) => (p.id === id ? { ...p, name: newName } : p))
-            );
-        }
+
     };
 
     const handleAdd = () => {
-        const newName = prompt("Nuevo producto:");
-        const newCategory = prompt("Categoría:");
-        if (newName && newCategory) {
-            setProducts([...products, { 
-                id: Date.now(), 
-                name: newName, 
-                category: newCategory,
-                image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop&crop=center"
-            }]);
-        }
+
     };
 
     return (

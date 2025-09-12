@@ -19,23 +19,13 @@ export default function CategoryCard() {
     ]);
 
     const handleDelete = (id: number) => {
-        setCategories(categories.filter((c) => c.id !== id));
     };
 
     const handleEdit = (id: number) => {
-        const newName = prompt("Editar categoría:");
-        if (newName) {
-            setCategories(
-                categories.map((c) => (c.id === id ? { ...c, name: newName } : c))
-            );
-        }
+
     };
 
     const handleAdd = () => {
-        const newName = prompt("Nueva categoría:");
-        if (newName) {
-            setCategories([...categories, { id: Date.now(), name: newName }]);
-        }
     };
 
     return (

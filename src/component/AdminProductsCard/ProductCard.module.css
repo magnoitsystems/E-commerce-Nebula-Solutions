@@ -7,6 +7,9 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  border-top: 3px solid #000000; 
+  padding-top: 2.5rem;
+  margin-top: 3rem;
 }
 
 .title {
@@ -29,9 +32,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   flex: 0 0 auto;
-  max-width: 600px;
+  width: auto;
 }
 
 .card {
@@ -39,13 +42,18 @@
   background: white;
   border: 2px solid #C25B00;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  min-height: 120px;
+  width: 625px !important; /* FORZAMOS EL ANCHO */
+  height: 207px !important; /* FORZAMOS EL ALTO */
+  min-width: 625px;
+  min-height: 207px;
+  max-width: 625px;
+  max-height: 207px;
 }
 
 .card:hover {
@@ -55,8 +63,10 @@
 
 .imageContainer {
   flex-shrink: 0;
-  width: 80px;
-  height: 80px;
+  width: 250px !important; /* FORZAMOS EL ANCHO MÁXIMO */
+  height: 165px !important; /* FORZAMOS EL ALTO */
+  min-width: 200px;
+  max-width: 250px;
   border-radius: 8px;
   overflow: hidden;
   background: #f5f5f5;
@@ -73,11 +83,13 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
+  height: 100%;
+  justify-content: center;
 }
 
 .productName {
-  font-size: 1.1rem;
+  font-size: 1.4rem !important; /* MÁS GRANDE */
   font-weight: 600;
   color: #1f1f1f;
   margin: 0;
@@ -85,7 +97,7 @@
 }
 
 .category {
-  font-size: 0.9rem;
+  font-size: 1.1rem !important; /* MÁS GRANDE */
   color: #666;
   font-weight: 400;
 }
@@ -102,21 +114,21 @@
 .iconBtn {
   background: white;
   border-radius: 50%;
-  padding: 4px;
+  padding: 6px; /* MÁS GRANDE */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 32px; /* MÁS GRANDE */
+  height: 32px; /* MÁS GRANDE */
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid rgba(0,0,0,0.06);
   transition: transform 0.2s ease;
 }
 
 .iconBtn svg {
-  width: 16px;
-  height: 16px;
+  width: 18px; /* MÁS GRANDE */
+  height: 18px; /* MÁS GRANDE */
 }
 
 .deleteBtn {
@@ -141,10 +153,10 @@
   justify-content: center;
   gap: 0.4rem;
   
-  padding: 0.4rem 1rem;
-  min-height: var(--add-btn-height);
+  padding: 0.6rem 1.2rem; /* MÁS GRANDE */
+  min-height: 50px; /* MÁS GRANDE */
   
-  font-size: 0.95rem;
+  font-size: 1rem; /* MÁS GRANDE */
   font-weight: 500;
   color: #1f1f1f;
   
@@ -160,7 +172,7 @@
 
 .plus {
   font-weight: 700; 
-  font-size: 1.05rem;
+  font-size: 1.2rem; /* MÁS GRANDE */
 }
 
 .addBtn:hover {
@@ -172,7 +184,7 @@
 }
 
 /* Media queries para responsive */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .gridWrapper {
     flex-direction: column;
     align-items: center;
@@ -181,14 +193,19 @@
   
   .container {
     width: 100%;
-    max-width: 500px;
+    align-items: center;
   }
   
   .card {
-    width: 100%; /* En móvil se adapta al ancho disponible */
-    max-width: 500px;
-    height: auto;
-    min-height: 160px;
+    width: 90% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    min-height: 180px !important;
+  }
+  
+  .imageContainer {
+    width: 150px !important;
+    height: 120px !important;
   }
   
   .title {
@@ -206,12 +223,13 @@
     flex-direction: column;
     text-align: center;
     padding: 1.5rem 1rem;
-    height: auto;
+    height: auto !important;
+    width: 95% !important;
   }
   
   .imageContainer {
-    max-width: 200px;
-    height: 120px;
+    width: 200px !important;
+    height: 150px !important;
   }
   
   .cardContent {
