@@ -1,15 +1,19 @@
+@import '@fontsource/open-sans/700.css';
+
 .wrapper {
   padding: 20px;
 }
 
 .title {
-  font-size: 1.4rem;
+  font-size: 2.3rem;
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .subtitle {
   color: #666;
   margin-bottom: 15px;
+  font-size: 24px;
 }
 
 .list {
