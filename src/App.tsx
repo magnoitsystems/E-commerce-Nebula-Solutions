@@ -33,8 +33,8 @@ function App() {
   return (
     // <File/>
     <main>
-      <CategoryCard></CategoryCard>
-      <ProductList></ProductList>
+      {/* <CategoryCard></CategoryCard>
+      <ProductList></ProductList> */}
       <ProductGrid products={products} />
       <Footer></Footer>
     </main>

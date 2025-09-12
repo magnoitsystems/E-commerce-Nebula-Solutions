@@ -11,13 +11,14 @@ interface Category {
 }
 
 export default function CategoryCard() {
-    const [categories, setCategories] = useState<Category[]>([
+    const [categories] = useState<Category[]>([
         { id: 1, name: "Maquillaje" },
         { id: 2, name: "Maquillaje" },
         { id: 3, name: "Maquillaje" },
         { id: 4, name: "Maquillaje" },
     ]);
 
+     //FUTURE METHODS THAT WILL HANDLE THE ADMIN OPERAIONS
     const handleDelete = (id: number) => {
     };
 
