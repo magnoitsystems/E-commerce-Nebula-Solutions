@@ -10,7 +10,7 @@ interface Category {
     name: string;
 }
 
-export default function CategoryList() {
+export default function CategoryCard() {
     const [categories, setCategories] = useState<Category[]>([
         { id: 1, name: "Maquillaje" },
         { id: 2, name: "Maquillaje" },
@@ -44,7 +44,7 @@ export default function CategoryList() {
                 className={styles.title}
                 style={{ fontFamily: 'Open Sans, sans-serif', fontWeight: 600 }}
             >
-                Categorias
+                Categorías
             </h3>
 
             <div className={styles.gridWrapper}>
@@ -85,10 +85,9 @@ export default function CategoryList() {
                 </div>
 
                 <button className={styles.addBtn} onClick={handleAdd} aria-label="Nueva categoría">
-                    Nueva categoria
+                    Nueva categoría
                     <span className={styles.plus}>+</span>
                 </button>
-
             </div>
         </div>
     );
