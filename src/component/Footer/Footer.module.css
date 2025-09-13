@@ -4,17 +4,16 @@
 
 .footerContainer {
   margin: 0 10px 10px;
-  background-color: #FE6A00; 
+  background-color: #FE6A00;
   border-radius: 24px;
   padding: 32px;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* --- Mobile First --- */
 .footerHeader {
   display: flex;
-  flex-direction: column;  /* 👈 todo abajo en mobile */
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   margin-bottom: 32px;
@@ -30,13 +29,13 @@
 
 .socialSection {
   display: flex;
-  flex-direction: column; /* 👈 centrado vertical */
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background-color: #3A3634; 
+  background-color: #3A3634;
   padding: 10px 16px;
-  border-radius: 16px; /* 👈 bordes redondeados completos */
+  border-radius: 12px; 
 }
 
 .socialText {
@@ -57,7 +56,7 @@
   width: 28px;
   height: 28px;
   object-fit: cover;
-  border-radius: 50%; /* 👈 más amigable mobile */
+  border-radius: 50%; 
   cursor: pointer;
   transition: transform 0.18s ease, opacity 0.18s ease;
 }
@@ -70,18 +69,17 @@
 /* contenido principal */
 .footerContent {
   display: grid;
-  grid-template-columns: 1fr; /* 👈 mobile: todo en 1 columna */
+  grid-template-columns: 1fr; 
   gap: 24px;
-  background-color: #272524; 
+  background-color: #272524;
   border-radius: 16px;
   padding: 28px;
   color: #ffffff;
-  align-items: center;
-  text-align: center; /* 👈 centrado en mobile */
+  text-align: center;
 }
 
 .footerSection {
-  text-align: center; 
+  text-align: center;
 }
 
 .sectionTitle,
@@ -146,8 +144,8 @@
 .ctaSection {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   padding: 24px 12px;
   text-align: center;
 }
@@ -192,7 +190,7 @@
 /* --- Tablet --- */
 @media (min-width: 768px) and (max-width: 1023px) {
   .footerContent {
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     gap: 32px;
     padding: 36px;
     text-align: left;
@@ -211,13 +209,37 @@
   }
 }
 
-
 /* --- Desktop --- */
 @media (min-width: 1024px) {
+  .footerHeader {
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .socialSection {
+    flex-direction: row;
+    border-radius: 12px 12px 0 12px; 
+    padding: 6px 12px;
+    gap: 12px;
+  }
+
+  .socialIcon {
+    border-radius: 6px; 
+  }
+
   .footerContent {
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
     gap: 40px;
     padding: 48px;
+    text-align: left;
+    align-items: start; 
+  }
+
+  .footerSection {
+    text-align: left;
   }
 
   .logoSection img {
