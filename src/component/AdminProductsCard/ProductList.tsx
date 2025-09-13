@@ -48,6 +48,13 @@ export default function ProductList() {
             >
                 Productos
             </h3>
+        
+
+            {/* BOTÓN FUERA DEL GRID - ARRIBA */}
+            <button className={styles.addBtn} onClick={handleAdd} aria-label="Nueva publicación">
+                Nueva publicación
+                <span className={styles.plus}>+</span>
+            </button>
 
             <div className={styles.gridWrapper}>
                 <div className={styles.container}>
@@ -100,11 +107,6 @@ export default function ProductList() {
                         </div>
                     ))}
                 </div>
-
-                <button className={styles.addBtn} onClick={handleAdd} aria-label="Nueva publicación">
-                    Nueva publicación
-                    <span className={styles.plus}>+</span>
-                </button>
             </div>
         </div>
     );
