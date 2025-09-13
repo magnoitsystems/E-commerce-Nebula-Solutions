@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import styles from "./CategoryCard.module.css";
-import '@fontsource/open-sans/600.css';
-import '@fontsource/open-sans/700.css';
+// import '@fontsource/open-sans/600.css';
+// import '@fontsource/open-sans/700.css';
 
 interface Category {
     id: number;

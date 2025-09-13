@@ -12,7 +12,7 @@ function Home() {
     return (
       <main>
           <NavBar/>
-          <Carrusel images={images} interval={2000}/>
+          <Carrusel images={images} />
           <ProductGrid />
           <Footer />
       </main>
