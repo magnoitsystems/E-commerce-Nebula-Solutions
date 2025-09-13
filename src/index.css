@@ -23,6 +23,8 @@
     --grey-5: #3A3634;
     --grey-6: #272524;
 
+    --grey-6-95: rgba(39, 37, 36, 0.95);
+
     /*padding-margin*/
     --1px: 0.0625;    /* 1px */
     --5px: 0.3125rem; /* 5px */
@@ -91,6 +93,7 @@ body {
     background: var(--background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Open Sans', sans-serif;
 }
 
 a {
