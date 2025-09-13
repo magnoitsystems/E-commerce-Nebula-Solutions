@@ -3,11 +3,17 @@ import styles from "./File.module.css";
 import Commentary from "./Commentary/Commentary.tsx";
 
 function File(){
+    const images = [
+        "/carruselImages/comboMaybeline.jpg",
+        "/carruselImages/comboMaybeline2.jpg",
+        "/carruselImages/comboMaybeline3.jpg"
+    ];
+
     return(
         <div className={styles.containerProperties}>
             <div className={styles.titleAndCarruselProperties}>
                 <h1>Combo labiales Maybeline NY</h1>
-                <Carrusel/>
+                <Carrusel images={images} interval={2000}/>
             </div>
             <div className={styles.priceAndCartButtonProperties}>
                 <span>$10.000</span>
