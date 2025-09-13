@@ -1,45 +1,17 @@
-import File from "../src/component/File/File.tsx";
-import './App.css'
-// import ProductList from './component/AdminProductsCard/ProductList.tsx';
-// import CategoryCard from './component/CategoryCard/CategoryCard.tsx';
-import Footer from "./component/Footer/Footer.tsx";
-// import ProductGrid from './component/ProductCard/ProductGrid.tsx';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home';
+import FileProduct from './pages/FileProduct.tsx';
 
 function App() {
-
-  // const products = [
-  //   {
-  //     id: 1,
-  //     name: "Sombras de ojos",
-  //     image: "/test-images/maybelline-combo.jpg",
-  //     price: 15000,
-  //     discountPrice: 10000,
-  //     discountPercent: 25,
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Sombras de ojos",
-  //     image: "/test-images/maybelline-combo.jpg",
-  //     price: 15000,
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Sombras de ojos",
-  //     image: "/test-images/maybelline-combo.jpg",
-  //     price: 20000,
-  //   },
-  // ];
-
   return (
-    <main>
-      <File mode={"create"} />
-      {/*<CategoryCard></CategoryCard>*/}
-      {/*<ProductList></ProductList>*/}
-      {/*<ProductGrid products={products} />*/}
-      <Footer></Footer>
-    </main>
-
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+          <Route path='/fileProduct' element={<FileProduct />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

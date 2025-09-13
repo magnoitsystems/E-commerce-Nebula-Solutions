@@ -64,7 +64,7 @@
     font-size: 50px;
 }
 
-.priceAndCartButtonProperties span, .cartButtonProperties, titleAndCarruselProperties, titleDescriptionProperties, .descriptionProperties span{
+.priceAndCartButtonProperties span, .cartButtonProperties, .titleAndCarruselProperties, .titleDescriptionProperties, .descriptionProperties span{
     font-family: 'Arial';
 }
 
@@ -99,6 +99,7 @@
     width: 800px;
     height: fit-content;
     margin-top: 40px;
+    margin-bottom: 50px;
 }
 
 .inputProperties{

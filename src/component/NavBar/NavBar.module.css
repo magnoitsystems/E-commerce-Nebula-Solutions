@@ -1,0 +1,138 @@
+/*all nav*/
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    width: 95%;
+    height: fit-content;
+
+    margin-inline: auto;
+}
+
+
+/*main parts*/
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    width: 100%;
+
+    margin: var(--20px);
+    padding: var(--10px);
+    padding-inline: var(--40px);
+
+    background-color: var(--orange-3);
+    border-radius: var(--20px);
+}
+
+.logo img {
+    width: 263px;
+    height: 60px;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: fit-content;
+    height: fit-content;
+
+    gap: var(--50px);
+
+    color: var(--grey-5);
+}
+
+.categories h5, .user img {
+    transition: all 0.6s ease;
+}
+.categories h5:hover, .user img:hover {
+    color: var(--grey-1);
+    transform: translateY(-4px);
+}
+
+.user img {
+    width: 40px;
+    height: 40px;
+}
+
+/*secondary parts*/
+/*all categories*/
+.allCategories {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 10;
+
+    width: 100%;
+    height: fit-content;
+    top: 100%;
+    left: 0;
+
+    padding: var(--30px);
+
+    background-color: var(--grey-6-95);
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+
+    gap: var(--5px);
+
+    color: #ffffff;
+}
+
+.category p {
+    font-weight: lighter;
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+.category h6 {
+    font-weight: bolder;
+    color: var(--orange-2);
+}
+
+.category p:hover, .category h6:hover {
+    color: var(--orange-4);
+}
+
+/*log in/out*/
+.log {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: end;
+    position: absolute;
+    z-index: 10;
+
+    width: fit-content;
+    height: fit-content;
+    top: 100%;
+    right: 0;
+
+    padding: var(--30px);
+    gap: var(--10px);
+
+    background-color: var(--grey-6-95);
+    color: #ffffff;
+}
+
+.log h5 {
+    transition: all 0.3s ease;
+}
+.log h5:hover {
+    color: var(--orange-2);
+}

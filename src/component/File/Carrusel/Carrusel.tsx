@@ -1,19 +1,18 @@
 import {useEffect, useState} from "react";
 import styles from "./Carrusel.module.css";
-import file from "../File.tsx";
 
 type Prop = {
-    isEditableFile: boolean,
-    isEmptyFile: boolean,
-    // onImagesChange?: (images: any[]) => void;
+    isEditableFile?: boolean,
+    isEmptyFile?: boolean,
+    images: string[];
 }
 
-function Carrusel({ isEditableFile, isEmptyFile }: Prop){
-    const images = [
-        "/carruselImages/comboMaybeline.jpg",
-        "/carruselImages/comboMaybeline2.jpg",
-        "/carruselImages/comboMaybeline3.jpg",
-    ]
+function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
+    // const images = [
+    //     "/carruselImages/comboMaybeline.jpg",
+    //     "/carruselImages/comboMaybeline2.jpg",
+    //     "/carruselImages/comboMaybeline3.jpg",
+    // ]
 
     const hasImages = images.length > 0;
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -109,21 +108,23 @@ function Carrusel({ isEditableFile, isEmptyFile }: Prop){
                     )}
                 </div>
             )}
-            {!hasImages && (isEditableFile || isEmptyFile) && (
+            {!hasImages && (
                 <div className={`${styles.containerAddImageForEmptyFile} ${styles.withoutImageProperties}`}>
-                    <div>
-                        <input
-                            type="file"
-                            id="inputId"
-                            className={styles.inputProperties}
-                            // onChange={handleImageUpload}
-                            accept="image/*"
-                            // disabled={uploading}
-                        />
-                        <label htmlFor="inputId" className={styles.labelAddImageProperties}>
-                            Añadir imagen
-                        </label>
-                    </div>
+                    {(isEditableFile || isEmptyFile) && (
+                        <div>
+                            <input
+                                type="file"
+                                id="inputId"
+                                className={styles.inputProperties}
+                                // onChange={handleImageUpload}
+                                accept="image/*"
+                                // disabled={uploading}
+                            />
+                            <label htmlFor="inputId" className={styles.labelAddImageProperties}>
+                                Añadir imagen
+                            </label>
+                        </div>
+                        )}
                 </div>
             )}
 

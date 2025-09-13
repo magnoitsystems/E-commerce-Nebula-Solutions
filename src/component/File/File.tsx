@@ -4,18 +4,17 @@ import Commentary from "./Commentary/Commentary.tsx";
 import {useState} from "react";
 import EditableTextFiel from "./EditableFile/EditableTextFiel.tsx";
 
-type TechnicalSheetProps = {
+type ProductProps = {
     mode: 'view' | 'create' | 'edit';
 };
 
-// Mover la interfaz fuera del componente
 interface ProductState {
     productName: string;
     price: string;
     description: string;
 }
 
-function File({ mode }: TechnicalSheetProps){
+function File({ mode }: ProductProps){
     const [editingField, setEditingField] = useState<string | null>(null);
 
     const isEmptyFile = mode === "create";
@@ -42,7 +41,6 @@ function File({ mode }: TechnicalSheetProps){
     };
 
     const handleCancelEdit = () => {
-        // Restaura todos los valores originales
         setLocalProperty({
             productName: initialProduct.productName || '',
             price: initialProduct.price || '',
@@ -88,7 +86,9 @@ function File({ mode }: TechnicalSheetProps){
                         </button>
                     )}
                 </div>
-                <Carrusel isEditableFile={isEditableFile} isEmptyFile={isEmptyFile}/>
+                <Carrusel images={[  "/carruselImages/comboMaybeline.jpg",
+                        "/carruselImages/comboMaybeline2.jpg",
+                        "/carruselImages/comboMaybeline3.jpg"]} isEditableFile={isEditableFile} isEmptyFile={isEmptyFile}/>
             </div>
 
             <div className={styles.priceAndCartButtonProperties}>

@@ -1,9 +1,28 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 16px;
   justify-items: center; 
-  margin: 40px auto 80px;
-  max-width: 1200px;
-  padding: 0 20px;
+  margin: 20px auto 40px;
+  padding: 0 20px; 
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 30px auto 60px;
+    padding: 0 30px; 
+  }
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+  .grid {
+    max-width: 1200px;
+    gap: 30px;
+    margin: 40px auto 80px;
+    padding: 0 40px; 
+  }
 }

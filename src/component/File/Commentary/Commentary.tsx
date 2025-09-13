@@ -5,7 +5,7 @@ function Commentary(){
         <div>
             <div className={styles.formCommentaryProperties}>
                 <div className={styles.userProperties}>
-                    <img src={"/icons/user.png"} alt={"User icon"} width={40} height={40}/>
+                    <img src={"/icons/user-circle.png"} alt={"User icon"} width={40} height={40}/>
                     <span>Manuel Torres</span>
                 </div>
                 <div className={styles.formProperties}>
@@ -17,7 +17,7 @@ function Commentary(){
                 <div className={styles.commentariesProperties}>
                     <div className={styles.commentaryUserProperties}>
                         <div>
-                            <img src={"/icons/user.png"} alt={"User icon"} width={40} height={40}/>
+                            <img src={"/icons/user-circle.png"} alt={"User icon"} width={40} height={40}/>
                         </div>
                         <div className={styles.userAndCommentaryProperties}>
                             <span className={styles.userNameProperties}>Manuel Torres</span>

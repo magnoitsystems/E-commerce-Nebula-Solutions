@@ -1,12 +1,10 @@
 .card {
   position: relative;
-    overflow: visible;
+  overflow: visible; /* deja que la badge sobresalga */
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   width: 100%;
-  max-width: 340px; 
   transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
 .card:hover {
@@ -15,27 +13,24 @@
 
 .image {
   width: 100%;
-  height: 300px; 
+  height: 180px; /* 👈 más chico para mobile */
   object-fit: cover;
   display: block;
 }
 
 .discountBadge {
   position: absolute;
-  top: -2px;       /* sobresale */
-  left: -25px;      /* sobresale */
+  top: -2px;
+  left: -25px;
   background: #ff7300;
   color: #fff;
-  font-size: 16px;
+  font-size: 12px; /* 👈 más chico en mobile */
   font-weight: 700;
-  padding: 5px 20px;
+  padding: 4px 14px;
   transform: rotate(-45deg);
-  z-index: 20;      /* más alto que todo */
-  
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35); /* efecto flotado */
+  z-index: 20;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
 }
-
-
 
 .discountBadge::before,
 .discountBadge::after {
@@ -50,15 +45,14 @@
 .discountBadge::before {
   left: 0;
   border-width: 6px 6px 0 0;
-  border-color: #b33c00 transparent transparent transparent; /* “pliegue” izquierdo */
+  border-color: #b33c00 transparent transparent transparent;
 }
 
 .discountBadge::after {
   right: 0;
   border-width: 6px 0 0 6px;
-  border-color: #b33c00 transparent transparent transparent; /* “pliegue” derecho */
+  border-color: #b33c00 transparent transparent transparent;
 }
-
 
 .info {
   position: absolute;
@@ -66,32 +60,82 @@
   width: 100%;
   background: rgba(0,0,0,0.6);
   color: white;
-  padding: 10px;
+  padding: 6px; /* 👈 más compacto en mobile */
   box-sizing: border-box;
 }
 
 .name {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px; /* 👈 más chico */
   font-weight: 600;
 }
 
 .prices {
-  margin-top: 4px;
+  margin-top: 2px;
   display: flex;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
 }
 
 .oldPrice {
   text-decoration: line-through;
   color: #ddd;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .newPrice {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: white;
 }
 
+/* --- Escalamos para tablets/desktops --- */
+@media (min-width: 768px) {
+  .image {
+    height: 240px;
+  }
+
+  .discountBadge {
+    font-size: 14px;
+    padding: 5px 16px;
+  }
+
+  .name {
+    font-size: 15px;
+  }
+
+  .oldPrice {
+    font-size: 13px;
+  }
+
+  .newPrice {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    max-width: 340px;
+  }
+
+  .image {
+    height: 300px;
+  }
+
+  .discountBadge {
+    font-size: 16px;
+    padding: 5px 20px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .oldPrice {
+    font-size: 14px;
+  }
+
+  .newPrice {
+    font-size: 16px;
+  }
+}

@@ -13,7 +13,7 @@ interface Product {
 }
 
 export default function ProductList() {
-    const [products, setProducts] = useState<Product[]>([
+    const [products] = useState<Product[]>([
         { 
             id: 1, 
             name: "Combo labiales Maybeline NY", 
@@ -28,6 +28,7 @@ export default function ProductList() {
         },
     ]);
 
+    //FUTURE METHODS THAT WILL HANDLE THE ADMIN OPERAIONS
     const handleDelete = (id: number) => {
     };
 
