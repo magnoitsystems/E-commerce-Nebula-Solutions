@@ -1,0 +1,238 @@
+:root {
+  --add-btn-height: 44px;
+}
+
+.wrapper {
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 3px solid #000000; 
+  padding-top: 2.5rem;
+  margin-top: 3rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin: 0 0 2rem 2rem;
+  text-align: left;
+}
+
+.gridWrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.card {
+  position: relative;
+  background: white;
+  border: 2px solid #C25B00;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 625px !important; /* FORZAMOS EL ANCHO */
+  height: 207px !important; /* FORZAMOS EL ALTO */
+  min-width: 625px;
+  min-height: 207px;
+  max-width: 625px;
+  max-height: 207px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.imageContainer {
+  flex-shrink: 0;
+  width: 250px !important; /* FORZAMOS EL ANCHO MÁXIMO */
+  height: 165px !important; /* FORZAMOS EL ALTO */
+  min-width: 200px;
+  max-width: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  justify-content: center;
+}
+
+.productName {
+  font-size: 1.4rem !important; /* MÁS GRANDE */
+  font-weight: 600;
+  color: #1f1f1f;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.category {
+  font-size: 1.1rem !important; /* MÁS GRANDE */
+  color: #666;
+  font-weight: 400;
+}
+
+.actions {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.iconBtn {
+  background: white;
+  border-radius: 50%;
+  padding: 6px; /* MÁS GRANDE */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; /* MÁS GRANDE */
+  height: 32px; /* MÁS GRANDE */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+.iconBtn svg {
+  width: 18px; /* MÁS GRANDE */
+  height: 18px; /* MÁS GRANDE */
+}
+
+.deleteBtn {
+  border: 2px solid #e94b4b;
+}
+
+.deleteBtn svg {
+  fill: #e94b4b;
+}
+
+.editBtn {
+  border: 2px solid #2da64f;
+}
+
+.editBtn svg {
+  fill: #2da64f;
+}
+
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  
+  padding: 0.6rem 1.2rem; /* MÁS GRANDE */
+  min-height: 50px; /* MÁS GRANDE */
+  
+  font-size: 1rem; /* MÁS GRANDE */
+  font-weight: 500;
+  color: #1f1f1f;
+  
+  background: #fafafa; 
+  border: 1px solid #C25B00; 
+  border-radius: 6px;
+  cursor: pointer;
+  
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.plus {
+  font-weight: 700; 
+  font-size: 1.2rem; /* MÁS GRANDE */
+}
+
+.addBtn:hover {
+  background: #fff2e9; 
+}
+
+.iconBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* Media queries para responsive */
+@media (max-width: 900px) {
+  .gridWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .container {
+    width: 100%;
+    align-items: center;
+  }
+  
+  .card {
+    width: 90% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    min-height: 180px !important;
+  }
+  
+  .imageContainer {
+    width: 150px !important;
+    height: 120px !important;
+  }
+  
+  .title {
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .addBtn {
+    align-self: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    height: auto !important;
+    width: 95% !important;
+  }
+  
+  .imageContainer {
+    width: 200px !important;
+    height: 150px !important;
+  }
+  
+  .cardContent {
+    align-items: center;
+  }
+}

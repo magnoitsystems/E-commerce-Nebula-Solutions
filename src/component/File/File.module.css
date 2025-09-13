@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-.titleAndCarruselProperties button{
+.buttonEditProperties{
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -27,6 +27,29 @@
     color: rgba(179, 75, 0, 1);
     width: fit-content;
     margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.inputSizer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    height: auto;
+    width: auto;
+    white-space: pre;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 10px;
+    padding-inline: 20px;
+    border: 1px solid transparent;
+}
+
+.inputSizer.inputProperties {
+    font-size: 20px;
+    padding: 10px;
+    padding-inline: 20px;
+    border: 1px solid transparent;
 }
 
 .priceAndCartButtonProperties{
@@ -76,4 +99,14 @@
     width: 800px;
     height: fit-content;
     margin-top: 40px;
+}
+
+.inputProperties{
+    width: fit-content;
+    height: 40px;
+    border-radius: 20px;
+    border: #C25B00 1px solid;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
 }

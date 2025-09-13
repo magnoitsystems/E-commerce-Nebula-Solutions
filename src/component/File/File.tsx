@@ -2,49 +2,174 @@ import Carrusel from "./Carrusel/Carrusel.tsx";
 import styles from "./File.module.css";
 import Commentary from "./Commentary/Commentary.tsx";
 import {useState} from "react";
+import EditableTextFiel from "./EditableFile/EditableTextFiel.tsx";
 
 type TechnicalSheetProps = {
     mode: 'view' | 'create' | 'edit';
 };
 
+// Mover la interfaz fuera del componente
+interface ProductState {
+    productName: string;
+    price: string;
+    description: string;
+}
+
 function File({ mode }: TechnicalSheetProps){
-    const [isEditing, setIsEditing] = useState(false);
+    const [editingField, setEditingField] = useState<string | null>(null);
 
     const isEmptyFile = mode === "create";
     const isEditableFile = mode === "edit";
 
-    const showPenForEdit = () => {
-        setIsEditing(true);
-    }
+    const initialProduct = {
+        images: [],
+        productName: "Nombre del producto",
+        description: "Descripción del producto...",
+        id: 0,
+        price: "0",
+    };
+
+    const [localProperty, setLocalProperty] = useState<ProductState>({
+        productName: initialProduct.productName || '',
+        price: initialProduct.price || '',
+        description: initialProduct.description || ''
+    });
+
+    // Función genérica para guardar cualquier campo
+    const handleSave = (field: keyof ProductState) => (value: string) => {
+        setLocalProperty(prev => ({ ...prev, [field]: value }));
+        setEditingField(null);
+    };
+
+    const handleCancelEdit = () => {
+        // Restaura todos los valores originales
+        setLocalProperty({
+            productName: initialProduct.productName || '',
+            price: initialProduct.price || '',
+            description: initialProduct.description || ''
+        });
+        setEditingField(null);
+    };
+
+    const handleStartEdit = (field: string) => {
+        setEditingField(field);
+    };
+
     return(
         <div className={styles.containerProperties}>
             <div className={styles.titleAndCarruselProperties}>
                 <div className={styles.titleAndEditButtonProperties}>
-                    {/*{isEditing && (*/}
+                    {(isEmptyFile || isEditableFile) && editingField === 'productName' ? (
+                        <EditableTextFiel
+                            value={localProperty.productName}
+                            isEditing={editingField === 'productName'}
+                            type={"text"}
+                            onSave={handleSave('productName')}
+                            onCancel={handleCancelEdit}
+                            className={styles.inputProperties}
+                        />
+                    ) : (
+                        <h1 onClick={() => handleStartEdit('productName')}>
+                            {localProperty.productName}
+                        </h1>
+                    )}
 
-                    {/*)}*/}
-                    <h1>Combo labiales Maybeline NY</h1>
-                    {isEditableFile || isEmptyFile && (
-                        <button onClick={showPenForEdit}><img src={"/icons/editButtonIcon.png"} alt={"Botón para eidtar"} width={35} height={35}/></button>
+                    {(isEditableFile || isEmptyFile) && (
+                        <button
+                            className={styles.buttonEditProperties}
+                            onClick={() => handleStartEdit('productName')}
+                        >
+                            <img
+                                src={"/icons/editButtonIcon.png"}
+                                alt={"Botón para editar"}
+                                width={35}
+                                height={35}
+                            />
+                        </button>
                     )}
                 </div>
                 <Carrusel isEditableFile={isEditableFile} isEmptyFile={isEmptyFile}/>
             </div>
+
             <div className={styles.priceAndCartButtonProperties}>
-                <span>$10.000</span>
-                <button className={styles.cartButtonProperties}>Agregar al carrito <img src={"/icons/carritoIcon.png"}/></button>
+                <div>
+                    {(isEmptyFile || isEditableFile) && editingField === 'price' ? (
+                        <EditableTextFiel
+                            value={localProperty.price}
+                            isEditing={editingField === 'price'}
+                            type={"text"}
+                            onSave={handleSave('price')}
+                            onCancel={handleCancelEdit}
+                            className={styles.inputProperties}
+                        />
+                    ) : (
+                        <span onClick={() => handleStartEdit('price')}>
+                            {localProperty.price}
+                        </span>
+                    )}
+
+                    {(isEditableFile || isEmptyFile) && (
+                        <button
+                            className={styles.buttonEditProperties}
+                            onClick={() => handleStartEdit('price')}
+                        >
+                            <img
+                                src={"/icons/editButtonIcon.png"}
+                                alt={"Botón para editar"}
+                                width={35}
+                                height={35}
+                            />
+                        </button>
+                    )}
+                </div>
+                {!isEditableFile && !isEmptyFile && (
+                    <button className={styles.cartButtonProperties}>
+                        Agregar al carrito
+                        <img src={"/icons/carritoIcon.png"}/>
+                    </button>
+                )}
             </div>
+
             <div className={styles.descriptionProperties}>
-                <span className={styles.titleDescriptionProperties}>Descripción</span>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <span className={styles.titleDescriptionProperties}>Descripción</span>
+                    {(isEditableFile || isEmptyFile) && (
+                        <button
+                            className={styles.buttonEditProperties}
+                            onClick={() => handleStartEdit('description')}
+                        >
+                            <img
+                                src={"/icons/editButtonIcon.png"}
+                                alt={"Botón para editar"}
+                                width={35}
+                                height={35}
+                            />
+                        </button>
+                    )}
+                </div>
                 <div className={styles.underlineProperties}/>
-                <span>Un set pensado para que tengas el tono justo en cada momento. Los colores van desde nudes suaves hasta intensos vibrantes, todos con buena pigmentación y una textura cómoda que no reseca.
-                Se aplican fácil, se fijan rápido y duran varias horas.
-                Podés usarlos solos o mezclarlos entre sí para looks más creativos.
-                Formato práctico: ideales para llevar en la cartera.</span>
+
+                {(isEmptyFile || isEditableFile) && editingField === 'description' ? (
+                    <EditableTextFiel
+                        value={localProperty.description}
+                        isEditing={editingField === 'description'}
+                        type={"text"}
+                        onSave={handleSave('description')}
+                        onCancel={handleCancelEdit}
+                        className={styles.inputProperties}
+                    />
+                ) : (
+                    <span onClick={() => handleStartEdit('description')}>
+                        {localProperty.description}
+                    </span>
+                )}
             </div>
-            <div>
-                <Commentary/>
-            </div>
+
+            {!isEmptyFile && !isEditableFile && (
+                <div>
+                    <Commentary/>
+                </div>
+            )}
         </div>
     );
 }

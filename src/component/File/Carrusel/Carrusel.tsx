@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import styles from "./Carrusel.module.css";
+import file from "../File.tsx";
 
 type Prop = {
     isEditableFile: boolean,
@@ -55,18 +56,20 @@ function Carrusel({ isEditableFile, isEmptyFile }: Prop){
 
     return(
         <div className={styles.carruselProperties} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <img className={styles.imageProperties} style={{
-                width: '100%',
-                height: '100%',
-                objectFit:"cover",
-            }} src={images[currentIndex]} alt={`Foto ${images[currentIndex]}`} />
-            {images.length > 1 && (
+            {hasImages && (
+                <img className={styles.imageProperties} style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit:"cover",
+                }} src={images[currentIndex]} alt={`Foto ${images[currentIndex]}`} />
+            )}
+            {hasImages && (
             <div className={styles.buttonCarruselProperties}>
                 <button onClick={goToPrevious}><img src={"/icons/IconFlechaDireccionContraria.png"} alt={"Icon flecha carrusel"}/></button>
                 <button onClick={goToNext}><img src={"/icons/IconFlecha.png"} alt={"Icon flecha carrusel"}/></button>
             </div>
             )}
-            {images.length > 1 && (
+            {hasImages && (
                 <div className={styles.guiaCaruselProperties}>
                     {images.map((_, index) => (
                         <button
@@ -92,20 +95,21 @@ function Carrusel({ isEditableFile, isEmptyFile }: Prop){
                             accept="image/*"
                             // disabled={uploading}
                         />
-                        {/*<label htmlFor="inputId" className={styles.labelAddImageProperties}>*/}
-                        {/*    {uploading ? 'Subiendo...' : 'Añadir imagen'}*/}
-                        {/*</label>*/}
+                        <label htmlFor="inputId" className={styles.labelAddImageProperties}>
+                            Añadir imagen
+                            {/*{uploading ? 'Subiendo...' : 'Añadir imagen'}*/}
+                        </label>
                     </div>
                     {hasImages && (
                         <div>
                             <button  onClick={() => handleDeleteClick(images[currentIndex])} className={styles.deleteIconProperties}>
-                                <img src="/icons/deleteIcon.png" alt="Ícono de eliminar" width={34} height={34} />
+                                <img src="/icons/deleteIcon.png" alt="Ícono de eliminar" width={20} height={24} />
                             </button>
                         </div>
                     )}
                 </div>
             )}
-            {!hasImages && (isEditableFile || isEmptyFile) &&(
+            {!hasImages && (isEditableFile || isEmptyFile) && (
                 <div className={`${styles.containerAddImageForEmptyFile} ${styles.withoutImageProperties}`}>
                     <div>
                         <input
@@ -116,9 +120,9 @@ function Carrusel({ isEditableFile, isEmptyFile }: Prop){
                             accept="image/*"
                             // disabled={uploading}
                         />
-                        {/*<label htmlFor="inputId" className={styles.labelAddImageProperties}>*/}
-                        {/*    {uploading ? 'Subiendo...' : 'Añadir imagen'}*/}
-                        {/*</label>*/}
+                        <label htmlFor="inputId" className={styles.labelAddImageProperties}>
+                            Añadir imagen
+                        </label>
                     </div>
                 </div>
             )}
