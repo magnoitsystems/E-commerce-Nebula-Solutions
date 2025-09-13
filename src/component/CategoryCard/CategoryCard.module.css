@@ -126,11 +126,9 @@
     display: grid;
     grid-template-columns: 1fr auto; 
     align-items: start; 
-    justify-content: space-around;
-    max-width: 80%;
   }
 
-  .card{
+  .card {
     max-width: 100px;
   }
 
@@ -139,6 +137,7 @@
     grid-row: 1 / 2;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* <-- reduce este valor para acercar las cards */
   }
 
   .addBtn {
@@ -151,4 +150,3 @@
     max-width: 220px;
   }
 }
-
