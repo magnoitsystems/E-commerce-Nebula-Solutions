@@ -14,32 +14,32 @@
   font-size: 1.6rem;
   font-weight: 700;
   color: #1f1f1f;
-  margin: 0 0 2rem 2rem;
+  margin: 0 0 1.25rem 1rem;
   text-align: left;
 }
 
 .gridWrapper {
-  position: relative;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 3rem; 
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
   width: 100%;
 }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
   justify-items: center;
   align-items: start;
-  flex: 0 0 auto;
+  width: 100%;
+  max-width: 300px;
 }
 
 .card {
   position: relative;
   background-color: #FFB078;
-  padding: 0.8rem 2rem; 
+  padding: 0.8rem 2rem;
   border-radius: 10px;
   font-weight: 700;
   font-size: 1rem;
@@ -53,9 +53,7 @@
   width: 100%;
 }
 
-.name {
-  text-align: center;
-}
+.name { text-align: center; }
 
 .actions {
   position: absolute;
@@ -81,99 +79,76 @@
   transition: transform 0.2s ease;
 }
 
-.iconBtn svg {
-  width: 16px;
-  height: 16px;
-}
+.iconBtn svg { width: 16px; height: 16px; }
 
-.deleteBtn {
-  border: 2px solid #e94b4b;
-}
+.deleteBtn { border: 2px solid #e94b4b; }
+.deleteBtn svg { fill: #e94b4b; }
 
-.deleteBtn svg {
-  fill: #e94b4b;
-}
+.editBtn { border: 2px solid #2da64f; }
+.editBtn svg { fill: #2da64f; }
 
-.editBtn {
-  border: 2px solid #2da64f;
-}
-
-.editBtn svg {
-  fill: #2da64f;
-}
+.iconBtn:hover { transform: translateY(-2px); }
 
 .addBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  
   padding: 0.4rem 1rem;
   min-height: var(--add-btn-height);
-  
   font-size: 0.95rem;
   font-weight: 500;
   color: #1f1f1f;
-  
-  background: #fafafa; 
-  border: 1px solid #C25B00; 
+  background: #fafafa;
+  border: 1px solid #C25B00;
   border-radius: 6px;
   cursor: pointer;
-  
   transition: background 0.2s ease;
   flex-shrink: 0;
   white-space: nowrap;
+  align-self: center;
+  width: auto; 
+  max-width: 220px;
 }
 
-.plus {
-  font-weight: 700; 
-  font-size: 1.05rem;
-}
+.plus { font-weight: 700; font-size: 1.05rem; }
+.addBtn:hover { background: #fff2e9; }
 
-.addBtn:hover {
-  background: #fff2e9; 
-}
-
-.iconBtn:hover {
-  transform: translateY(-2px);
-}
-
-/* Media queries para responsive */
-@media (max-width: 1200px) {
-  .container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
+@media (min-width: 601px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .card {
-    min-width: 160px;
+    max-width: none;
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 901px) {
   .gridWrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  .container {
-    grid-template-columns: repeat(1, 1fr);
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    column-gap: 1rem;            
+    align-items: start;          
     width: 100%;
-    max-width: 300px;
   }
-  
-  .title {
-    margin-left: 1rem;
-    margin-bottom: 1.5rem;
+
+  .container {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    justify-items: start;
+    width: auto;
+    max-width: none;
   }
-  
+
   .addBtn {
-    align-self: center;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: start; 
+    align-self: start; 
+    margin: 0;
+    width: auto;
+    max-width: 220px;
   }
 }
+

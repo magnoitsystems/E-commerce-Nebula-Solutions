@@ -39,6 +39,12 @@ export default function CategoryCard() {
             </h3>
 
             <div className={styles.gridWrapper}>
+
+                <button className={styles.addBtn} onClick={handleAdd} aria-label="Nueva categoría">
+                    Nueva categoría
+                    <span className={styles.plus}>+</span>
+                </button>
+
                 <div className={styles.container}>
                     {categories.map((cat) => (
                         <div key={cat.id} className={styles.card}>
@@ -74,11 +80,6 @@ export default function CategoryCard() {
                         </div>
                     ))}
                 </div>
-
-                <button className={styles.addBtn} onClick={handleAdd} aria-label="Nueva categoría">
-                    Nueva categoría
-                    <span className={styles.plus}>+</span>
-                </button>
             </div>
         </div>
     );
