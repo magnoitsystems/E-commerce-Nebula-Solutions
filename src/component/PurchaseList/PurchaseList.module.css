@@ -5,7 +5,7 @@
 }
 
 .title {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
 }
@@ -13,10 +13,11 @@
 .subtitle {
   color: #666;
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .list {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
