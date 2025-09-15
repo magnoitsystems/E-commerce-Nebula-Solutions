@@ -1,0 +1,33 @@
+.logButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    height: fit-content;
+
+    padding: var(--10px);
+    padding-inline: var(--30px);
+
+    background-color: var(--orange-4);
+    color: var(--grey-5);
+    border-radius: var(--20px);
+}
+
+.googleButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    height: fit-content;
+
+    padding-inline: var(--30px);
+
+    background-color: var(--grey-2);
+    color: var(--grey-5);
+    border-radius: var(--50px);
+}
+

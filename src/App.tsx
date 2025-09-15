@@ -4,15 +4,17 @@ import Home from './pages/Home';
 import FileProduct from './pages/FileProduct.tsx';
 import Admin from './pages/Admin';
 import Purchases from './pages/Purchases.tsx';
+import Login from './pages/Login.tsx';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path='/fileProduct' element={<FileProduct />} />
           <Route path="/admin" element={<Admin />}></Route>
           <Route path="/purchases" element={<Purchases />}></Route>
+          <Route path="/login" element={<Login/>}></Route>
       </Routes>
     </BrowserRouter>
   );

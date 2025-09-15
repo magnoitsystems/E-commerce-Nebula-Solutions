@@ -1,0 +1,31 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 95%;
+    height: fit-content;
+
+    margin-inline: auto;
+
+    text-align: left;
+    color: var(--background);
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: fit-content;
+
+    padding: var(--5px);
+    padding-inline: var(--20px);
+
+    background-color: var(--background);
+    color: var(--grey-2);
+    border-radius: var(--50px);
+}
