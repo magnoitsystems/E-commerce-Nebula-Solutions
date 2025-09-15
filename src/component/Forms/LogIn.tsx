@@ -2,6 +2,7 @@ import styles from './Log.module.css';
 import Field from "./Field/Field.tsx";
 import LogButton from './Buttons/LogButton.tsx';
 import GoogleButton from './Buttons/GoogleButton.tsx';
+import { Link } from "react-router-dom";
 
 export default function LogIn() {
     return (
@@ -24,7 +25,9 @@ export default function LogIn() {
 
             <div className={styles.logup}>
                 <h6>¿Aún no tenés cuenta?</h6>
-                <h5><span>Registrate</span></h5>
+                <Link to="/logup">
+                    <h5><span>Registrarse</span></h5>
+                </Link>
             </div>
         </main>
     )

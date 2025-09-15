@@ -1,6 +1,7 @@
 import styles from './Log.module.css';
 import Field from "./Field/Field.tsx";
 import LogButton from "./Buttons/LogButton.tsx";
+import {Link} from "react-router-dom";
 
 export default function LogUp() {
     return (
@@ -29,7 +30,9 @@ export default function LogUp() {
 
             <div className={styles.logup}>
                 <h6>¿Ya tenés una cuenta?</h6>
-                <h5><span>Iniciá sesión</span></h5>
+                <Link to="/login">
+                    <h5><span>Iniciar sesión</span></h5>
+                </Link>
             </div>
         </main>
     )

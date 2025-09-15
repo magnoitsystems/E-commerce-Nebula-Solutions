@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./NavBar.module.css";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
     const [openCategories, setOpenCategories] = useState(false);
@@ -11,18 +12,24 @@ export default function NavBar() {
         <nav className={styles.nav}>
             <div className={styles.main}>
                 <div className={styles.logo}>
-                    <img src={"/logos/oneshop.png"} alt="OneShop logo" />
+                    <Link to="/">
+                        <img src={"/logos/oneshop.png"} alt="OneShop logo" />
+                    </Link>
                 </div>
 
                 <div className={styles.categories}>
-                    <h5>Inicio</h5>
+                    <Link to="/">
+                        <h5>Inicio</h5>
+                    </Link>
                     <h5 onClick={() => {
                         setOpenCategories(!openCategories);
-                        setOpenUser(false); // cierro user si abro productos
+                        setOpenUser(false);
                     }}>
                         Productos
                     </h5>
-                    <h5>Mi carrito</h5>
+                    <h5>
+                        <Link to="/carrito">Mi carrito</Link>
+                    </h5>
                 </div>
 
                 <div className={styles.user}>
