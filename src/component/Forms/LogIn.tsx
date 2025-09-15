@@ -12,12 +12,12 @@ export default function LogIn() {
             </div>
 
             <div className={styles.fields}>
-                <Field/>
-                <Field/>
+                <Field name={"Email"}/>
+                <Field name={"Contraseña"}/>
             </div>
 
             <div className={styles.log}>
-                <LogButton/>
+                <LogButton name={"Iniciar sesión"}/>
                 <p>-------------------------- <span>o</span> --------------------------</p>
                 <GoogleButton/>
             </div>

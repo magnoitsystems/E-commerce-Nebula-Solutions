@@ -1,11 +1,15 @@
 import styles from './Field.module.css';
 
-export default function Field() {
+type Props = {
+    name: string;
+}
+
+export default function Field({ name }: Props) {
     return (
         <main className={styles.main}>
-            <h5>Email</h5>
+            <h6>{name}</h6>
             <div className={styles.content}>
-                <h6>Email</h6>
+                <h6>{name}</h6>
             </div>
         </main>
     )

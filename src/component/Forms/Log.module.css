@@ -46,6 +46,16 @@
     gap: var(--10px);
 }
 
+.firstStep, .secondStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    gap: var(--10px);
+}
+
 .log {
     display: flex;
     flex-direction: column;
@@ -70,4 +80,5 @@
 
 .logup span {
     color: var(--orange-2);
+    text-decoration: underline;
 }

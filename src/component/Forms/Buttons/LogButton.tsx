@@ -1,9 +1,13 @@
 import styles from './Buttons.module.css';
 
-export default function LogButton() {
+type Props = {
+    name: string,
+}
+
+export default function LogButton({ name } : Props) {
     return (
         <main className={styles.logButton}>
-            <h5>Iniciar sesión</h5>
+            <h5>{name}</h5>
         </main>
     )
 }

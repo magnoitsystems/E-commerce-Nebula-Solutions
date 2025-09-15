@@ -5,6 +5,7 @@ import FileProduct from './pages/FileProduct.tsx';
 import Admin from './pages/Admin';
 import Purchases from './pages/Purchases.tsx';
 import Login from './pages/Login.tsx';
+import Logup from "./pages/Logup.tsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/admin" element={<Admin />}></Route>
           <Route path="/purchases" element={<Purchases />}></Route>
           <Route path="/login" element={<Login/>}></Route>
+          <Route path="/logup" element={<Logup/>}></Route>
       </Routes>
     </BrowserRouter>
   );
