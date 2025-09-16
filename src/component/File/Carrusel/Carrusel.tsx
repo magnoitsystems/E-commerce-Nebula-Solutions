@@ -131,7 +131,7 @@ function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
             {(!isEmptyFile && !isEditableFile) && (
                 <img
                     src={'/backgrounds/homeBackground.jpg'}
-                    alt="Imagen propiedad"
+                    alt=""
                     className={`${styles.imageProperties} ${styles.imagePropertiesActive}`}
                     onError={(e) => {
                         console.error('Error al cargar imagen:', e);

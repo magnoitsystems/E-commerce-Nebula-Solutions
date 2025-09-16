@@ -1,32 +1,54 @@
-.main {
+.inputGroup {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
 
     width: 95%;
-    height: fit-content;
 
     margin-inline: auto;
     gap: var(--5px);
-
-    text-align: left;
-    color: var(--background);
 }
 
-.content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.inputGroup label {
+    color: var(--background);
 
-    width: 100%;
-    height: fit-content;
+    font-size: 14px;
+    font-weight: bold;
+}
 
-    padding: var(--5px);
-    padding-inline: var(--20px);
+.inputGroup input {
+    width: 95%;
 
+    margin-inline: auto;
+    padding: var(--10px) var(--15px);
+
+    border: none;
+    outline: none;
+    border-radius: var(--20px);
     background-color: var(--background);
-    color: var(--grey-2);
-    border-radius: var(--50px);
+}
+
+.inputGroup input::placeholder {
+    color: var(--grey-3);
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.inputWrapper input {
+    flex: 1;
+    padding-right: 40px; /* deja espacio para el icono */
+}
+
+.toggleBtn {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
 }

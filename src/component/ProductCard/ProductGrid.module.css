@@ -18,7 +18,7 @@
 
 @media (min-width: 1200px) {
   .grid {
-    max-width: 1200px;
+    max-width: 95%;
     gap: 30px;
     margin: 40px auto 80px;
     padding: 0 40px; 
