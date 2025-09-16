@@ -8,13 +8,13 @@
 }
 
 .categoryCard {
-  position: relative; /* clave para contener subcategorías absolutas */
+  position: relative; 
   background-color: #222;
   color: white;
   border-radius: 8px;
   width: 437px;
-  height: 92px; /* altura fija */
-  overflow: visible; /* permitir que las subcategorías se vean fuera */
+  height: 92px; 
+  overflow: visible; 
   transition: transform 0.2s ease, box-shadow 0.2s ease, height 0.3s ease;
 }
 
@@ -43,13 +43,12 @@
   font-weight: 600;
 }
 
-/* Subcategorías desplegables */
 .subcategories {
   list-style: none;
   padding: 12px 20px;
   margin: 0;
-  position: absolute; /* se superpone, no empuja a nadie */
-  top: 100%; /* aparece debajo de la card */
+  position: absolute; 
+  top: 100%; 
   left: 0;
   width: 100%;
   background: #333;
