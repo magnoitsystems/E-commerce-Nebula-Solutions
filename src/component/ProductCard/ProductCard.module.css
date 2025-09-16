@@ -1,10 +1,11 @@
 .card {
   position: relative;
-  overflow: visible; /* deja que la badge sobresalga */
+  overflow: visible; 
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   width: 100%;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -13,7 +14,7 @@
 
 .image {
   width: 100%;
-  height: 180px; /* 👈 más chico para mobile */
+  height: 180px; 
   object-fit: cover;
   display: block;
 }
@@ -24,7 +25,7 @@
   left: -25px;
   background: #ff7300;
   color: #fff;
-  font-size: 12px; /* 👈 más chico en mobile */
+  font-size: 12px;
   font-weight: 700;
   padding: 4px 14px;
   transform: rotate(-45deg);
@@ -60,13 +61,13 @@
   width: 100%;
   background: rgba(0,0,0,0.6);
   color: white;
-  padding: 6px; /* 👈 más compacto en mobile */
+  padding: 6px; 
   box-sizing: border-box;
 }
 
 .name {
   margin: 0;
-  font-size: 14px; /* 👈 más chico */
+  font-size: 14px; 
   font-weight: 600;
 }
 
@@ -89,7 +90,6 @@
   color: white;
 }
 
-/* --- Escalamos para tablets/desktops --- */
 @media (min-width: 768px) {
   .image {
     height: 240px;
@@ -115,7 +115,7 @@
 
 @media (min-width: 1024px) {
   .card {
-    max-width: 340px;
+    max-width: 450px;
   }
 
   .image {

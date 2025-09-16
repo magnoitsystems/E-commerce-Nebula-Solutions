@@ -7,7 +7,6 @@
   padding: 0 20px; 
 }
 
-/* Tablet */
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
@@ -17,10 +16,9 @@
   }
 }
 
-/* Desktop grande */
 @media (min-width: 1200px) {
   .grid {
-    max-width: 1200px;
+    max-width: 95%;
     gap: 30px;
     margin: 40px auto 80px;
     padding: 0 40px; 

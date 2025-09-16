@@ -7,6 +7,8 @@
     align-items: center;
     justify-content: center;
     align-self: center;
+    margin: var(--20px);
+    margin-inline: 0;
 }
 
 .imageProperties{
@@ -41,16 +43,16 @@
 .guiaCaruselProperties{
     display: flex;
     position: absolute;
-    height: 20px;
+    height: var(--20px);
     width: 200px;
-    border-radius: 20px;
+    border-radius: var(--20px);
     background-color: rgba(255, 121, 25, 1);
-    gap: 10px;
+    gap: var(--10px);
     justify-self: center;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    bottom: 20px;
+    bottom: var(--20px);
 }
 
 .indexProperties{
@@ -59,8 +61,8 @@
 
 .guiaProperties{
     border-radius: 100%;
-    width: 10px;
-    height: 10px;
+    width: var(--10px);
+    height: var(--10px);
     border: none;
     cursor: pointer;
 }
@@ -81,7 +83,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: var(--20px);
 }
 
 .containerAddImageForEmptyFile, .containerAddImage{
@@ -96,7 +98,7 @@
     justify-self: center;
     align-self: center;
     justify-content: center;
-    gap: 20px;
+    gap: var(--20px);
 }
 
 .inputProperties {
@@ -106,12 +108,12 @@
 
 .labelAddImageProperties {
     display: flex;
-    width: 200px;
-    height: 50px;
+    width: 50%;
+    height: var(--50px);
     background-color: var(--orange-4);
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: var(--10px);
     cursor: pointer;
     color: white;
 }
@@ -122,8 +124,8 @@
 
 .aceptButtonProperties, .cancelButtonProperties {
     width: fit-content;
-    padding: 10px;
-    height: 50px;
+    padding: var(--10px);
+    height: var(--50px);
     border-radius: var(--20px);
     border: none;
     font-size: var(--15px);
@@ -187,9 +189,9 @@
 
 .deleteIconProperties {
     background-color: rgba(207, 208, 255, 1);
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
+    width: var(--50px);
+    height: var(--50px);
+    border-radius: var(--10px);
     border: none;
     box-shadow: none;
     cursor: pointer;
@@ -197,4 +199,10 @@
 
 .deleteIconProperties img{
     cursor: pointer;
+}
+
+@media (min-width: 1098px) {
+    .labelAddImageProperties{
+        width: 200px;
+    }
 }
