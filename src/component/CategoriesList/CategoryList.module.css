@@ -1,6 +1,6 @@
 .categoryList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(437px, 1fr));
   gap: 16px;
   width: 100%;
   max-width: 1400px;
@@ -8,15 +8,14 @@
 }
 
 .categoryCard {
+  position: relative; /* clave para contener subcategorías absolutas */
   background-color: #222;
   color: white;
   border-radius: 8px;
   width: 437px;
-  height: auto;
-  padding: 0 20px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  overflow: hidden;
+  height: 92px; /* altura fija */
+  overflow: visible; /* permitir que las subcategorías se vean fuera */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, height 0.3s ease;
 }
 
 .categoryCard:hover {
@@ -29,6 +28,7 @@
   align-items: center;
   gap: 20px;
   height: 92px;
+  padding: 0 20px;
 }
 
 .categoryImage {
@@ -43,22 +43,30 @@
   font-weight: 600;
 }
 
-/* Subcategorías ocultas por defecto */
+/* Subcategorías desplegables */
 .subcategories {
   list-style: none;
-  padding: 12px 0 16px 92px; /* alineadas después de la imagen */
+  padding: 12px 20px;
   margin: 0;
-  display: none;
-  flex-direction: column;
-  gap: 8px;
+  position: absolute; /* se superpone, no empuja a nadie */
+  top: 100%; /* aparece debajo de la card */
+  left: 0;
+  width: 100%;
+  background: #333;
+  border-radius: 0 0 8px 8px;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
 }
 
-/* Al hacer hover en la card, mostrar subcategorías */
-.categoryCard:hover .subcategories {
-  display: flex;
+.subcategories.show {
+  max-height: 400px;
+  opacity: 1;
 }
 
-/* Subcategoría con efecto de subrayado */
 .subcategoryItem {
   font-size: 15px;
   font-weight: 400;
@@ -66,6 +74,7 @@
   position: relative;
   cursor: pointer;
   transition: color 0.2s ease;
+  margin: 6px 0;
 }
 
 .subcategoryItem::after {
@@ -86,3 +95,4 @@
 .subcategoryItem:hover::after {
   width: 100%;
 }
+
