@@ -67,8 +67,8 @@ function File({ mode }: ProductProps){
                             className={styles.inputProperties}
                         />
                     ) : (
-                        <h1 onClick={() => handleStartEdit('productName')}>
-                            {localProperty.productName}
+                        <h1 className={styles.productNameProperties} onClick={() => handleStartEdit('productName')}>
+                            {isEditableFile || isEmptyFile? localProperty.productName : "Combo Maybeline NY"}
                         </h1>
                     )}
 
@@ -104,7 +104,7 @@ function File({ mode }: ProductProps){
                         />
                     ) : (
                         <span onClick={() => handleStartEdit('price')}>
-                            {localProperty.price}
+                           ${isEditableFile || isEmptyFile? localProperty.price : "10.000"}
                         </span>
                     )}
 
@@ -124,15 +124,15 @@ function File({ mode }: ProductProps){
                 </div>
                 {!isEditableFile && !isEmptyFile && (
                     <button className={styles.cartButtonProperties}>
-                        Agregar al carrito
+                        {/*Agregar al carrito*/}
                         <img src={"/icons/carritoIcon.png"}/>
                     </button>
                 )}
             </div>
 
             <div className={styles.descriptionProperties}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span className={styles.titleDescriptionProperties}>Descripción</span>
+                <div className={styles.descriptionSectionProperties}>
+                    <h2>Descripción</h2>
                     {(isEditableFile || isEmptyFile) && (
                         <button
                             className={styles.buttonEditProperties}
@@ -160,13 +160,18 @@ function File({ mode }: ProductProps){
                     />
                 ) : (
                     <span onClick={() => handleStartEdit('description')}>
-                        {localProperty.description}
+                        {isEditableFile || isEmptyFile ? localProperty.description : "Un set pensado para que tengas el tono justo en cada momento. Los colores van desde nudes suaves hasta intensos vibrantes, todos con buena pigmentación y una textura cómoda que no reseca.\n" +
+                            "Se aplican fácil, se fijan rápido y duran varias horas.\n" +
+                            "Podés usarlos solos o mezclarlos entre sí para looks más creativos.\n" +
+                            "Formato práctico: ideales para llevar en la cartera."}
                     </span>
                 )}
             </div>
 
             {!isEmptyFile && !isEditableFile && (
-                <div>
+                <div className={styles.commentarySectionProperties}>
+                    <h2>Comentarios</h2>
+                    <div className={styles.underlineProperties}/>
                     <Commentary/>
                 </div>
             )}

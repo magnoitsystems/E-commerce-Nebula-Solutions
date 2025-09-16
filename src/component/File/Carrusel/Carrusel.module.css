@@ -42,16 +42,16 @@
 .guiaCaruselProperties{
     display: flex;
     position: absolute;
-    height: 20px;
+    height: var(--20px);
     width: 200px;
-    border-radius: 20px;
+    border-radius: var(--20px);
     background-color: rgba(255, 121, 25, 1);
-    gap: 10px;
+    gap: var(--10px);
     justify-self: center;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    bottom: 20px;
+    bottom: var(--20px);
 }
 
 .indexProperties{
@@ -60,20 +60,14 @@
 
 .guiaProperties{
     border-radius: 100%;
-    width: 10px;
-    height: 10px;
+    width: var(--10px);
+    height: var(--10px);
     border: none;
     cursor: pointer;
 }
 
 .notIndexProperties{
     background-color: rgba(255, 176, 120, 1) !important;
-}
-
-.imageContainerProperties:hover .containerAddImage,
-.imageContainerProperties:hover .messageCardPropertie {
-    visibility: visible;
-    opacity: 1;
 }
 
 .containerAddImage {
@@ -88,10 +82,10 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: var(--20px);
 }
 
-.containerAddImageForEmptyFile{
+.containerAddImageForEmptyFile, .containerAddImage{
     display: flex;
     flex-direction: row;
     position: relative;
@@ -100,8 +94,10 @@
     width: 100%;
     height: 100%;
     align-items: center;
+    justify-self: center;
+    align-self: center;
     justify-content: center;
-    gap: 20px;
+    gap: var(--20px);
 }
 
 .inputProperties {
@@ -111,15 +107,77 @@
 
 .labelAddImageProperties {
     display: flex;
-    width: 200px;
-    height: 50px;
-    background-color: #C25B00;
+    width: 50%;
+    height: var(--50px);
+    background-color: var(--orange-4);
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: var(--10px);
     cursor: pointer;
     color: white;
 }
+
+.aceptButtonProperties{
+    background-color: green;
+}
+
+.aceptButtonProperties, .cancelButtonProperties {
+    width: fit-content;
+    padding: var(--10px);
+    height: var(--50px);
+    border-radius: var(--20px);
+    border: none;
+    font-size: var(--15px);
+    color: var(--grey-1);
+}
+
+.buttonMessageProperties{
+    display: flex;
+    flex-direction: row;
+    gap: var(--20px);
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonMessageProperties button{
+    cursor: pointer;
+}
+
+.cancelButtonProperties{
+    background-color: red;
+}
+
+.messageCardPropertie {
+    opacity: 1;
+}
+
+.messageCardPropertie {
+    display: flex;
+    flex-direction: column;
+    gap: var(--20px);
+    background-color: rgba(255, 121, 25, 0.61);
+    max-width: 500px;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    justify-self: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 250px;
+    padding: var(--10px);
+    z-index: 11;
+    opacity: 1;
+    color: var(--grey-1);
+    border-radius: var(--10px);
+}
+
+
+.imageContainerProperties:hover .containerAddImage,
+.imageContainerProperties:hover .messageCardPropertie {
+    visibility: visible;
+    opacity: 1;
+}
+
 
 .withoutImageProperties{
     background-image: url("/carruselImages/notImage.png");
@@ -130,9 +188,20 @@
 
 .deleteIconProperties {
     background-color: rgba(207, 208, 255, 1);
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
+    width: var(--50px);
+    height: var(--50px);
+    border-radius: var(--10px);
     border: none;
     box-shadow: none;
+    cursor: pointer;
+}
+
+.deleteIconProperties img{
+    cursor: pointer;
+}
+
+@media (min-width: 1098px) {
+    .labelAddImageProperties{
+        width: 200px;
+    }
 }

@@ -9,10 +9,11 @@
     cursor: pointer;
 }
 
-.titleAndEditButtonProperties{
+.titleAndEditButtonProperties {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .containerProperties{
@@ -24,10 +25,14 @@
 }
 
 .titleAndCarruselProperties h1{
-    color: rgba(179, 75, 0, 1);
+    color: var(--orange-5);
     width: fit-content;
     margin-left: 10px;
     margin-bottom: 0;
+}
+
+.titleAndEditButtonProperties h1{
+    font-size: var(--30px);
 }
 
 .inputSizer {
@@ -70,16 +75,12 @@
 
 .cartButtonProperties{
     background-color: rgba(0, 23, 211, 1);
-    width: 270px;
+    width: 20%;
     height: 60px;
     border: none;
     border-radius: 20px;
     color: white;
-    font-size: 25px;
-}
-
-.titleAndCarruselProperties h1 {
-    font-size: 40px;
+    font-size: var(--15px);
 }
 
 .titleDescriptionProperties{
@@ -96,10 +97,11 @@
 }
 
 .descriptionProperties{
-    width: 800px;
+    width: 100%;
     height: fit-content;
     margin-top: 40px;
     margin-bottom: 50px;
+    text-align: justify;
 }
 
 .inputProperties{
@@ -110,4 +112,43 @@
     margin-bottom: 20px;
     margin-top: 20px;
     padding-left: 10px;
+}
+
+.commentarySectionProperties{
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionSectionProperties{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.commentarySectionProperties h2, .descriptionSectionProperties h2{
+    color: var(--orange-6);
+}
+
+@media (min-width: 1500px) {
+    .titleAndEditButtonProperties h1{
+        font-size: var(--50px);
+    }
+
+    .descriptionProperties{
+        width: 800px;
+    }
+
+    .commentarySectionProperties{
+        width: 50%;
+    }
+
+    .cartButtonProperties{
+        background-color: rgba(0, 23, 211, 1);
+        width: 270px;
+        height: 60px;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        font-size: 25px;
+    }
 }
