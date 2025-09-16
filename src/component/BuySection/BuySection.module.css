@@ -1,0 +1,160 @@
+/*buy container*/
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 100%;
+    height: fit-content;
+
+    padding: var(--20px);
+    padding-inline: var(--10px);
+    gap: var(--50px);
+
+    background-color: var(--grey-1);
+}
+
+.buySummery, .paymentDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left;
+
+    width: 90%;
+    height: fit-content;
+
+    margin-inline: auto;
+    gap: var(--50px);
+}
+
+.details h3, .paymentDetails h3 {
+    margin: var(--10px);
+    margin-inline: 0;
+
+    font-weight: bolder;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+.price h2 {
+    font-weight: bolder;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: var(--10px);
+}
+.buttons h3 {
+    margin: 0;
+
+    font-weight: lighter;
+}
+
+.cashPayment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+
+    gap: var(--50px);
+}
+
+.creditPayment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+
+    gap: var(--30px);
+}
+
+.creditPayment div {
+    width: 100%;
+}
+
+/*payment bar properties*/
+.paymentBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 90%;
+    height: fit-content;
+
+    margin-inline: auto;
+
+    background-color: var(--background);
+    color: var(--orange-4);
+    border-radius: var(--50px);
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 33%;
+    height: fit-content;
+
+    padding: var(--5px);
+    padding-inline: var(--10px);
+
+    border-radius: var(--50px);
+    transition: all 0.3s ease;
+}
+
+.active {
+    background-color: var(--orange-4);
+    color: var(--background);
+}
+
+/*buy buttons properties*/
+.primaryButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    height: fit-content;
+
+    padding: var(--10px);
+    margin-inline: auto;
+
+    background-color: var(--blue-5);
+    color: var(--background);
+    border-radius: var(--5px);
+    border: none;
+}
+
+.secondaryButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    height: fit-content;
+
+    padding: var(--10px);
+    margin-inline: auto;
+
+    background-color: transparent;
+    color: var(--blue-5);
+    border: none;
+}

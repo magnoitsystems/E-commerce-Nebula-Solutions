@@ -13,8 +13,8 @@ export default function LogIn() {
             </div>
 
             <div className={styles.fields}>
-                <Field name={"Email"} type={'email'}/>
-                <Field name={"Contraseña"} type={'password'}/>
+                <Field name={"Email"} type={'email'} className={'inputGroup'}/>
+                <Field name={"Contraseña"} type={'password'} className={'inputGroup'}/>
             </div>
 
             <div className={styles.log}>

@@ -1,4 +1,4 @@
-.inputGroup {
+.inputGroup, .darkInputGroup {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -16,7 +16,11 @@
     font-weight: bold;
 }
 
-.inputGroup input {
+.darkInputGroup label {
+    color: var(--grey-6);
+}
+
+.inputGroup input, .darkInputGroup input {
     width: 95%;
 
     margin-inline: auto;
@@ -28,7 +32,7 @@
     background-color: var(--background);
 }
 
-.inputGroup input::placeholder {
+.inputGroup input::placeholder, .darkInputGroup input::placeholder {
     color: var(--grey-3);
 }
 

@@ -20,18 +20,18 @@ export default function LogUp() {
             <div className={styles.fields}>
                 {step === 1 && (
                     <div className={styles.firstStep}>
-                        <Field name={"Nombre"} type={'text'}/>
-                        <Field name={"Apellido"} type={'text'}/>
-                        <Field name={"DNI"} type={'number'}/>
+                        <Field name={"Nombre"} type={'text'} className={'inputGroup'}/>
+                        <Field name={"Apellido"} type={'text'} className={'inputGroup'}/>
+                        <Field name={"DNI"} type={'number'} className={'inputGroup'}/>
                         <LogButton name={"Siguiente"} onClick={nextStep} className={'logButton'}/>
                     </div>
                 )}
 
                 {step === 2 && (
                     <div className={styles.secondStep}>
-                        <Field name={"Email"} type={'email'}/>
-                        <Field name={"Contraseña"} type={'password'}/>
-                        <Field name={"Confirmar contraseña"} type={'password'}/>
+                        <Field name={"Email"} type={'email'} className={'inputGroup'}/>
+                        <Field name={"Contraseña"} type={'password'} className={'inputGroup'}/>
+                        <Field name={"Confirmar contraseña"} type={'password'} className={'inputGroup'}/>
                         <div className={styles.buttons}>
                             <LogButton name={"Atrás"} onClick={prevStep} className={'alternativeButton'} />
                             <LogButton name={"Registrarse"} className={'logButton'} />

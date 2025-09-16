@@ -3,17 +3,18 @@ import { Eye, EyeOff } from "lucide-react";
 import styles from "./Field.module.css";
 
 type Props = {
-    name: string;
-    type: React.HTMLInputTypeAttribute;
+    name: string,
+    type: React.HTMLInputTypeAttribute,
+    className: string,
 };
 
-export default function Field({ name, type }: Props) {
+export default function Field({ name, type, className}: Props) {
     const [showPassword, setShowPassword] = useState(false);
 
     const isPassword = type === "password";
 
     return (
-        <main className={styles.inputGroup}>
+        <main className={styles[className]}>
             <label htmlFor={name}>
                 <h6>{name}</h6>
             </label>

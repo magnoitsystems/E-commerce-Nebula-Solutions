@@ -6,6 +6,7 @@ import Admin from './pages/Admin';
 import Purchases from './pages/Purchases.tsx';
 import Login from './pages/Login.tsx';
 import Logup from "./pages/Logup.tsx";
+import Cart from "./pages/Cart.tsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/purchases" element={<Purchases />}></Route>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/logup" element={<Logup/>}></Route>
+          <Route path="/micarrito" element={<Cart/>}></Route>
       </Routes>
     </BrowserRouter>
   );

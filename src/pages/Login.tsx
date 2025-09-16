@@ -1,6 +1,6 @@
 import NavBar from "../component/NavBar/NavBar";
 import LogIn from "../component/Forms/LogIn.tsx";
-import styles from './Log.module.css';
+import styles from './styles/Log.module.css';
 import Footer from "../component/Footer/Footer.tsx";
 
 export default function Login() {
