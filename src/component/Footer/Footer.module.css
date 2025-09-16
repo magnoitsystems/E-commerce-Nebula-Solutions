@@ -33,13 +33,13 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background-color: #3A3634;
+  background-color: var(--grey-5);
   padding: 10px 16px;
   border-radius: 12px; 
 }
 
 .socialText {
-  font-size: 14px;
+  font-size: var(--fs-14);
   font-weight: 600;
   color: #ffffff;
   margin: 0;
@@ -70,7 +70,7 @@
   display: grid;
   grid-template-columns: 1fr; 
   gap: 24px;
-  background-color: #272524;
+  background-color: var(--grey-6);
   border-radius: 16px;
   padding: 28px;
   color: #ffffff;
@@ -83,7 +83,7 @@
 
 .sectionTitle,
 .footerSection h3 {
-  font-size: 16px;
+  font-size: var(--fs-16);
   font-weight: 700;
   margin: 0 0 12px 0;
   color: #ffffff;
@@ -94,9 +94,9 @@
 .ctaText,
 .linksList,
 .footerSection p {
-  font-size: 14px;
+  font-size: var(--fs-14);
   line-height: 1.6;
-  color: rgba(255,255,255,0.95);
+  color: var(--white-95);
   margin: 0;
   padding-left: 0;
 }
@@ -112,9 +112,9 @@
 }
 
 .link {
-  color: rgba(255,255,255,0.95);
+  color: var(--white-95);
   text-decoration: none;
-  font-size: 14px;
+  font-size: var(--fs-14);
   font-weight: 400;
   display: inline-block;
   position: relative;
@@ -150,14 +150,14 @@
 }
 
 .ctaText h4 {
-  font-size: 18px;
+  font-size: var(--fs-18);
   font-weight: 700;
   margin: 0 0 6px 0;
   color: #ffffff;
 }
 
 .ctaText p {
-  font-size: 16px;
+  font-size: var(--fs-16);
   font-weight: 600;
   margin: 0 0 16px 0;
   color: #ffffff;
@@ -165,25 +165,25 @@
 
 .emailButton {
   background: transparent;
-  border: 2px solid #FE6A00;
-  color: #FE6A00;
+  border: 2px solid var(--orange-4);
+  color: var(--orange-4);
   padding: 10px 24px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: var(--fs-14);
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
 .emailButton:hover {
-  background: #FE6A00;
-  color: #272524;
+  background: var(--orange-4);
+  color: var(--grey-6);
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.22);
 }
 
 .sectionTitle:hover {
-  color: #ffb896;
+  color: var(--orange-1);
 }
 
 /* --- Tablet --- */
