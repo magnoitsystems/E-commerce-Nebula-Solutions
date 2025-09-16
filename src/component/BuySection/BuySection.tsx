@@ -11,12 +11,12 @@ type Props = {
 }
 
 export default function BuySection({ productsQuantity, shipments, price }: Props) {
-    const [paymentMethod, setPaymentMethod] = useState<string | null>(null);
+    const [paymentMethod, setPaymentMethod] = useState<string>("efectivo")
     const [step, setStep] = useState<"summary" | "payment">("summary");
 
     return (
         <main className={styles.main}>
-            <PaymentBar setPaymentMethod={setPaymentMethod} selected={paymentMethod} />
+            <PaymentBar setPaymentMethod={setPaymentMethod} selected={paymentMethod}/>
 
             {step === "summary" && (
                 <>
@@ -33,13 +33,15 @@ export default function BuySection({ productsQuantity, shipments, price }: Props
                         </div>
                     </div>
 
+                    <div className={styles.buySummery}><h5>Método de pago seleccionado: {paymentMethod}</h5></div>
+
                     <div className={styles.buttons}>
                         <BuyButton
                             text={'Continuar compra'}
                             className={'primaryButton'}
                             onClick={() => setStep("payment")}
                         />
-                        <BuyButton text={'Seguir buscando'} className={'secondaryButton'} />
+                        <BuyButton text={'Seguir buscando'} className={'secondaryButton'}/>
                     </div>
                 </>
             )}
