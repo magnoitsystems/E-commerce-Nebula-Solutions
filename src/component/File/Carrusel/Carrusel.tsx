@@ -8,11 +8,6 @@ type Prop = {
 }
 
 function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
-    // const images = [
-    //     "/carruselImages/comboMaybeline.jpg",
-    //     "/carruselImages/comboMaybeline2.jpg",
-    //     "/carruselImages/comboMaybeline3.jpg",
-    // ]
 
     const hasImages = images.length > 0;
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,9 +15,13 @@ function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
     const [showConfirmModal, setShowConfirmModal] = useState(false);
     const [imageToDelete, setImageToDelete] = useState<any>(null);
 
+    const handleCancelDelete = () =>{
+        setShowConfirmModal(false);
+    }
+
     const handleDeleteClick = (imageIdentifier: any) => {
-        setImageToDelete(imageIdentifier);
         setShowConfirmModal(true);
+        setImageToDelete(imageIdentifier);
     };
 
     // Función para ir a la imagen anterior
@@ -45,7 +44,7 @@ function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
 
         const interval = setInterval(() => {
             goToNext();
-        }, 3000); // Cambia cada 3 segundos
+        }, 3000);
 
         return () => clearInterval(interval);
     }, [currentIndex, isAutoPlaying]);
@@ -85,27 +84,22 @@ function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
             )}
             {hasImages && (isEditableFile || isEmptyFile) && (
                 <div className={`${isEditableFile? styles.containerAddImage : ""} ${isEmptyFile? styles.containerAddImageForEmptyFile : ""}`}>
-                    <div>
-                        <input
-                            type="file"
-                            id="inputId"
-                            className={styles.inputProperties}
-                            // onChange={handleImageUpload}
-                            accept="image/*"
-                            // disabled={uploading}
-                        />
-                        <label htmlFor="inputId" className={styles.labelAddImageProperties}>
-                            Añadir imagen
-                            {/*{uploading ? 'Subiendo...' : 'Añadir imagen'}*/}
-                        </label>
-                    </div>
-                    {hasImages && (
-                        <div>
-                            <button  onClick={() => handleDeleteClick(images[currentIndex])} className={styles.deleteIconProperties}>
-                                <img src="/icons/deleteIcon.png" alt="Ícono de eliminar" width={20} height={24} />
-                            </button>
-                        </div>
-                    )}
+                    <input
+                        type="file"
+                        id="inputId"
+                        className={styles.inputProperties}
+                        // onChange={handleImageUpload}
+                        accept="image/*"
+                        // disabled={uploading}
+                    />
+                    <label htmlFor="inputId" className={styles.labelAddImageProperties}>
+                        Añadir imagen
+                        {/*{uploading ? 'Subiendo...' : 'Añadir imagen'}*/}
+                    </label>
+
+                    <button onClick={() => handleDeleteClick(images[currentIndex])} className={styles.deleteIconProperties}>
+                        <img src="/icons/deleteIcon.png" alt="Ícono de eliminar" width={20} height={24} />
+                    </button>
                 </div>
             )}
             {!hasImages && (
@@ -150,17 +144,18 @@ function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
                 </div>
             )}
 
-            {showConfirmModal && imageToDelete && (
+            {showConfirmModal && (
                 <div className={styles.messageCardPropertie}>
-                    <p>¿Desea eliminar la imagen?</p>
-                    <p>Esta acción no se podrá deshacer.</p>
+                    <div>
+                        <p>¿Desea eliminar la imagen?</p>
+                        <p>Esta acción no se podrá deshacer.</p>
+                    </div>
                     <div className={styles.buttonMessageProperties}>
                         {/*onClick={handleDeleteConfirmed}*/}
                         <button className={styles.aceptButtonProperties}>
                             Sí, deseo eliminarla
                         </button>
-                        {/*onClick={handleCancelDelete}*/}
-                        <button className={styles.cancelButtonProperties}>
+                        <button onClick={handleCancelDelete} className={styles.cancelButtonProperties}>
                             No, gracias
                         </button>
                     </div>

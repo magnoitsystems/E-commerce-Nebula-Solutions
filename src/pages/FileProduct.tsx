@@ -6,7 +6,7 @@ function FileProduct(){
     return(
         <main>
             <NavBar />
-            <File mode={"edit"}/>
+            <File mode={"create"}/>
             <Footer />
         </main>
     );
