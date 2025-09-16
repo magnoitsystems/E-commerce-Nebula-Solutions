@@ -24,6 +24,7 @@
     width: 100%;
 
     margin: var(--20px);
+    margin-bottom: 0;
     padding: var(--10px);
     padding-inline: var(--40px);
 

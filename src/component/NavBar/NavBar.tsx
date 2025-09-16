@@ -7,10 +7,12 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
     const [openCategories, setOpenCategories] = useState(false);
     const [openUser, setOpenUser] = useState(false);
+    const [active, setActive] = useState(false);
 
     return (
         <nav className={styles.nav}>
-            <div className={styles.main}>
+            <div className={styles.main} style={{ borderRadius: active ? "20px 20px 0 0" : "20px",
+            }}>
                 <div className={styles.logo}>
                     <Link to="/">
                         <img src={"/logos/oneshop.png"} alt="OneShop logo" />
@@ -24,7 +26,9 @@ export default function NavBar() {
                     <h5 onClick={() => {
                         setOpenCategories(!openCategories);
                         setOpenUser(false);
-                    }}>
+                        setActive(!active);
+                    }}
+                    >
                         Productos
                     </h5>
                     <h5>
@@ -38,7 +42,7 @@ export default function NavBar() {
                         alt="User Logo"
                         onClick={() => {
                             setOpenUser(!openUser);
-                            setOpenCategories(false); // cierro productos si abro user
+                            setOpenCategories(false);
                         }}
                     />
                 </div>
