@@ -38,6 +38,12 @@
   border-radius: 8px;
   position: relative;
   z-index: 2;
+  transition: border-radius 0.3s ease;
+}
+
+/* Cuando está expandida, quitar border-radius inferior del header */
+.categoryCard.expanded .categoryHeader {
+  border-radius: 8px 8px 0 0;
 }
 
 .categoryImage {
@@ -57,7 +63,7 @@
   padding: 12px 20px;
   margin: 0;
   position: absolute; 
-  top: 92px; /* Pegado directamente al header */
+  top: 91px; /* Un pixel menos para eliminar la línea */
   left: 0;
   width: 100%;
   background: #222; /* Mismo color que el header */
@@ -66,13 +72,14 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease, border-radius 0.3s ease;
   z-index: 1;
 }
 
 .subcategories.show {
   max-height: 400px;
   opacity: 1;
+  border-radius: 0 0 8px 8px; /* Mantener solo border-radius inferior */
 }
 
 .subcategoryItem {
