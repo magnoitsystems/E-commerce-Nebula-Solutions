@@ -3,6 +3,7 @@ import ProductGrid from '../component/ProductCard/ProductGrid.tsx';
 import NavBar from "../component/NavBar/NavBar.tsx";
 import Carrusel from "../component/File/Carrusel/Carrusel.tsx";
 import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs.tsx";
+import CategoryList from "../component/CategoriesList/CategoryList.tsx";
 
 function Home() {
     const images = [
@@ -15,6 +16,7 @@ function Home() {
           <NavBar/>
           <Breadcrumbs/>
           <Carrusel images={images} />
+          <CategoryList></CategoryList>
           <ProductGrid />
           <Footer />
       </main>
