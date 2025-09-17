@@ -1,67 +1,56 @@
 import ProductCard from "./ProductCard";
 import styles from "./ProductGrid.module.css";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const products = [
-  {
-    id: 1,
-    name: "Combo Maybelline",
-    image: "/test-images/maybelline-combo.jpg",
-    price: 55420,
-    discountPrice: 37564,
-    discountPercent: 25,
-  },
-  {
-    id: 2,
-    name: "Máscara de pestañas Falsies Maybelline",
-    image: "/test-images/falsies.jpg",
-    price: 22403,
-    discountPrice: 17564,
-    discountPercent: 18,
-  },
-  {
-    id: 3,
-    name: "Bronzer Sunkisser Maybelline",
-    image: "/test-images/sunkisser.jpg",
-    price: 26340,
-  },
-  {
-    id: 4,
-    name: "Rubor Sunkisser Maybelline",
-    image: "/test-images/sunkiss.jpg",
-    price: 25780,
-  },
-  {
-    id: 5,
-    name: "Gloss Superstay Maybelline",
-    image: "/test-images/superstay.jpg",
-    price: 17560,
-  },
-  {
-    id: 6,
-    name: "Base líquida FitMe Maybelline",
-    image: "/test-images/fitme.jpg",
-    price: 32450,
-    discountPrice: 18240,
-    discountPercent: 45,
-  },
-];
+interface Product {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  discountPrice?: number;
+  discountPercent?: number;
+}
 
-export default function ProductGrid() {
+interface ProductGridProps {
+  products: Product[];
+  showViewAllButton?: boolean;
+  viewAllButtonText?: string;
+  viewAllButtonPath?: string;
+  onViewAllClick?: () => void;
+}
+
+export default function ProductGrid({ 
+  products, 
+  showViewAllButton = false, 
+  viewAllButtonText = "Ver productos",
+  viewAllButtonPath = "/products",
+  onViewAllClick 
+}: ProductGridProps) {
   const navigate = useNavigate();
-  const handleAdd = () => {
-    navigate("/products");
-  }
+
+  const handleViewAll = () => {
+    if (onViewAllClick) {
+      onViewAllClick();
+    } else {
+      navigate(viewAllButtonPath);
+    }
+  };
+
   return (
     <div>
       <div className={styles.grid}>
-        {products.map((p) => (
-            <ProductCard key={p.id} product={p} />
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      <div className={styles.buttonContainerProperties}>
-        <button onClick={handleAdd} className={styles.seeAllProductsProperties}>Ver productos</button>
-      </div>
+      
+      {showViewAllButton && (
+        <div className={styles.buttonContainerProperties}>
+          <button onClick={handleViewAll} className={styles.seeAllProductsProperties}>
+            {viewAllButtonText}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
