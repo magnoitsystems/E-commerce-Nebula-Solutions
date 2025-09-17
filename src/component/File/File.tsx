@@ -7,6 +7,8 @@ import EditableTextFiel from "./EditableFile/EditableTextFiel.tsx";
 
 type ProductProps = {
     mode: 'view' | 'create' | 'edit';
+    images: string[];
+    productId: any;
 };
 
 interface ProductState {
@@ -15,8 +17,9 @@ interface ProductState {
     description: string;
 }
 
-function File({ mode }: ProductProps){
+function File({ mode, images, productId }: ProductProps){
     const [editingField, setEditingField] = useState<string | null>(null);
+    console.log(productId);
 
     const isEmptyFile = mode === "create";
     const isEditableFile = mode === "edit";
@@ -91,9 +94,7 @@ function File({ mode }: ProductProps){
                         </button>
                     )}
                 </div>
-                <Carrusel images={[  "/carruselImages/comboMaybeline.jpg",
-                        "/carruselImages/comboMaybeline2.jpg",
-                        "/carruselImages/comboMaybeline3.jpg"]} isEditableFile={isEditableFile} isEmptyFile={isEmptyFile}/>
+                <Carrusel images={images} isEditableFile={isEditableFile} isEmptyFile={isEmptyFile}/>
             </div>
 
             <div className={styles.priceAndCartButtonProperties}>
@@ -127,10 +128,19 @@ function File({ mode }: ProductProps){
                         </button>
                     )}
                 </div>
-                {!isEditableFile && !isEmptyFile && (
+                {!isEditableFile && (
                     <button className={styles.cartButtonProperties}>
                         {/*Agregar al carrito*/}
-                        <img src={"/icons/carritoIcon.png"}/>
+                        {isEmptyFile && (
+                            <span>Generar publicación</span>
+                        )}
+                        {isEditableFile && (
+                            <span>Guardar cambios</span>
+                        )}
+                        {!isEditableFile && !isEmptyFile && (
+                            <span>Agregar al carrito</span>
+                            // <img src={"/icons/carritoIcon.png"}/>
+                        )}
                     </button>
                 )}
             </div>

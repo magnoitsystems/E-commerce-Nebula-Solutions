@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import styles from "./ProductCard.module.css";
-// import '@fontsource/open-sans/600.css';
-// import '@fontsource/open-sans/700.css';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
     id: number;
@@ -28,16 +27,23 @@ export default function ProductList() {
         },
     ]);
 
+    const navigate = useNavigate();
+
     //FUTURE METHODS THAT WILL HANDLE THE ADMIN OPERAIONS
     const handleDelete = (id: number) => {
+        console.log(id)
     };
 
     const handleEdit = (id: number) => {
-
+        navigate(`/ProductFile/${id}`, {
+            state: {mode: "edit"}
+        })
     };
 
     const handleAdd = () => {
-
+        navigate(`/FileProduct`, {
+            state: { mode: 'create' }
+        });
     };
 
     return (
@@ -48,13 +54,6 @@ export default function ProductList() {
             >
                 Productos
             </h3>
-        
-
-            {/* BOTÓN FUERA DEL GRID - ARRIBA */}
-            <button className={styles.addBtn} onClick={handleAdd} aria-label="Nueva publicación">
-                Nueva publicación
-                <span className={styles.plus}>+</span>
-            </button>
 
             <div className={styles.gridWrapper}>
                 <div className={styles.container}>
@@ -108,6 +107,11 @@ export default function ProductList() {
                     ))}
                 </div>
             </div>
+
+            <button className={styles.addBtn} onClick={handleAdd} aria-label="Nueva publicación">
+                Nueva publicación
+                <span className={styles.plus}>+</span>
+            </button>
         </div>
     );
 }

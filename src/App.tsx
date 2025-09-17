@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<Home />} />
-          <Route path='/fileProduct' element={<FileProduct />} />
+          <Route path='/fileProduct' element={<FileProduct image={[]} />} />
           <Route path="/admin" element={<Admin />}></Route>
           <Route path="/purchases" element={<Purchases />}></Route>
           <Route path="/login" element={<Login/>}></Route>

@@ -15,7 +15,7 @@ export default function NavBar() {
             }}>
                 <div className={styles.logo}>
                     <Link to="/">
-                        <img src={"/logos/oneshop.png"} alt="OneShop logo" />
+                        <img src={"/logos/oneshop.png"} alt="OneShop logo"/>
                     </Link>
                 </div>
 
@@ -34,6 +34,16 @@ export default function NavBar() {
                     <h5>
                         <Link to="/micarrito">Mi carrito</Link>
                     </h5>
+                    <div className={styles.user}>
+                        <img
+                            src={"/icons/user-circle.png"}
+                            alt="User Logo"
+                            onClick={() => {
+                                setOpenUser(!openUser);
+                                setOpenCategories(false);
+                            }}
+                        />
+                    </div>
                 </div>
 
                 <div className={styles.user}>
@@ -136,7 +146,9 @@ export default function NavBar() {
                 <div className={styles.log}>
                     <h5>Carrito de compras</h5>
                     <h5>Historial de compras</h5>
-                    <h5>Cerrar sesión</h5>
+                    <Link to="/login">
+                        <h5>Iniciar sesión</h5>
+                    </Link>
                 </div>
             )}
         </nav>

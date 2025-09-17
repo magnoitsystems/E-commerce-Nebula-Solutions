@@ -8,7 +8,6 @@ type Prop = {
 }
 
 function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
-
     const hasImages = images.length > 0;
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
