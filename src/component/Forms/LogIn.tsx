@@ -19,7 +19,7 @@ export default function LogIn() {
 
             <div className={styles.log}>
                 <LogButton name={"Iniciar sesión"} className={'logButton'}/>
-                <p>-------------------------- <span>o</span> --------------------------</p>
+                <p>------------------------- <span>o</span> -------------------------</p>
                 <GoogleButton/>
             </div>
 

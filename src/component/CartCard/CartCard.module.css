@@ -9,6 +9,7 @@
 
     padding: var(--10px);
     gap: var(--50px);
+    margin-inline: auto;
 
     background-color: var(--grey-1);
     color: var(--grey-6);
