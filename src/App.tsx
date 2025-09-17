@@ -7,6 +7,7 @@ import Purchases from './pages/Purchases.tsx';
 import Login from './pages/Login.tsx';
 import Logup from "./pages/Logup.tsx";
 import Cart from "./pages/Cart.tsx";
+import AllProducts from './pages/AllProducts.tsx';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/logup" element={<Logup/>}></Route>
           <Route path="/micarrito" element={<Cart/>}></Route>
-          {/* <Route path="/products" element={<AllProducts/>}></Route> */}
+          <Route path="/products" element={<AllProducts/>}></Route>
       </Routes>
     </BrowserRouter>
   );

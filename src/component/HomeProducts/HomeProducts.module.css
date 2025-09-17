@@ -1,0 +1,38 @@
+.homeProductsContainer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.productSection {
+  margin-bottom: 60px;
+}
+
+.productSection:last-child {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .homeProductsContainer {
+    padding: 0 16px;
+  }
+  
+  .productSection {
+    margin-bottom: 50px;
+  }
+  
+  .sectionTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
