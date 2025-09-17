@@ -4,10 +4,11 @@
     align-items: center;
     justify-content: center;
 
-    width: 30%;
+    width: 90%;
     height: fit-content;
 
     margin-inline: auto;
+    margin-bottom: var(--40px);
     padding: var(--30px);
     gap: var(--30px);
 
@@ -90,4 +91,16 @@
 
     margin-top: var(--20px);
     gap: var(--10px);
+}
+
+@media (min-width: 768px) {
+    .main {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main {
+        width: 30%;
+    }
 }

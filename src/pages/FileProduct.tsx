@@ -2,6 +2,7 @@ import File from "../component/File/File.tsx";
 import NavBar from "../component/NavBar/NavBar.tsx";
 import Footer from "../component/Footer/Footer.tsx";
 import {useLocation, useParams} from "react-router-dom";
+import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs.tsx";
 
 type Prop = {
     image?: string[];
@@ -21,6 +22,7 @@ function FileProduct({ image: initialImages = [] } : Prop){
     return(
         <main>
             <NavBar />
+            <Breadcrumbs />
             <File mode={mode} images={images} productId={id}/>
             <Footer />
         </main>

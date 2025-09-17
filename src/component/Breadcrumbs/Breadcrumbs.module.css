@@ -1,0 +1,15 @@
+.breadcrumbs {
+    font-size: var(--h6);
+    margin: var(--20px);
+    margin-inline: 2.5%;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--orange-4);
+    font-weight: 500;
+}
+
+.breadcrumbs span {
+    color: var(--grey-5);
+}

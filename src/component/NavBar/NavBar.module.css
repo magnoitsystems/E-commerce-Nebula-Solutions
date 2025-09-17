@@ -16,7 +16,7 @@
 /*main parts*/
 .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -26,15 +26,16 @@
     margin: var(--20px);
     margin-bottom: 0;
     padding: var(--10px);
-    padding-inline: var(--40px);
+    padding-inline: var(--20px);
+    gap: var(--5px);
 
     background-color: var(--orange-3);
     border-radius: var(--20px);
 }
 
 .logo img {
-    width: 263px;
-    height: 60px;
+    width: 175px;
+    height: 40px;
 }
 
 .categories {
@@ -46,9 +47,13 @@
     width: fit-content;
     height: fit-content;
 
-    gap: var(--50px);
+    gap: var(--20px);
 
     color: var(--grey-5);
+}
+
+.categories .user {
+    display: flex;
 }
 
 .categories h5, .user img {
@@ -59,6 +64,9 @@
     transform: translateY(-4px);
 }
 
+.user {
+    display: none;
+}
 .user img {
     width: 40px;
     height: 40px;
@@ -67,12 +75,10 @@
 /*secondary parts*/
 /*all categories*/
 .allCategories {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     position: absolute;
-    z-index: 10;
+    z-index: 100;
 
     width: 100%;
     height: fit-content;
@@ -80,6 +86,7 @@
     left: 0;
 
     padding: var(--30px);
+    gap: var(--20px);
 
     background-color: var(--grey-6-95);
 }
@@ -136,4 +143,28 @@
 }
 .log h5:hover {
     color: var(--orange-2);
+}
+
+@media (min-width: 768px) {
+    .main {
+        flex-direction: row;
+        padding-inline: var(--40px);
+    }
+
+    .logo img {
+        width: 263px;
+        height: 60px;
+    }
+
+    .categories .user {
+        display: none;
+    }
+
+    .categories {
+        gap: var(--30px);
+    }
+
+    .user {
+        display: flex;
+    }
 }

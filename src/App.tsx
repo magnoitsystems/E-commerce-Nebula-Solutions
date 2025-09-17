@@ -19,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/logup" element={<Logup/>}></Route>
           <Route path="/micarrito" element={<Cart/>}></Route>
+          {/* <Route path="/products" element={<AllProducts/>}></Route> */}
       </Routes>
     </BrowserRouter>
   );
