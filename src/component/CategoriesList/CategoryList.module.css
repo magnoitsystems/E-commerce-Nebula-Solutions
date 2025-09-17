@@ -1,7 +1,7 @@
 .categoryList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(437px, 1fr));
-  gap: 16px;
+  gap: 16px; /* Gap normal de vuelta */
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -15,7 +15,12 @@
   width: 437px;
   height: 92px; 
   overflow: visible; 
-  transition: transform 0.2s ease, box-shadow 0.2s ease, height 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, margin-bottom 0.3s ease;
+}
+
+/* Solo la card expandida tiene margen extra */
+.categoryCard.expanded {
+  margin-bottom: 100px; /* Un poco más de espacio para mejor separación */
 }
 
 .categoryCard:hover {
@@ -29,6 +34,10 @@
   gap: 20px;
   height: 92px;
   padding: 0 20px;
+  background-color: #222;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
 }
 
 .categoryImage {
@@ -48,17 +57,17 @@
   padding: 12px 20px;
   margin: 0;
   position: absolute; 
-  top: 100%; 
+  top: 92px; /* Pegado directamente al header */
   left: 0;
   width: 100%;
-  background: #333;
+  background: #222; /* Mismo color que el header */
   border-radius: 0 0 8px 8px;
 
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease;
-  z-index: 10;
+  z-index: 1;
 }
 
 .subcategories.show {
@@ -74,6 +83,8 @@
   cursor: pointer;
   transition: color 0.2s ease;
   margin: 6px 0;
+  display: block; /* Para que estén una debajo de la otra */
+  width: fit-content; /* Para que el ancho sea solo del contenido */
 }
 
 .subcategoryItem::after {
@@ -92,6 +103,5 @@
 }
 
 .subcategoryItem:hover::after {
-  width: 100%;
+  width: 100%; /* Ahora 100% será solo el ancho del texto */
 }
-
