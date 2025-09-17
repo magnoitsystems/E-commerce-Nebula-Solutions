@@ -166,7 +166,7 @@
     text-align: center;
     margin-top: 250px;
     padding: var(--10px);
-    z-index: 11;
+    z-index: 20;
     opacity: 1;
     color: var(--grey-1);
     border-radius: var(--10px);

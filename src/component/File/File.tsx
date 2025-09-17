@@ -3,6 +3,7 @@ import styles from "./File.module.css";
 import Commentary from "./Commentary/Commentary.tsx";
 import {useState} from "react";
 import EditableTextFiel from "./EditableFile/EditableTextFiel.tsx";
+// import AlertCard from "../AlertCard/AlertCard.tsx";
 
 type ProductProps = {
     mode: 'view' | 'create' | 'edit';
@@ -55,6 +56,7 @@ function File({ mode }: ProductProps){
 
     return(
         <div className={styles.containerProperties}>
+            {/*<AlertCard message={"¡Gracias por confiar en nosotros! Su compra fue realizada exitosamente"} />*/}
             <div className={styles.titleAndCarruselProperties}>
                 <div className={styles.titleAndEditButtonProperties}>
                     {(isEmptyFile || isEditableFile) && editingField === 'productName' ? (
