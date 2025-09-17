@@ -48,11 +48,20 @@ const products = [
 ];
 
 export default function ProductGrid() {
+  const navigate = useNavigate();
+  const handleAdd = () => {
+    navigate("/products");
+  }
   return (
-    <div className={styles.grid}>
-      {products.map((p) => (
-        <ProductCard key={p.id} product={p} />
-      ))}
+    <div>
+      <div className={styles.grid}>
+        {products.map((p) => (
+            <ProductCard key={p.id} product={p} />
+        ))}
+      </div>
+      <div className={styles.buttonContainerProperties}>
+        <button onClick={handleAdd} className={styles.seeAllProductsProperties}>Ver productos</button>
+      </div>
     </div>
   );
 }

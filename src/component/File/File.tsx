@@ -19,6 +19,7 @@ interface ProductState {
 
 function File({ mode, images, productId }: ProductProps){
     const [editingField, setEditingField] = useState<string | null>(null);
+    console.log(productId);
 
     const isEmptyFile = mode === "create";
     const isEditableFile = mode === "edit";
@@ -131,7 +132,7 @@ function File({ mode, images, productId }: ProductProps){
                     <button className={styles.cartButtonProperties}>
                         {/*Agregar al carrito*/}
                         {isEmptyFile && (
-                            <span>Publicar producto</span>
+                            <span>Generar publicación</span>
                         )}
                         {isEditableFile && (
                             <span>Guardar cambios</span>

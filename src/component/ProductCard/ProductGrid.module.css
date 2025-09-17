@@ -7,6 +7,33 @@
   padding: 0 20px; 
 }
 
+.seeAllProductsProperties{
+  background-color: var(--blue-4);
+  border: none;
+  color: var(--grey-1);
+  width: 400px;
+  height: 50px;
+  font-size: var(--20px);
+  border-radius: 20px;
+  justify-self: center;
+  cursor: pointer;
+  transition: background-color 0.8s ease-in-out;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.50);
+}
+
+.seeAllProductsProperties:hover{
+  background-color: var(--grey-1);
+  border: var(--blue-4) 2px solid;
+  color: var(--blue-4);
+}
+
+.buttonContainerProperties{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--50px);
+}
+
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);

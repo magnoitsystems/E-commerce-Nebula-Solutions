@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import styles from "./ProductCard.module.css";
-// import '@fontsource/open-sans/600.css';
-// import '@fontsource/open-sans/700.css';
 import { useNavigate } from 'react-router-dom';
 
 interface Product {
@@ -33,6 +31,7 @@ export default function ProductList() {
 
     //FUTURE METHODS THAT WILL HANDLE THE ADMIN OPERAIONS
     const handleDelete = (id: number) => {
+        console.log(id)
     };
 
     const handleEdit = (id: number) => {
@@ -42,7 +41,7 @@ export default function ProductList() {
     };
 
     const handleAdd = () => {
-        navigate(`/FileProduct/new`, {
+        navigate(`/FileProduct`, {
             state: { mode: 'create' }
         });
     };

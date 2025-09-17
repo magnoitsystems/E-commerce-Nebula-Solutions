@@ -13,9 +13,9 @@ function FileProduct({ image: initialImages = [] } : Prop){
     const { id } = useParams();
     const mode = (location.state?.mode as "view" | "create" | "edit") || "view";
 
-    const isEmptyFile = mode === "create" || id === "new";
-    const isEditFile = mode === "edit";
-    const isViewFile = mode === "view";
+    const isEmptyFile = mode === "create";
+    // const isEditFile = mode === "edit";
+    // const isViewFile = mode === "view";
 
     const images = isEmptyFile ? [] : initialImages;
 
