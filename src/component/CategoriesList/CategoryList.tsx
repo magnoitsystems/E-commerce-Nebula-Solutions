@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./CategoryList.module.css";
 
 interface Category {
@@ -51,6 +51,36 @@ const categories: Category[] = [
 
 const CategoryList: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
+  const handleCardClick = (index: number) => {
+    if (isMobile) {
+      setOpenIndex(openIndex === index ? null : index);
+    }
+  };
+
+  const handleMouseEnter = (index: number) => {
+    if (!isMobile) {
+      setOpenIndex(index);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setOpenIndex(null);
+    }
+  };
 
   return (
     <div className={styles.categoryList}>
@@ -60,12 +90,27 @@ const CategoryList: React.FC = () => {
           <div
             key={cat.id}
             className={`${styles.categoryCard} ${isOpen ? styles.expanded : ''}`}
-            onMouseEnter={() => setOpenIndex(index)}
-            onMouseLeave={() => setOpenIndex(null)}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => handleCardClick(index)}
           >
             <div className={styles.categoryHeader}>
               <img src={cat.image} alt={cat.name} className={styles.categoryImage} />
               <span className={styles.categoryName}>{cat.name}</span>
+              {isMobile && cat.subcategories && (
+                <button className={styles.expandButton}>
+                  <svg 
+                    className={`${styles.arrowIcon} ${isOpen ? styles.rotated : ''}`}
+                    xmlns="http://www.w3.org/2000/svg" 
+                    height="24px" 
+                    viewBox="0 -960 960 960" 
+                    width="24px" 
+                    fill="#ff6b35"
+                  >
+                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                  </svg>
+                </button>
+              )}
             </div>
 
             {cat.subcategories && (
