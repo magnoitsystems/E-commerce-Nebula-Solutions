@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
   className?: string;
@@ -57,17 +58,16 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
         <div className={styles.footerSection}>
           <h3 className={styles.sectionTitle}>Unirte</h3>
           <ul className={styles.linksList}>
-            <li><a href="#" className={styles.link}>Iniciar sesión</a></li>
-            <li><a href="#" className={styles.link}>Registrarte</a></li>
+            <li><Link to="/login" className={styles.link}>Iniciar sesión</Link></li>
+            <li><Link to="/logup" className={styles.link}>Registrate</Link></li>
           </ul>
         </div>
 
         <div className={styles.footerSection}>
           <h3 className={styles.sectionTitle}>Comprar</h3>
           <ul className={styles.linksList}>
-            <li><a href="#" className={styles.link}>Comprar</a></li>
-            <li><a href="#" className={styles.link}>Mis compras</a></li>
-            <li><a href="#" className={styles.link}>Ofertas</a></li>
+            <li><Link to="/purchases" className={styles.link}>Mis compras</Link></li>
+            <li><Link to="/micarrito" className={styles.link}>Mi carrito</Link></li>
           </ul>
         </div>
 
