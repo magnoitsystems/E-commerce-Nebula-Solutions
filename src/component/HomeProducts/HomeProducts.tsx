@@ -59,7 +59,7 @@ export default function HomeProducts() {
         <h2 className={styles.sectionTitle}>Ofertas del mes</h2>
         <ProductGrid 
           products={offerProducts}
-          showViewAllButton={true}
+          showViewAllButton={false}
           viewAllButtonText="Ver todas las ofertas"
           viewAllButtonPath="/ofertas"
         />
@@ -70,7 +70,7 @@ export default function HomeProducts() {
         <h2 className={styles.sectionTitle}>Productos destacados</h2>
         <ProductGrid 
           products={featuredProducts}
-          showViewAllButton={true}
+          showViewAllButton={false}
           viewAllButtonText="Ver productos destacados"
           viewAllButtonPath="/destacados"
         />
