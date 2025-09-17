@@ -2,12 +2,13 @@ import CartCard from "../component/CartCard/CartCard";
 import NavBar from "../component/NavBar/NavBar";
 import styles from './styles/Cart.module.css';
 import BuySection from "../component/BuySection/BuySection.tsx";
+import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs.tsx";
 
 export default function Cart () {
     return (
         <main>
             <NavBar/>
-
+            <Breadcrumbs/>
             <section className={styles.content}>
                 <div className={styles.itemsGrid}>
                     <CartCard

@@ -1,0 +1,36 @@
+.alertCardContainerProperties{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 200px;
+    background-color: rgba(39, 37, 36, 0.95);
+    border-radius: var(--10px);
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    position: absolute;
+    z-index: 50;
+}
+
+.alertCardContainerProperties span{
+    color: var(--orange-3);
+    font-size: var(--30px);
+    text-align: center;
+}
+
+.closeButtonProperties{
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.closeButtonProperties button{
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    color: var(--orange-3);
+    cursor: pointer;
+}

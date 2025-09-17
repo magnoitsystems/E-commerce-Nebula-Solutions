@@ -35,7 +35,6 @@
     height: 80px;
     justify-content: space-between;
     align-items: center;
-    z-index: 20;
     align-self: center;
 }
 
@@ -50,8 +49,8 @@
     justify-self: center;
     justify-content: center;
     align-items: center;
-    z-index: 10;
     bottom: var(--20px);
+    z-index: 10;
 }
 
 .indexProperties{
@@ -74,28 +73,10 @@
     display: flex;
     flex-direction: row;
     position: absolute;
-    visibility: hidden;
-    transition: opacity 1s ease;
-    opacity: 0;
-    z-index: 10;
-    width: 100%;
+    z-index: 30;
+    width: 90%;
     height: 100%;
     align-items: center;
-    justify-content: center;
-    gap: var(--20px);
-}
-
-.containerAddImageForEmptyFile, .containerAddImage{
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    transition: opacity 1s ease;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-self: center;
-    align-self: center;
     justify-content: center;
     gap: var(--20px);
 }
@@ -165,7 +146,7 @@
     text-align: center;
     margin-top: 250px;
     padding: var(--10px);
-    z-index: 11;
+    z-index: 20;
     opacity: 1;
     color: var(--grey-1);
     border-radius: var(--10px);
