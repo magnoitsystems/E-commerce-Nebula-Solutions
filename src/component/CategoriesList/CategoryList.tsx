@@ -15,7 +15,7 @@ const categories: Category[] = [
     id: 1,
     name: "Maquillaje",
     image: "/test-images/falsies.jpg",
-    subcategories: ["Artístico", "Fantasía", "Social", "Efectos especiales"],
+    subcategories: ["Artístico", "Fantasía", "Social"],
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const categories: Category[] = [
     id: 4,
     name: "Decoración",
     image: "/test-images/decoracion.jpg",
-    subcategories: ["Artístico", "Fantasía", "Social", "Efectos especiales"],
+    subcategories: ["Artístico", "Fantasía", "Social"],
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ const CategoryList: React.FC = () => {
         return (
           <div
             key={cat.id}
-            className={styles.categoryCard}
+            className={`${styles.categoryCard} ${isOpen ? styles.expanded : ''}`}
             onMouseEnter={() => setOpenIndex(index)}
             onMouseLeave={() => setOpenIndex(null)}
           >
