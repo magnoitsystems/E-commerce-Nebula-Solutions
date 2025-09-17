@@ -75,6 +75,7 @@ export default function HomeProducts() {
           viewAllButtonPath="/destacados"
         />
       </section>
+
     </div>
   );
 }

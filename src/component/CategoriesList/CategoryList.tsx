@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./CategoryList.module.css";
 
 interface Category {
@@ -52,6 +53,7 @@ const categories: Category[] = [
 const CategoryList: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -64,9 +66,25 @@ const CategoryList: React.FC = () => {
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
-  const handleCardClick = (index: number) => {
+  // Función para navegar a categoría
+  const handleCategoryClick = (categoryName: string) => {
+    const categorySlug = categoryName.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/productsByCategory/${categorySlug}`);
+  };
+
+  // Función para navegar a subcategoría
+  const handleSubcategoryClick = (subcategoryName: string, e: React.MouseEvent) => {
+    e.stopPropagation(); // Evita que se propague al click del card
+    const subcategorySlug = subcategoryName.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/productsByCategory/${subcategorySlug}`);
+  };
+
+  const handleCardClick = (index: number, categoryName: string) => {
     if (isMobile) {
       setOpenIndex(openIndex === index ? null : index);
+    } else {
+      // En desktop, click directo navega a la categoría
+      handleCategoryClick(categoryName);
     }
   };
 
@@ -82,6 +100,11 @@ const CategoryList: React.FC = () => {
     }
   };
 
+  const handleCategoryNameClick = (categoryName: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    handleCategoryClick(categoryName);
+  };
+
   return (
     <div className={styles.categoryList}>
       {categories.map((cat, index) => {
@@ -92,11 +115,16 @@ const CategoryList: React.FC = () => {
             className={`${styles.categoryCard} ${isOpen ? styles.expanded : ''}`}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
-            onClick={() => handleCardClick(index)}
+            onClick={() => handleCardClick(index, cat.name)}
           >
             <div className={styles.categoryHeader}>
               <img src={cat.image} alt={cat.name} className={styles.categoryImage} />
-              <span className={styles.categoryName}>{cat.name}</span>
+              <span 
+                className={styles.categoryName}
+                onClick={(e) => handleCategoryNameClick(cat.name, e)}
+              >
+                {cat.name}
+              </span>
               {isMobile && cat.subcategories && (
                 <button className={styles.expandButton}>
                   <svg 
@@ -116,7 +144,11 @@ const CategoryList: React.FC = () => {
             {cat.subcategories && (
               <ul className={`${styles.subcategories} ${isOpen ? styles.show : ""}`}>
                 {cat.subcategories.map((sub, subIndex) => (
-                  <li key={subIndex} className={styles.subcategoryItem}>
+                  <li 
+                    key={subIndex} 
+                    className={styles.subcategoryItem}
+                    onClick={(e) => handleSubcategoryClick(sub, e)}
+                  >
                     {sub}
                   </li>
                 ))}

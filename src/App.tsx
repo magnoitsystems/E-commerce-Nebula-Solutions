@@ -8,6 +8,7 @@ import Login from './pages/Login.tsx';
 import Logup from "./pages/Logup.tsx";
 import Cart from "./pages/Cart.tsx";
 import AllProducts from './pages/AllProducts.tsx';
+import ProductsByCategory from './pages/ProductsByCategory.tsx';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/logup" element={<Logup/>}></Route>
           <Route path="/micarrito" element={<Cart/>}></Route>
           <Route path="/products" element={<AllProducts/>}></Route>
+          <Route path="/productsByCategory/:category" element={<ProductsByCategory/>}></Route>
       </Routes>
     </BrowserRouter>
   );

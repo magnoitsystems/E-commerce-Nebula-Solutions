@@ -113,7 +113,7 @@ export default function AllProducts() {
           products={maquillaje}
           showViewAllButton={true}
           viewAllButtonText="Ver todo el maquillaje"
-          viewAllButtonPath="/categoria/maquillaje"
+          viewAllButtonPath="/productsByCategory/maquillaje"
         />
       </section>
 
@@ -124,7 +124,7 @@ export default function AllProducts() {
           products={indumentaria}
           showViewAllButton={true}
           viewAllButtonText="Ver toda la indumentaria"
-          viewAllButtonPath="/categoria/indumentaria"
+          viewAllButtonPath="/productsByCategory/indumentaria"
         />
       </section>
 
@@ -135,7 +135,7 @@ export default function AllProducts() {
           products={electrodomesticos}
           showViewAllButton={true}
           viewAllButtonText="Ver todos los electrodomésticos"
-          viewAllButtonPath="/categoria/electrodomesticos"
+          viewAllButtonPath="/productsByCategory/electrodomesticos"
         />
       </section>
     </div>
