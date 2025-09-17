@@ -1,5 +1,5 @@
 import styles from "./ProductCard.module.css";
-// import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 interface Product {
   id: number;
@@ -17,8 +17,15 @@ interface Props {
 export default function ProductCard({ product }: Props) {
   const { name, image, price, discountPrice, discountPercent } = product;
 
+  const navigate = useNavigate();
+
+  const handleAdd = (productId : number) => {
+        navigate(`/FileProduct/${productId}`, {
+            state: { mode: 'view' }
+        });
+  }
   return (
-      <div className={styles.card}>
+      <div onClick={() => handleAdd(product.id)} className={styles.card}>
           {discountPercent && (
               <div className={styles.discountBadge}>{discountPercent}%</div>
           )}

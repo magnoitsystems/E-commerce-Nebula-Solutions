@@ -82,6 +82,11 @@
     border-radius: 20px;
     color: white;
     font-size: var(--15px);
+    cursor: pointer;
+}
+
+.cartButtonProperties span{
+    font-size: var(--25px);
 }
 
 .titleDescriptionProperties{

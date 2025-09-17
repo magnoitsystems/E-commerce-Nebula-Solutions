@@ -1,5 +1,6 @@
 import ProductCard from "./ProductCard";
 import styles from "./ProductGrid.module.css";
+import {useNavigate} from "react-router-dom";
 
 const products = [
   {
