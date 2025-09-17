@@ -83,7 +83,7 @@ function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
                 </div>
             )}
             {hasImages && (isEditableFile || isEmptyFile) && (
-                <div className={`${isEditableFile? styles.containerAddImage : ""} ${isEmptyFile? styles.containerAddImageForEmptyFile : ""}`}>
+                <div className={styles.containerAddImage}>
                     <input
                         type="file"
                         id="inputId"
@@ -97,13 +97,15 @@ function Carrusel({ isEditableFile, isEmptyFile, images }: Prop){
                         {/*{uploading ? 'Subiendo...' : 'Añadir imagen'}*/}
                     </label>
 
-                    <button onClick={() => handleDeleteClick(images[currentIndex])} className={styles.deleteIconProperties}>
-                        <img src="/icons/deleteIcon.png" alt="Ícono de eliminar" width={20} height={24} />
-                    </button>
+                    {isEditableFile && (
+                        <button onClick={() => handleDeleteClick(images[currentIndex])} className={styles.deleteIconProperties}>
+                            <img src="/icons/deleteIcon.png" alt="Ícono de eliminar" width={20} height={24} />
+                        </button>
+                    )}
                 </div>
             )}
             {!hasImages && (
-                <div className={`${styles.containerAddImageForEmptyFile} ${styles.withoutImageProperties}`}>
+                <div className={`${styles.containerAddImage} ${styles.withoutImageProperties}`}>
                     {(isEditableFile || isEmptyFile) && (
                         <div>
                             <input

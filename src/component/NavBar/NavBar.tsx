@@ -32,7 +32,7 @@ export default function NavBar() {
                         Productos
                     </h5>
                     <h5>
-                        <Link to="/carrito">Mi carrito</Link>
+                        <Link to="/micarrito">Mi carrito</Link>
                     </h5>
                 </div>
 

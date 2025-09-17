@@ -23,6 +23,9 @@
     --grey-5: #3A3634;
     --grey-6: #272524;
 
+    --white-95: rgba(255,255,255,0.95);
+
+
     --grey-6-95: rgba(39, 37, 36, 0.95);
 
     /*padding-margin*/
@@ -44,6 +47,10 @@
     --h4: 1.125rem;  /* 18px */
     --h5: 1rem;      /* 16px */
     --h6: 0.875rem;  /* 14px */
+
+    --fs-14: 14px;
+    --fs-16: 16px;
+    --fs-18: 18px;
 }
 
 /*responsive for tablet*/

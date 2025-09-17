@@ -30,9 +30,9 @@ function File({ mode }: ProductProps){
     };
 
     const [localProperty, setLocalProperty] = useState<ProductState>({
-        productName: initialProduct.productName || '',
-        price: initialProduct.price || '',
-        description: initialProduct.description || ''
+        productName: isEmptyFile ? initialProduct.productName : "Combo Maybeline NY",
+        price: isEmptyFile ? initialProduct.price : "10.000",
+        description: isEmptyFile ? initialProduct.description : "Un set pensado para que tengas el tono justo en cada momento. Los colores van desde nudes suaves hasta intensos vibrantes, todos con buena pigmentación y una textura cómoda que no reseca. Se aplican fácil, se fijan rápido y duran varias horas. Podés usarlos solos o mezclarlos entre sí para looks más creativos. Formato práctico: ideales para llevar en la cartera."
     });
 
     // Función genérica para guardar cualquier campo
@@ -43,9 +43,12 @@ function File({ mode }: ProductProps){
 
     const handleCancelEdit = () => {
         setLocalProperty({
-            productName: initialProduct.productName || '',
-            price: initialProduct.price || '',
-            description: initialProduct.description || ''
+            productName: isEmptyFile ? initialProduct.productName : "Combo Maybeline NY",
+            price: isEmptyFile ? initialProduct.price : "10.000",
+            description: isEmptyFile ? initialProduct.description : "\"Un set pensado para que tengas el tono justo en cada momento. Los colores van desde nudes suaves hasta intensos vibrantes, todos con buena pigmentación y una textura cómoda que no reseca.\\n\" +\n" +
+                "                            \"Se aplican fácil, se fijan rápido y duran varias horas.\\n\" +\n" +
+                "                            \"Podés usarlos solos o mezclarlos entre sí para looks más creativos.\\n\" +\n" +
+                "                            \"Formato práctico: ideales para llevar en la cartera.\""
         });
         setEditingField(null);
     };
@@ -152,21 +155,25 @@ function File({ mode }: ProductProps){
                 <div className={styles.underlineProperties}/>
 
                 {(isEmptyFile || isEditableFile) && editingField === 'description' ? (
-                    <EditableTextFiel
-                        value={localProperty.description}
-                        isEditing={editingField === 'description'}
-                        type={"text"}
-                        onSave={handleSave('description')}
-                        onCancel={handleCancelEdit}
-                        className={styles.inputProperties}
-                    />
+                    <div className={styles.containerInputProperties}>
+                        <EditableTextFiel
+                            value={localProperty.description}
+                            isEditing={editingField === 'description'}
+                            type={"text"}
+                            onSave={handleSave('description')}
+                            onCancel={handleCancelEdit}
+                            className={styles.inputProperties}
+                        />
+                    </div>
                 ) : (
-                    <span onClick={() => handleStartEdit('description')}>
+                    <div className={styles.descriptionSpanProperties}>
+                          <span onClick={() => handleStartEdit('description')}>
                         {isEditableFile || isEmptyFile ? localProperty.description : "Un set pensado para que tengas el tono justo en cada momento. Los colores van desde nudes suaves hasta intensos vibrantes, todos con buena pigmentación y una textura cómoda que no reseca.\n" +
                             "Se aplican fácil, se fijan rápido y duran varias horas.\n" +
                             "Podés usarlos solos o mezclarlos entre sí para looks más creativos.\n" +
                             "Formato práctico: ideales para llevar en la cartera."}
-                    </span>
+                          </span>
+                    </div>
                 )}
             </div>
 
