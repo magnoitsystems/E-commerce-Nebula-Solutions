@@ -1,15 +1,15 @@
 :root {
-  --add-btn-height: 44px;
+  --add-btn-height: var(--44px);
 }
 
 .wrapper {
-  padding: 1rem;
+  padding: var(--16px);
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--1200px);
   margin: 0 auto;
-  border-top: 3px solid #000000; 
-  padding-top: 2.5rem;
-  margin-top: 3rem;
+  border-top: 3px solid var(--black); 
+  padding-top: var(--40px);
+  margin-top: var(--50px);
 
   display: flex;
   flex-direction: column;
@@ -17,9 +17,9 @@
 
 .title {
   font-size: 1.6rem;
-  font-weight: 700;
-  color: #1f1f1f;
-  margin: 0 0 2rem 1rem;
+  font-weight: var(--font-bold);
+  color: var(--dark-text);
+  margin: 0 0 var(--30px) var(--16px);
   text-align: left;
 }
 
@@ -29,42 +29,42 @@
   justify-content: center;
   gap: 0.4rem;
   padding: 0.6rem 1.2rem;
-  min-height: 50px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #1f1f1f;
-  background: #fafafa; 
-  border: 1px solid #C25B00; 
-  border-radius: 6px;
+  min-height: var(--50px);
+  font-size: var(--16px);
+  font-weight: var(--font-medium);
+  color: var(--dark-text);
+  background: var(--light-bg); 
+  border: 1px solid var(--orange-border); 
+  border-radius: var(--6px);
   cursor: pointer;
   transition: background 0.2s ease;
   flex-shrink: 0;
   white-space: nowrap;
   align-self: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--30px);
 }
 
 .plus {
-  font-weight: 700; 
+  font-weight: var(--font-bold); 
   font-size: 1.2rem;
 }
 
 .addBtn:hover {
-  background: #fff2e9; 
+  background: var(--hover-orange); 
 }
 
 .gridWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: var(--24px);
   width: 100%;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--30px);
   flex: 0 0 auto;
   width: 100%;
   align-items: center;
@@ -72,35 +72,35 @@
 
 .card {
   position: relative;
-  background: white;
-  border: 2px solid #C25B00;
-  border-radius: 12px;
-  padding: 1.5rem 1rem;
+  background: var(--white);
+  border: var(--2px) solid var(--orange-border);
+  border-radius: var(--12px);
+  padding: var(--24px) var(--16px);
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  gap: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  gap: var(--24px);
+  box-shadow: var(--shadow-light-card);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 90%;
-  max-width: 500px;
+  max-width: var(--500px);
   height: auto;
-  min-height: 180px;
+  min-height: var(--180px);
 }
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-hover-card);
 }
 
 .imageContainer {
   flex-shrink: 0;
-  width: 200px;
-  height: 150px;
-  border-radius: 8px;
+  width: var(--200px);
+  height: var(--150px);
+  border-radius: var(--8px);
   overflow: hidden;
-  background: #f5f5f5;
+  background: var(--light-grey-bg);
 }
 
 .productImage {
@@ -113,7 +113,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--16px);
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -121,15 +121,15 @@
 
 .productName {
   font-size: 1.4rem;
-  font-weight: 600;
-  color: #1f1f1f;
+  font-weight: var(--font-semibold);
+  color: var(--dark-text);
   margin: 0;
   line-height: 1.4;
 }
 
 .category {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--medium-grey);
   font-weight: 400;
 }
 
@@ -139,43 +139,43 @@
   right: -10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--6px);
 }
 
 .iconBtn {
-  background: white;
+  background: var(--white);
   border-radius: 50%;
-  padding: 6px;
+  padding: var(--6px);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.06);
+  width: var(--32px);
+  height: var(--32px);
+  box-shadow: var(--shadow-icon);
+  border: var(--border-light);
   transition: transform 0.2s ease;
 }
 
 .iconBtn svg {
-  width: 18px;
-  height: 18px;
+  width: var(--icon-medium);
+  height: var(--icon-medium);
 }
 
 .deleteBtn {
-  border: 2px solid #e94b4b;
+  border: var(--2px) solid var(--error-red);
 }
 
 .deleteBtn svg {
-  fill: #e94b4b;
+  fill: var(--error-red);
 }
 
 .editBtn {
-  border: 2px solid #2da64f;
+  border: var(--2px) solid var(--success-green);
 }
 
 .editBtn svg {
-  fill: #2da64f;
+  fill: var(--success-green);
 }
 
 .iconBtn:hover {
@@ -186,16 +186,16 @@
   .card {
     flex-direction: row;
     text-align: left;
-    padding: 2rem;
+    padding: var(--30px);
     width: 90%;
-    max-width: 500px;
+    max-width: var(--500px);
     height: auto;
-    min-height: 180px;
+    min-height: var(--180px);
   }
   
   .imageContainer {
-    width: 150px;
-    height: 120px;
+    width: var(--150px);
+    height: var(--120px);
   }
   
   .cardContent {
@@ -207,17 +207,17 @@
   .wrapper {
     display: grid;
     grid-template-columns: auto auto; 
-    column-gap: 1rem; 
+    column-gap: var(--16px); 
     align-items: start;
   }
 
   .title {
     grid-column: 1 / 3; 
-     font-size: 1.6rem;
-  font-weight: 700;
-  color: #1f1f1f;
-  margin: 0 0 1.25rem 1rem;
-  text-align: left;
+    font-size: 1.6rem;
+    font-weight: var(--font-bold);
+    color: var(--dark-text);
+    margin: 0 0 var(--20px) var(--16px);
+    text-align: left;
   }
 
   .gridWrapper {
@@ -229,7 +229,7 @@
   .container {
     width: auto;
     align-items: flex-start;
-    gap: 1rem; 
+    gap: var(--16px); 
   }
 
   .addBtn {
@@ -240,22 +240,22 @@
   }
 
   .card {
-    width: 625px !important;
-    height: 207px !important;
-    min-width: 625px;
-    min-height: 207px;
-    max-width: 625px;
-    max-height: 207px;
+    width: var(--625px) !important;
+    height: var(--207px) !important;
+    min-width: var(--625px);
+    min-height: var(--207px);
+    max-width: var(--625px);
+    max-height: var(--207px);
     flex-direction: row;
     text-align: left;
-    padding: 2rem;
+    padding: var(--30px);
   }
   
   .imageContainer {
-    width: 250px !important;
-    height: 165px !important;
-    min-width: 200px;
-    max-width: 250px;
+    width: var(--250px) !important;
+    height: var(--165px) !important;
+    min-width: var(--200px);
+    max-width: var(--250px);
   }
   
   .cardContent {

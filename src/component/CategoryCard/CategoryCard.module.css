@@ -1,20 +1,20 @@
 :root {
-  --card-height: 56px;
-  --add-btn-height: 44px;
+  --card-height: var(--56px);
+  --add-btn-height: var(--44px);
 }
 
 .wrapper {
-  padding: 1rem;
+  padding: var(--16px);
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--1200px);
   margin: 0 auto;
 }
 
 .title {
   font-size: 1.6rem;
-  font-weight: 700;
-  color: #1f1f1f;
-  margin: 0 0 1.25rem 1rem;
+  font-weight: var(--font-bold);
+  color: var(--dark-text);
+  margin: 0 0 var(--20px) var(--16px);
   text-align: left;
 }
 
@@ -22,38 +22,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: var(--24px);
   width: 100%;
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
+  gap: var(--24px);
   justify-items: center;
   align-items: start;
   width: 100%;
-  max-width: 300px;
+  max-width: var(--300px);
 }
 
 .card {
   position: relative;
-  background-color: #FFB078;
-  padding: 0.8rem 2rem;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1rem;
-  color: #fff;
+  background-color: var(--orange-1);
+  padding: 0.8rem var(--30px);
+  border-radius: var(--10px);
+  font-weight: var(--font-bold);
+  font-size: var(--16px);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 180px;
+  min-width: var(--180px);
   min-height: var(--card-height);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-category);
   width: 100%;
 }
 
-.name { text-align: center; }
+.name { 
+  text-align: center; 
+}
 
 .actions {
   position: absolute;
@@ -61,58 +63,79 @@
   right: -10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--6px);
 }
 
 .iconBtn {
-  background: white;
+  background: var(--white);
   border-radius: 50%;
-  padding: 4px;
+  padding: var(--4px);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.06);
+  width: var(--icon-btn-small);
+  height: var(--icon-btn-small);
+  box-shadow: var(--shadow-icon);
+  border: var(--border-light);
   transition: transform 0.2s ease;
 }
 
-.iconBtn svg { width: 16px; height: 16px; }
+.iconBtn svg { 
+  width: var(--icon-small); 
+  height: var(--icon-small); 
+}
 
-.deleteBtn { border: 2px solid #e94b4b; }
-.deleteBtn svg { fill: #e94b4b; }
+.deleteBtn { 
+  border: var(--2px) solid var(--error-red); 
+}
 
-.editBtn { border: 2px solid #2da64f; }
-.editBtn svg { fill: #2da64f; }
+.deleteBtn svg { 
+  fill: var(--error-red); 
+}
 
-.iconBtn:hover { transform: translateY(-2px); }
+.editBtn { 
+  border: var(--2px) solid var(--success-green); 
+}
+
+.editBtn svg { 
+  fill: var(--success-green); 
+}
+
+.iconBtn:hover { 
+  transform: translateY(-2px); 
+}
 
 .addBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem var(--16px);
   min-height: var(--add-btn-height);
   font-size: 0.95rem;
-  font-weight: 500;
-  color: #1f1f1f;
-  background: #fafafa;
-  border: 1px solid #C25B00;
-  border-radius: 6px;
+  font-weight: var(--font-medium);
+  color: var(--dark-text);
+  background: var(--light-bg);
+  border: 1px solid var(--orange-border);
+  border-radius: var(--6px);
   cursor: pointer;
   transition: background 0.2s ease;
   flex-shrink: 0;
   white-space: nowrap;
   align-self: center;
   width: auto; 
-  max-width: 220px;
+  max-width: var(--220px);
 }
 
-.plus { font-weight: 700; font-size: 1.05rem; }
-.addBtn:hover { background: #fff2e9; }
+.plus { 
+  font-weight: var(--font-bold); 
+  font-size: 1.05rem; 
+}
+
+.addBtn:hover { 
+  background: var(--hover-orange); 
+}
 
 @media (min-width: 601px) {
   .container {
@@ -137,7 +160,7 @@
     grid-row: 1 / 2;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px; 
+    gap: var(--10px); 
   }
 
   .addBtn {
@@ -147,6 +170,6 @@
     align-self: start; 
     margin: 0;
     width: auto;
-    max-width: 220px;
+    max-width: var(--220px);
   }
 }
