@@ -109,6 +109,18 @@ const productsByCategory: { [key: string]: any[] } = {
       image: "/test-images/aceite-motor.webp",
       price: 12900,
     },
+    {
+      id: 54,
+      name: "Toyota Hilux 2023",
+      image: "/test-images/hilux.jpg",
+      price: 70000000,
+    },
+    {
+      id: 55,
+      name: "Fiat Cronos 0km",
+      image: "/test-images/cronos.webp",
+      price: 26000000,
+    }
   ],
   'mochilas': [
     {
@@ -126,56 +138,7 @@ const productsByCategory: { [key: string]: any[] } = {
       discountPercent: 20,
     },
   ],
-  // Subcategorías
-  'artístico': [
-    {
-      id: 16,
-      name: "Kit Maquillaje Artístico Profesional",
-      image: "/test-images/kit-artistico.jpeg",
-      price: 89990,
-      discountPrice: 71990,
-      discountPercent: 20,
-    },
-    {
-      id: 17,
-      name: "Paleta de Colores Fantasy",
-      image: "/test-images/paleta-colores.webp",
-      price: 34500,
-    },
-  ],
-  'fútbol': [
-    {
-      id: 18,
-      name: "Botines Adidas Predator",
-      image: "/test-images/botines-adidas.webp",
-      price: 125900,
-      discountPrice: 100720,
-      discountPercent: 20,
-    },
-    {
-      id: 19,
-      name: "Camiseta Selección Argentina",
-      image: "/test-images/camiseta-argentina.webp",
-      price: 35600,
-    },
-  ],
-  'cocina': [
-    {
-      id: 20,
-      name: "Batidora KitchenAid 300W",
-      image: "/test-images/batidora.webp",
-      price: 189990,
-      discountPrice: 151990,
-      discountPercent: 20,
-    },
-    {
-      id: 21,
-      name: "Set Cuchillos Acero Inoxidable",
-      image: "/test-images/set-cuchillos.webp",
-      price: 45600,
-    },
-  ],
-  'indumentaria' : [
+   'indumentaria' : [
   {
     id: 22,
     name: "Remera Básica Algodón",
@@ -205,6 +168,268 @@ const productsByCategory: { [key: string]: any[] } = {
     price: 45600,
   },
 ],
+  'tecnología': [
+    {
+      id: 26,
+      name: "Iphone 13",
+      image: "/test-images/iphone13.jpg",
+      price: 400000
+    },
+    {
+      id: 27,
+      name: "Iphone 16",
+      image: "/test-images/iphone.png",
+      price: 900000
+    },
+    {
+      id: 28,
+      name: "Computadora Samsung",
+      image: "/test-images/samsung-compu.jpeg",
+      price: 400000
+    }
+  ],
+  'música': [
+    {
+      id: 29,
+      name: "Saxofon Yamaha",
+      image: "/test-images/saxofon.jpeg",
+      price: 700000
+    },
+    {
+      id: 30,
+      name: "Taylor Swift Disco Homónimo",
+      image: "/test-images/taylor-swift.avif",
+      price: 30000
+    },
+  ],
+  // Subcategorías
+  'artístico': [
+    {
+      id: 16,
+      name: "Kit Maquillaje Artístico Profesional",
+      image: "/test-images/kit-artistico.jpeg",
+      price: 89990,
+      discountPrice: 71990,
+      discountPercent: 20,
+    },
+    {
+      id: 17,
+      name: "Paleta de Colores Fantasy",
+      image: "/test-images/paleta-colores.webp",
+      price: 34500,
+    },
+  ],
+  'social': [
+   {
+      id: 31,
+      name: "Combo Maybelline",
+      image: "/test-images/maybelline-combo.jpg",
+      price: 55420,
+      discountPrice: 37564,
+      discountPercent: 25,
+    },
+    {
+      id: 32,
+      name: "Máscara de pestañas Falsies Maybelline",
+      image: "/test-images/falsies.jpg",
+      price: 22403,
+      discountPrice: 17564,
+      discountPercent: 18,
+    },
+    {
+      id: 33,
+      name: "Base líquida FitMe Maybelline",
+      image: "/test-images/fitme.jpg",
+      price: 32450,
+      discountPrice: 18240,
+      discountPercent: 45,
+    },
+  ],
+  'fútbol': [
+    {
+      id: 18,
+      name: "Botines Adidas Predator",
+      image: "/test-images/botines-adidas.webp",
+      price: 125900,
+      discountPrice: 100720,
+      discountPercent: 20,
+    },
+    {
+      id: 19,
+      name: "Camiseta Selección Argentina",
+      image: "/test-images/camiseta-argentina.webp",
+      price: 35600,
+    },
+  ],
+  'running': [
+    {
+      id: 34,
+      name: "Runner kit",
+      image: "/test-images/runner-kit.jpg",
+      price: 60000,
+      discountPrice: 55000,
+      discountPercent: 5,
+    },
+    {
+      id: 35,
+      name: "Running shoes",
+      image: "/test-images/running-shoes.jpeg",
+      price: 160000,
+      discountPrice: 100000,
+      discountPercent: 30,
+    },
+    {
+      id: 35,
+      name: "Botellón",
+      image: "/test-images/botella.jpeg",
+      price: 30000,
+    },
+  ],
+  'natación': [
+    {
+      id: 36,
+      name: "kit para apneas",
+      image: "/test-images/antiparras.jpeg",
+      price: 50000,
+    },
+    {
+      id: 38,
+      name: "kit natación",
+      image: "/test-images/kit-natacion.jpeg",
+      price: 60000
+    },
+    {
+      id: 39,
+      name: "patas de rana",
+      image: "/test-images/patas-de-rana.jpeg",
+      price: 40000
+    }
+  ],
+  'cocina': [
+    {
+      id: 20,
+      name: "Batidora KitchenAid 300W",
+      image: "/test-images/batidora.webp",
+      price: 189990,
+      discountPrice: 151990,
+      discountPercent: 20,
+    },
+    {
+      id: 21,
+      name: "Set Cuchillos Acero Inoxidable",
+      image: "/test-images/set-cuchillos.webp",
+      price: 45600,
+    },
+  ],
+  'limpieza': [
+    {
+      id: 40,
+      name: "Aspiradora",
+      image: "/test-images/aspiradora.jpeg",
+      price: 130000,
+    },
+    {
+      id: 41,
+      name: "Aspiradora",
+      image: "/test-images/aspiradora.webp",
+      price: 110000,
+    },
+    {
+      id: 42,
+      name: "robot de limpieza",
+      image: "/test-images/robot.webp",
+      price: 300000,
+    }
+  ],
+  'muebles': [
+    {
+      id: 43,
+      name: "Mesa",
+      image: "/test-images/mesa.webp",
+      price: 100000,
+    },
+    {
+      id: 44,
+      name: "estantería",
+      image: "/test-images/estanteria.jpg",
+      price: 70000
+    }
+  ],
+  'adornos': [
+    {
+      id: 45,
+      name: "Cuadros triples",
+      image: "/test-images/cuadros-triples.jpg",
+      price: 90000,
+    },
+    {
+      id: 46,
+      name: "Florero",
+      image: "/test-images/florero.jpg",
+      price: 40000,
+    },
+    {
+      id: 47,
+      name: "Cuadro abstracto",
+      image: "/test-images/cuadro-abstracto.jpeg",
+      price: 120000,
+    }
+  ],
+  'autos': [
+    {
+      id: 48,
+      name: "Peugeot 208 0km",
+      image: "/test-images/peugeot.jpg",
+      price: 40000000,
+    },
+    {
+      id: 49,
+      name: "Toyota Corolla 2023",
+      image: "/test-images/corolla.png",
+      price: 31000000,
+    },
+    {
+      id: 50,
+      name: "Fiat Cronos 0km",
+      image: "/test-images/cronos.webp",
+      price: 26000000,
+    }
+  ],
+  'camionetas': [
+    {
+      id: 51,
+      name: "Toyota Hilux 2023",
+      image: "/test-images/hilux.jpg",
+      price: 70000000,
+    },
+    {
+      id: 52,
+      name: "Renault Alaskan 0km",
+      image: "/test-images/alaskan.webp",
+      price: 67000000,
+    },
+    {
+      id: 53,
+      name: "Wolkswagen Amarok 2020",
+      image: "/test-images/amarok.avif",
+      price: 63000000,
+    }
+  ],
+  'útiles': [
+    {
+      id: 56,
+      name: "Limpiador de carrocería",
+      image: "/test-images/limpiador.webp",
+      price: 25000,
+    },
+     {
+      id: 57,
+      name: "Aspiradora",
+      image: "/test-images/aspiradora.jpeg",
+      price: 130000,
+    },
+  ],
+  
 };
 
 // Función para capitalizar y formatear el nombre de categoría para mostrar
