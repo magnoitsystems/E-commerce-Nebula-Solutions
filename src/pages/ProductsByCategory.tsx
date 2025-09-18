@@ -429,7 +429,190 @@ const productsByCategory: { [key: string]: any[] } = {
       price: 130000,
     },
   ],
-  
+  'escolares': [
+    {
+      id: 58,
+      name: "mochila cerezas",
+      image: "/test-images/mochi-cerezas.webp",
+      price: 70000,
+    },
+    {
+      id: 59,
+      name: "mochi escolar típica",
+      image: "/test-images/mochi-escolar.webp",
+      price: 64000,
+    }
+  ],
+  'tote-bags': [
+    {
+      id: 60,
+      name: "Tote Bag Flores",
+      image: "/test-images/totebag-flores.jpg",
+      price: 43000
+    },
+    {
+      id: 61,
+      name: "Tote Bag Organic",
+      image: "/test-images/totebag-organic.jpeg",
+      price: 21000
+    }
+  ],
+  'carteras': [
+    {
+      id: 62,
+      name: "Cartera Azul",
+      image: "/test-images/cartera-azul.jpg",
+      price: 110000,
+    },
+    {
+      id: 63,
+      name: "Cartera gris",
+      image: "/test-images/cartera-gris.webp",
+      price: 18000,
+    }
+  ],
+  'remeras': [
+    {
+      id: 64,
+      name: "Remera blanca algodón",
+      image: "/test-images/remera-basica.jpeg",
+      price: 20000
+    },
+    {
+      id: 65,
+      name: "Remera verde algodón",
+      image: "/test-images/remera-verde.jpeg",
+      price: 20000
+    },
+    {
+      id: 66,
+      name: "Remera batik algodón",
+      image: "/test-images/remera-batik.jpeg",
+      price: 20000
+    }
+  ],
+  'jeans': [
+    {
+      id: 67,
+      name: "Jean wide leg",
+      image: "/test-images/wide-leg.jpeg",
+      price: 35000,
+    },
+    {
+      id: 68,
+      name: "Jean oxford Leutthe",
+      image: "/test-images/oxford.jpg",
+      price: 42000,
+    },
+    {
+      id: 69,
+      name: "Jean oxford usado",
+      image: "/test-images/oxford.webp",
+      price: 14000
+    }
+  ],
+  'zapatillas': [
+    {
+      id: 70,
+      name: "zapatillas urbanas",
+      image: "/test-images/zapatillas.jpeg",
+      price: 15000,
+    },
+    {
+      id: 71,
+      name: "Zapatillas adidas",
+      image: "/test-images/adidas.jpeg",
+      price: 60000,
+    },
+    {
+      id: 72,
+      name: "Adidas campus",
+      image: "/test-images/campus.jpeg",
+      price: 110000,
+    }
+  ],
+  'celulares': [
+    {
+      id: 73,
+      name: "Iphone 13",
+      image: "/test-images/iphone13.jpg",
+      price: 400000
+    },
+    {
+      id: 74,
+      name: "Iphone 16",
+      image: "/test-images/iphone.png",
+      price: 900000
+    },
+    {
+      id: 75,
+      name: "Samsung A05",
+      image: "/test-images/a05.webp",
+      price: 23000
+    }
+  ],
+  'computadoras': [
+    {
+      id: 76,
+      name: "Computadora HP",
+      image: "/test-images/hp.jpeg",
+      price: 800000,
+    },
+    {
+      id: 77,
+      name: "Computadora Samsung",
+      image: "/test-images/samsung-compu.jpeg",
+      price: 2200000
+    }
+  ],
+  'periféricos': [
+    {
+      id: 78,
+      name: "Mouse gamer",
+      image: "/test-images/mouse-gamer.jpg",
+      price: 43000,
+    },
+    {
+      id: 79,
+      name: "Teclado con colores",
+      image: "/test-images/teclado.jpg",
+      price: 32000
+    }
+  ],
+  'instrumentos':[
+    {
+      id: 80,
+      name: "Guitarra criolla",
+      image: "/test-images/guitarra.jpeg",
+      price: 500000,
+    },
+    {
+      id: 81,
+      name: "Saxofón Yamaha",
+      image: "/test-images/saxofon.jpeg",
+      price: 700000,
+    }
+  ],
+  'discos': [
+    {
+      id: 82,
+      name: "Taylor Swift Disco Homónimo",
+      image: "/test-images/taylor-swift.avif",
+      price: 30000
+    },
+    {
+      id: 83,
+      name: "Taylor Swift Disco Lover ",
+      image: "/test-images/lover.webp",
+      price: 24000,
+    },
+    {
+      id: 84,
+      name: "Taylor Swift Disco Reputation",
+      image: "/test-images/reputation.jpg",
+      price: 50000,
+    }
+  ],
 };
 
 // Función para capitalizar y formatear el nombre de categoría para mostrar
