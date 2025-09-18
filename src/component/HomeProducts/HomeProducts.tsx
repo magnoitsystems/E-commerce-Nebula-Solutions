@@ -53,29 +53,37 @@ const featuredProducts = [
 
 export default function HomeProducts() {
   return (
-    <div className={styles.homeProductsContainer}>
-      {/* Sección de Ofertas del mes */}
-      <section className={styles.productSection}>
-        <h2 className={styles.sectionTitle}>Ofertas del mes</h2>
-        <ProductGrid 
-          products={offerProducts}
-          showViewAllButton={false}
-          viewAllButtonText="Ver todas las ofertas"
-          viewAllButtonPath="/ofertas"
-        />
-      </section>
+    <main>
+      <div>
+          <ProductGrid
+            products={[]}
+            showViewAllButton={true}
+          />
+      </div>
+      <div className={styles.homeProductsContainer}>
+        {/* Sección de Ofertas del mes */}
+        <section className={styles.productSection}>
+          <h2 className={styles.sectionTitle}>Ofertas del mes</h2>
+          <ProductGrid
+            products={offerProducts}
+            showViewAllButton={false}
+            viewAllButtonText="Ver todas las ofertas"
+            viewAllButtonPath="/ofertas"
+          />
+        </section>
 
-      {/* Sección de Productos destacados */}
-      <section className={styles.productSection}>
-        <h2 className={styles.sectionTitle}>Productos destacados</h2>
-        <ProductGrid 
-          products={featuredProducts}
-          showViewAllButton={false}
-          viewAllButtonText="Ver productos destacados"
-          viewAllButtonPath="/destacados"
-        />
-      </section>
+        {/* Sección de Productos destacados */}
+        <section className={styles.productSection}>
+          <h2 className={styles.sectionTitle}>Productos destacados</h2>
+          <ProductGrid
+            products={featuredProducts}
+            showViewAllButton={false}
+            viewAllButtonText="Ver productos destacados"
+            viewAllButtonPath="/destacados"
+          />
+        </section>
 
-    </div>
+      </div>
+    </main>
   );
 }
