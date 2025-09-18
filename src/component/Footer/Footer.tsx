@@ -36,14 +36,14 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
         </div>
 
         <div className={styles.footerSection}>
-          <h3 className={styles.sectionTitle}>Productos</h3>
+          <h3 className={styles.sectionTitle}> <a href="/products">Productos</a></h3>
           <ul className={styles.linksList}>
-            <li><a href="#" className={styles.link}>Hogar</a></li>
-            <li><a href="#" className={styles.link}>Maquillaje</a></li>
-            <li><a href="#" className={styles.link}>Electrodomésticos</a></li>
-            <li><a href="#" className={styles.link}>Audio y visual</a></li>
-            <li><a href="#" className={styles.link}>Vehículos</a></li>
-            <li><a href="#" className={styles.link}>Indumentaria</a></li>
+            <li><a href="/productsByCategory/decoracion" className={styles.link}>Hogar</a></li>
+            <li><a href="/productsByCategory/maquillaje" className={styles.link}>Maquillaje</a></li>
+            <li><a href="/productsByCategory/electrodomesticos" className={styles.link}>Electrodomésticos</a></li>
+            <li><a href="/productsByCategory/deportivo" className={styles.link}>Deportivo</a></li>
+            <li><a href="/productsByCategory/vehiculos" className={styles.link}>Vehículos</a></li>
+            <li><a href="/productsByCategory/indumentaria" className={styles.link}>Indumentaria</a></li>
           </ul>
         </div>
 

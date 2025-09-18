@@ -82,13 +82,13 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 10,
       name: "Cuadro Abstracto 60x80",
-      image: "/test-images/cuadro-abstracto.jpg",
+      image: "/test-images/cuadro-abstracto.jpeg",
       price: 25900,
     },
     {
       id: 11,
       name: "Lámpara de Mesa Moderna",
-      image: "/test-images/lampara-mesa.jpg",
+      image: "/test-images/lampara.jpeg",
       price: 18500,
       discountPrice: 14800,
       discountPercent: 20,
