@@ -44,6 +44,9 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
             <li><a href="/productsByCategory/deportivo" className={styles.link}>Deportivo</a></li>
             <li><a href="/productsByCategory/vehiculos" className={styles.link}>Vehículos</a></li>
             <li><a href="/productsByCategory/indumentaria" className={styles.link}>Indumentaria</a></li>
+            <li><a href="/productsByCategory/mochilas" className={styles.link}>Mochilas</a></li>
+            <li><a href="/productsByCategory/tecnología" className={styles.link}>Tecnología</a></li>
+            <li><a href="/productsByCategory/música" className={styles.link}>Música</a></li>
           </ul>
         </div>
 
