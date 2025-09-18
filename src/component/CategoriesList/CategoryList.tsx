@@ -16,7 +16,7 @@ const categories: Category[] = [
     id: 1,
     name: "Maquillaje",
     image: "/test-images/falsies.jpg",
-    subcategories: ["Artístico", "Fantasía", "Social"],
+    subcategories: ["Artístico", "Social"],
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const categories: Category[] = [
     id: 3,
     name: "Electrodomésticos",
     image: "/test-images/electrodomesticos.jpeg",
-    subcategories: ["Cocina", "Limpieza", "Climatización"],
+    subcategories: ["Cocina", "Limpieza"],
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const categories: Category[] = [
     id: 5,
     name: "Vehículos",
     image: "/test-images/vehiculos.jpg",
-    subcategories: ["Autos", "Camionetas", "Motos", "Útiles"],
+    subcategories: ["Autos", "Camionetas", "Útiles"],
   },
   {
     id: 6,
@@ -50,21 +50,21 @@ const categories: Category[] = [
   },
   {
     id: 7,
-    name: "Mochilas",
-    image: "/test-images/bags.jpg",
-    subcategories: ["Cocina", "Limpieza", "Climatización"],
+    name: "Indumentaria",
+    image: "/test-images/campera-cuero.jpg",
+    subcategories: ["Remeras", "Jeans", "Zapatillas"],
   },
   {
-    id: 6,
-    name: "Mochilas",
-    image: "/test-images/bags.jpg",
-    subcategories: ["Cocina", "Limpieza", "Climatización"],
+    id: 8,
+    name: "Tecnología",
+    image: "/test-images/tecnologia.jpeg",
+    subcategories: ["Celulares", "Computadoras", "Periféricos"],
   },
   {
-    id: 6,
-    name: "Mochilas",
-    image: "/test-images/bags.jpg",
-    subcategories: ["Cocina", "Limpieza", "Climatización"],
+    id: 9,
+    name: "Música",
+    image: "/test-images/musica.jpeg",
+    subcategories: ["Instrumentos", "Discos"],
   },
 ];
 
