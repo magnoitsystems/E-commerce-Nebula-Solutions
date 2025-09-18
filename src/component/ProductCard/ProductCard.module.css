@@ -1,8 +1,8 @@
 .card {
   position: relative;
   overflow: visible; 
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-light);
   width: 100%;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -14,7 +14,7 @@
 
 .image {
   width: 100%;
-  height: 180px; 
+  height: var(--180px); 
   object-fit: cover;
   display: block;
 }
@@ -23,14 +23,14 @@
   position: absolute;
   top: -2px;
   left: -25px;
-  background: #ff7300;
-  color: #fff;
-  font-size: 12px;
+  background: var(--orange-4);
+  color: var(--white);
+  font-size: var(--12px);
   font-weight: 700;
   padding: 4px 14px;
   transform: rotate(-45deg);
   z-index: 20;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-discount);
 }
 
 .discountBadge::before,
@@ -46,28 +46,28 @@
 .discountBadge::before {
   left: 0;
   border-width: 6px 6px 0 0;
-  border-color: #b33c00 transparent transparent transparent;
+  border-color: var(--discount-dark) transparent transparent transparent;
 }
 
 .discountBadge::after {
   right: 0;
   border-width: 6px 0 0 6px;
-  border-color: #b33c00 transparent transparent transparent;
+  border-color: var(--discount-dark) transparent transparent transparent;
 }
 
 .info {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0,0,0,0.6);
-  color: white;
+  background: var(--black-60);
+  color: var(--white);
   padding: 6px; 
   box-sizing: border-box;
 }
 
 .name {
   margin: 0;
-  font-size: 14px; 
+  font-size: var(--h6); 
   font-weight: 600;
 }
 
@@ -80,28 +80,28 @@
 
 .oldPrice {
   text-decoration: line-through;
-  color: #ddd;
-  font-size: 12px;
+  color: var(--light-grey);
+  font-size: var(--12px);
 }
 
 .newPrice {
-  font-size: 14px;
+  font-size: var(--h6);
   font-weight: bold;
-  color: white;
+  color: var(--white);
 }
 
 @media (min-width: 768px) {
   .image {
-    height: 240px;
+    height: var(--240px);
   }
 
   .discountBadge {
-    font-size: 14px;
-    padding: 5px 16px;
+    font-size: var(--h6);
+    padding: var(--5px) var(--16px);
   }
 
   .name {
-    font-size: 15px;
+    font-size: var(--h5);
   }
 
   .oldPrice {
@@ -109,33 +109,33 @@
   }
 
   .newPrice {
-    font-size: 15px;
+    font-size: var(--h5);
   }
 }
 
 @media (min-width: 1024px) {
   .card {
-    max-width: 450px;
+    max-width: var(--450px);
   }
 
   .image {
-    height: 300px;
+    height: var(--300px);
   }
 
   .discountBadge {
-    font-size: 16px;
-    padding: 5px 20px;
+    font-size: var(--h4);
+    padding: var(--5px) var(--20px);
   }
 
   .name {
-    font-size: 16px;
+    font-size: var(--h4);
   }
 
   .oldPrice {
-    font-size: 14px;
+    font-size: var(--h6);
   }
 
   .newPrice {
-    font-size: 16px;
+    font-size: var(--h4);
   }
 }
