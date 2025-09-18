@@ -11,11 +11,12 @@ export default function NavBar() {
 
     return (
         <nav className={styles.nav}>
-            <div className={styles.main} style={{ borderRadius: active ? "20px 20px 0 0" : "20px",
+            <div className={styles.main} style={{
+                borderRadius: active ? "20px 20px 0 0" : "20px",
             }}>
                 <div className={styles.logo}>
                     <Link to="/">
-                        <img src={"/logos/oneshop.png"} alt="OneShop logo"/>
+                        <img src={"/logos/oneshop.png"} alt="OneShop logo" />
                     </Link>
                 </div>
 
@@ -62,81 +63,126 @@ export default function NavBar() {
             {openCategories && (
                 <div className={styles.allCategories}>
                     <div className={styles.category}>
-                        <h6>Maquillaje</h6>
-                        <p>Labiales</p>
-                        <p>Polvos compactos</p>
-                        <p>Sombras de ojos</p>
-                        <p>Bronzers/Contornos</p>
-                        <p>Delineadores</p>
+                        <Link to="/productsByCategory/maquillaje">
+                            <h6>Maquillaje</h6>
+                        </Link>
+                        <Link to="/productsByCategory/artístico">
+                            <p>Artístico</p>
+                        </Link>
+                        <Link to="/productsByCategory/social">
+                            <p>Social</p>
+                        </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <h6>Electrodomésticos</h6>
-                        <p>Lavarropas</p>
-                        <p>Heladeras</p>
-                        <p>Microondas</p>
-                        <p>Hornos eléctricos</p>
-                        <p>Pequeños electrodomésticos</p>
-                        <p>Secarropas</p>
-                        <p>Termotanques</p>
+                        <Link to="/productsByCategory/electrodomesticos">
+                            <h6>Electrodomésticos</h6>
+                        </Link>
+                        <Link to="/productsByCategory/cocina">
+                            <p>Cocina</p>
+                        </Link>
+                        <Link to="/productsByCategory/limpieza">
+                            <p>Limpieza</p>
+                        </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <h6>Audio y visual</h6>
-                        <p>TV smart</p>
-                        <p>Auriculares</p>
-                        <p>Parlantes</p>
-                        <p>Celulares</p>
-                        <p>Tablets</p>
+                        <Link to="/productsByCategory/deportivo">
+                            <h6>Deportivo</h6>
+                        </Link>
+                        <Link to="/productsByCategory/fútbol">
+                            <p>Fútbol</p>
+                        </Link>
+                        <Link to="/productsByCategory/running">
+                            <p>Running</p>
+                        </Link>
+                        <Link to="/productsByCategory/natación">
+                            <p>Natación</p>
+                        </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <h6>Vehículos</h6>
-                        <p>Camionetas</p>
-                        <p>Autos</p>
-                        <p>Motocicletas</p>
-                        <p>Cuatriciclos</p>
-                        <p>Camiones</p>
-                        <p>UTVs</p>
+                        <Link to="/productsByCategory/vehiculos">
+                            <h6>Vehículos</h6>
+                        </Link>
+                        <Link to="/productsByCategory/camionetas">
+                            <p>Camionetas</p>
+                        </Link>
+                        <Link to="/productsByCategory/autos">
+                            <p>Autos</p>
+                        </Link>
+                        <Link to="/productsByCategory/útiles">
+                            <p>Útiles</p>
+                        </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <h6>Maquillaje</h6>
-                        <p>Labiales</p>
-                        <p>Polvos compactos</p>
-                        <p>Sombras de ojos</p>
-                        <p>Bronzers/Contornos</p>
-                        <p>Delineadores</p>
+                        <Link to="/productsByCategory/decoración">
+                            <h6>Decoración</h6>
+                        </Link>
+                        <Link to="/productsByCategory/muebles">
+                            <p>Muebles</p>
+                        </Link>
+                        <Link to="/productsByCategory/adornos">
+                            <p>Adornos</p>
+                        </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <h6>Electrodomésticos</h6>
-                        <p>Lavarropas</p>
-                        <p>Heladeras</p>
-                        <p>Microondas</p>
-                        <p>Hornos eléctricos</p>
-                        <p>Pequeños electrodomésticos</p>
-                        <p>Secarropas</p>
-                        <p>Termotanques</p>
+                        <Link to="/productsByCategory/mochilas">
+                            <h6>Mochilas</h6>
+                        </Link>
+                        <Link to="/productsByCategory/escolares">
+                            <p>Escolares</p>
+                        </Link>
+                        <Link to="/productsByCategory/tote-bags">
+                            <p>Tote Bags</p>
+                        </Link>
+                        <Link to="/productsByCategory/carteras">
+                            <p>Carteras</p>
+                        </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <h6>Audio y visual</h6>
-                        <p>TV smart</p>
-                        <p>Auriculares</p>
-                        <p>Parlantes</p>
-                        <p>Celulares</p>
-                        <p>Tablets</p>
+                        <Link to="/productsByCategory/indumentaria">
+                            <h6>Indumentaria</h6>
+                        </Link>
+                        <Link to="/productsByCategory/remeras">
+                            <p>Remeras</p>
+                        </Link>
+                        <Link to="/productsByCategory/jeans">
+                            <p>Jeans</p>
+                        </Link>
+                        <Link to="/productsByCategory/zapatillas">
+                            <p>Zapatillas</p>
+                        </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <h6>Vehículos</h6>
-                        <p>Camionetas</p>
-                        <p>Autos</p>
-                        <p>Motocicletas</p>
-                        <p>Cuatriciclos</p>
-                        <p>Camiones</p>
-                        <p>UTVs</p>
+                        <Link to="/productsByCategory/tecnología">
+                            <h6>Tecnología</h6>
+                        </Link>
+                        <Link to="/productsByCategory/celulares">
+                            <p>Celulares</p>
+                        </Link>
+                        <Link to="/productsByCategory/computadoras">
+                            <p>Computadoras</p>
+                        </Link>
+                        <Link to="/productsByCategory/periféricos">
+                            <p>Periféricos</p>
+                        </Link>
+                    </div>
+
+                    <div className={styles.category}>
+                        <Link to="/productsByCategory/música">
+                            <h6>Música</h6>
+                        </Link>
+                        <Link to="/productsByCategory/instrumentos">
+                            <p>Instrumentos</p>
+                        </Link>
+                        <Link to="/productsByCategory/discos">
+                            <p>Discos</p>
+                        </Link>
                     </div>
                 </div>
             )}
@@ -144,8 +190,9 @@ export default function NavBar() {
             {/* desplegable User */}
             {openUser && (
                 <div className={styles.log}>
-                    <h5>Carrito de compras</h5>
-                    <h5>Historial de compras</h5>
+                    <Link to="/purchases">
+                        <h5>Mis compras</h5>
+                    </Link>
                     <Link to="/login">
                         <h5>Iniciar sesión</h5>
                     </Link>
