@@ -34,13 +34,31 @@ const categories: Category[] = [
     id: 4,
     name: "Decoración",
     image: "/test-images/decoracion.jpg",
-    subcategories: ["Artístico", "Fantasía", "Social"],
+    subcategories: ["Muebles", "Adornos"],
   },
   {
     id: 5,
     name: "Vehículos",
     image: "/test-images/vehiculos.jpg",
-    subcategories: ["Fútbol", "Running", "Natación"],
+    subcategories: ["Autos", "Camionetas", "Motos", "Útiles"],
+  },
+  {
+    id: 6,
+    name: "Mochilas",
+    image: "/test-images/bags.jpg",
+    subcategories: ["Escolares", "Tote Bags", "Carteras"],
+  },
+  {
+    id: 7,
+    name: "Mochilas",
+    image: "/test-images/bags.jpg",
+    subcategories: ["Cocina", "Limpieza", "Climatización"],
+  },
+  {
+    id: 6,
+    name: "Mochilas",
+    image: "/test-images/bags.jpg",
+    subcategories: ["Cocina", "Limpieza", "Climatización"],
   },
   {
     id: 6,

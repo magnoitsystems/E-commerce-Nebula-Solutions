@@ -44,13 +44,13 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 5,
       name: "Pelota de Fútbol Adidas",
-      image: "/test-images/pelota-futbol.jpg",
+      image: "/test-images/pelota-adidas.webp",
       price: 12500,
     },
     {
       id: 6,
       name: "Malla de Natación Speedo",
-      image: "/test-images/malla-natacion.jpg",
+      image: "/test-images/malla-natacion.jpeg",
       price: 18900,
     },
   ],
@@ -58,7 +58,7 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 7,
       name: "Licuadora Philips 600W",
-      image: "/test-images/licuadora.jpg",
+      image: "/test-images/licuadora.webp",
       price: 67890,
       discountPrice: 54312,
       discountPercent: 20,
@@ -66,13 +66,13 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 8,
       name: "Microondas Samsung 20L",
-      image: "/test-images/microondas.jpg",
+      image: "/test-images/microondas.jpeg",
       price: 89990,
     },
     {
       id: 9,
       name: "Cafetera Express Nespresso",
-      image: "/test-images/cafetera.jpg",
+      image: "/test-images/cafetera.webp",
       price: 125900,
       discountPrice: 100720,
       discountPercent: 20,
@@ -98,7 +98,7 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 12,
       name: "Neumático Michelin 185/60 R15",
-      image: "/test-images/neumatico.jpg",
+      image: "/test-images/neumatico.webp",
       price: 45600,
       discountPrice: 36480,
       discountPercent: 20,
@@ -106,7 +106,7 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 13,
       name: "Aceite Motor Castrol 5W30",
-      image: "/test-images/aceite-motor.jpg",
+      image: "/test-images/aceite-motor.webp",
       price: 12900,
     },
   ],
@@ -114,24 +114,24 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 14,
       name: "Mochila Deportiva Nike",
-      image: "/test-images/mochila-nike.jpg",
+      image: "/test-images/mochila-nike.jpeg",
       price: 22900,
     },
     {
       id: 15,
       name: "Mochila Escolar Jansport",
-      image: "/test-images/mochila-escolar.jpg",
+      image: "/test-images/mochila-escolar.webp",
       price: 18500,
       discountPrice: 14800,
       discountPercent: 20,
     },
   ],
   // Subcategorías
-  'artistico': [
+  'artístico': [
     {
       id: 16,
       name: "Kit Maquillaje Artístico Profesional",
-      image: "/test-images/kit-artistico.jpg",
+      image: "/test-images/kit-artistico.jpeg",
       price: 89990,
       discountPrice: 71990,
       discountPercent: 20,
@@ -139,15 +139,15 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 17,
       name: "Paleta de Colores Fantasy",
-      image: "/test-images/paleta-colores.jpg",
+      image: "/test-images/paleta-colores.webp",
       price: 34500,
     },
   ],
-  'futbol': [
+  'fútbol': [
     {
       id: 18,
       name: "Botines Adidas Predator",
-      image: "/test-images/botines-adidas.jpg",
+      image: "/test-images/botines-adidas.webp",
       price: 125900,
       discountPrice: 100720,
       discountPercent: 20,
@@ -155,7 +155,7 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 19,
       name: "Camiseta Selección Argentina",
-      image: "/test-images/camiseta-argentina.jpg",
+      image: "/test-images/camiseta-argentina.webp",
       price: 35600,
     },
   ],
@@ -163,7 +163,7 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 20,
       name: "Batidora KitchenAid 300W",
-      image: "/test-images/batidora.jpg",
+      image: "/test-images/batidora.webp",
       price: 189990,
       discountPrice: 151990,
       discountPercent: 20,
@@ -171,10 +171,40 @@ const productsByCategory: { [key: string]: any[] } = {
     {
       id: 21,
       name: "Set Cuchillos Acero Inoxidable",
-      image: "/test-images/set-cuchillos.jpg",
+      image: "/test-images/set-cuchillos.webp",
       price: 45600,
     },
-  ]
+  ],
+  'indumentaria' : [
+  {
+    id: 22,
+    name: "Remera Básica Algodón",
+    image: "/test-images/remera-basica.jpeg",
+    price: 15990,
+    discountPrice: 12790,
+    discountPercent: 20,
+  },
+  {
+    id: 23,
+    name: "Jean Skinny Azul",
+    image: "/test-images/jean-skinny.jpeg",
+    price: 34500,
+  },
+  {
+    id: 24,
+    name: "Campera de Cuero",
+    image: "/test-images/campera-cuero.jpg",
+    price: 89999,
+    discountPrice: 71999,
+    discountPercent: 20,
+  },
+  {
+    id: 25,
+    name: "Zapatillas Deportivas",
+    image: "/test-images/zapatillas.jpeg",
+    price: 45600,
+  },
+],
 };
 
 // Función para capitalizar y formatear el nombre de categoría para mostrar
