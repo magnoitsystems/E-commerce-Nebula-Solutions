@@ -51,7 +51,7 @@ const indumentaria = [
   {
     id: 7,
     name: "Remera Básica Algodón",
-    image: "/test-images/remera-basica.jpg",
+    image: "/test-images/remera-basica.jpeg",
     price: 15990,
     discountPrice: 12790,
     discountPercent: 20,
@@ -59,7 +59,7 @@ const indumentaria = [
   {
     id: 8,
     name: "Jean Skinny Azul",
-    image: "/test-images/jean-skinny.jpg",
+    image: "/test-images/jean-skinny.jpeg",
     price: 34500,
   },
   {
@@ -73,7 +73,7 @@ const indumentaria = [
   {
     id: 10,
     name: "Zapatillas Deportivas",
-    image: "/test-images/zapatillas.jpg",
+    image: "/test-images/zapatillas.jpeg",
     price: 45600,
   },
 ];
@@ -82,7 +82,7 @@ const electrodomesticos = [
   {
     id: 11,
     name: "Licuadora Philips 600W",
-    image: "/test-images/licuadora.jpg",
+    image: "/test-images/licuadora.webp",
     price: 67890,
     discountPrice: 54312,
     discountPercent: 20,
@@ -96,7 +96,7 @@ const electrodomesticos = [
   {
     id: 13,
     name: "Cafetera Express Nespresso",
-    image: "/test-images/cafetera.jpg",
+    image: "/test-images/cafetera.webp",
     price: 125900,
     discountPrice: 100720,
     discountPercent: 20,
