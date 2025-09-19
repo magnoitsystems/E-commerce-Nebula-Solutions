@@ -18,7 +18,7 @@ function AlertCard({message}: Prop){
                     <button onClick={handleClose}><img src={"/icons/closeButton.png"} alt={"Botón para cerrar"}/></button>
                 </div>
                 <span>{message}</span>
-                <img src={"/logos/logoSitio.png"}/>
+                <img src={"/logos/logoSitio.png"} alt={"logo del sitio"}/>
             </div>
         )
     );

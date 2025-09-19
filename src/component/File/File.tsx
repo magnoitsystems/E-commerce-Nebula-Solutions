@@ -3,6 +3,7 @@ import styles from "./File.module.css";
 import Commentary from "./Commentary/Commentary.tsx";
 import {useState} from "react";
 import EditableTextFiel from "./EditableFile/EditableTextFiel.tsx";
+import AlertCard from "../AlertCard/AlertCard.tsx";
 // import AlertCard from "../AlertCard/AlertCard.tsx";
 
 type ProductProps = {
@@ -38,6 +39,14 @@ function File({ mode, images, productId }: ProductProps){
         description: isEmptyFile ? initialProduct.description : "Un set pensado para que tengas el tono justo en cada momento. Los colores van desde nudes suaves hasta intensos vibrantes, todos con buena pigmentación y una textura cómoda que no reseca. Se aplican fácil, se fijan rápido y duran varias horas. Podés usarlos solos o mezclarlos entre sí para looks más creativos. Formato práctico: ideales para llevar en la cartera."
     });
 
+    const [show, setShowAlertCard] = useState(false);
+    const [message, setMessage] = useState("");
+
+    const showAlertCard = (message: string) => {
+        setShowAlertCard(true);
+        setMessage(message);
+    }
+
     // Función genérica para guardar cualquier campo
     const handleSave = (field: keyof ProductState) => (value: string) => {
         setLocalProperty(prev => ({ ...prev, [field]: value }));
@@ -62,7 +71,9 @@ function File({ mode, images, productId }: ProductProps){
 
     return(
         <div className={styles.containerProperties}>
-            {/*<AlertCard message={"¡Gracias por confiar en nosotros! Su compra fue realizada exitosamente"} />*/}
+            {show && (
+                <AlertCard message={message} />
+            )}
             <div className={styles.titleAndCarruselProperties}>
                 <div className={styles.titleAndEditButtonProperties}>
                     {(isEmptyFile || isEditableFile) && editingField === 'productName' ? (
@@ -128,21 +139,20 @@ function File({ mode, images, productId }: ProductProps){
                         </button>
                     )}
                 </div>
-                {!isEditableFile && (
-                    <button className={styles.cartButtonProperties}>
-                        {/*Agregar al carrito*/}
-                        {isEmptyFile && (
-                            <span>Generar publicación</span>
-                        )}
-                        {isEditableFile && (
-                            <span>Guardar cambios</span>
-                        )}
-                        {!isEditableFile && !isEmptyFile && (
-                            <span>Agregar al carrito</span>
-                            // <img src={"/icons/carritoIcon.png"}/>
-                        )}
-                    </button>
-                )}
+
+                <button className={styles.cartButtonProperties}>
+                    {isEmptyFile && (
+                        <span onClick={() => showAlertCard("Publicación generada con éxito")}>Generar publicación</span>
+                    )}
+                    {isEditableFile && (
+                        <span onClick={() => showAlertCard("Cambios guardados con éxito")}>Guardar cambios</span>
+                    )}
+                    {!isEditableFile && !isEmptyFile && (
+                        <span onClick={() => showAlertCard("El producto se ha agregado con éxito")}>Agregar al carrito</span>
+                        // <img src={"/icons/carritoIcon.png"}/>
+                    )}
+                </button>
+
             </div>
 
             <div className={styles.descriptionProperties}>
