@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./CategoryCard.module.css";
 import AlertCard from "../AlertCard/AlertCard";
+import AlertCardWithActions from "../AlertCardWithActions/AlertCardWithActions";
 
 interface Subcategory {
     id: number;
@@ -102,7 +103,6 @@ export default function CategoryCard() {
     const [newSubcategories, setNewSubcategories] = useState<string[]>([""]);
     const [alertMessage, setAlertMessage] = useState<string | null>(null);
     const [pendingDeleteId, setPendingDeleteId] = useState<number | null>(null);
-
 
     const handleDelete = (id: number) => {
         const categoryToDelete = categories.find(cat => cat.id === id);
@@ -438,23 +438,13 @@ export default function CategoryCard() {
             {alertMessage && (
                 <div className={styles.alertWrapper}>
                     {pendingDeleteId ? (
-                        <div className={styles.confirmDialog}>
-                            <AlertCard message={alertMessage} />
-                            <div className={styles.confirmActions}>
-                                <button
-                                    onClick={cancelDelete}
-                                    className={styles.cancelBtn}
-                                >
-                                    Cancelar
-                                </button>
-                                <button
-                                    onClick={confirmDelete}
-                                    className={styles.deleteConfirmBtn}
-                                >
-                                    Eliminar
-                                </button>
-                            </div>
-                        </div>
+                        <AlertCardWithActions
+                            message={alertMessage}
+                            buttonText1="Cancelar"
+                            buttonText2="Eliminar"
+                            onAction1={cancelDelete}
+                            onAction2={confirmDelete}
+                        />
                     ) : (
                         <AlertCard message={alertMessage} />
                     )}
