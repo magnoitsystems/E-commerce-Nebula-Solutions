@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./CategoryCard.module.css";
+import AlertCard from "../AlertCard/AlertCard";
 
 interface Subcategory {
     id: number;
@@ -16,78 +17,78 @@ interface Category {
 
 export default function CategoryCard() {
     const [categories, setCategories] = useState<Category[]>([
-        { 
-            id: 1, 
-            name: "Maquillaje", 
+        {
+            id: 1,
+            name: "Maquillaje",
             subcategories: [
                 { id: 101, name: "Artístico" },
                 { id: 102, name: "Social" }
             ]
         },
-        { 
-            id: 2, 
-            name: "Deportivo", 
+        {
+            id: 2,
+            name: "Deportivo",
             subcategories: [
                 { id: 201, name: "Fútbol" },
                 { id: 202, name: "Running" },
                 { id: 203, name: "Natación" }
             ]
         },
-        { 
-            id: 3, 
-            name: "Electrodomésticos", 
+        {
+            id: 3,
+            name: "Electrodomésticos",
             subcategories: [
                 { id: 301, name: "Cocina" },
                 { id: 302, name: "Limpieza" }
             ]
         },
-        { 
-            id: 4, 
-            name: "Decoración", 
+        {
+            id: 4,
+            name: "Decoración",
             subcategories: [
                 { id: 401, name: "Muebles" },
                 { id: 402, name: "Adornos" }
             ]
         },
-        { 
-            id: 5, 
-            name: "Vehículos", 
+        {
+            id: 5,
+            name: "Vehículos",
             subcategories: [
                 { id: 501, name: "Autos" },
                 { id: 502, name: "Camionetas" },
                 { id: 503, name: "Útiles" }
             ]
         },
-        { 
-            id: 6, 
-            name: "Mochilas", 
+        {
+            id: 6,
+            name: "Mochilas",
             subcategories: [
                 { id: 601, name: "Escolares" },
                 { id: 602, name: "Tote Bags" },
                 { id: 603, name: "Carteras" }
             ]
         },
-        { 
-            id: 7, 
-            name: "Indumentaria", 
+        {
+            id: 7,
+            name: "Indumentaria",
             subcategories: [
                 { id: 701, name: "Remeras" },
                 { id: 702, name: "Jeans" },
                 { id: 703, name: "Zapatillas" }
             ]
         },
-        { 
-            id: 8, 
-            name: "Tecnología", 
+        {
+            id: 8,
+            name: "Tecnología",
             subcategories: [
                 { id: 801, name: "Celulares" },
                 { id: 802, name: "Computadoras" },
                 { id: 803, name: "Periféricos" }
             ]
         },
-        { 
-            id: 9, 
-            name: "Música", 
+        {
+            id: 9,
+            name: "Música",
             subcategories: [
                 { id: 901, name: "Instrumentos" },
                 { id: 902, name: "Discos" }
@@ -99,9 +100,29 @@ export default function CategoryCard() {
     const [isAddingCategory, setIsAddingCategory] = useState(false);
     const [newCategoryName, setNewCategoryName] = useState("");
     const [newSubcategories, setNewSubcategories] = useState<string[]>([""]);
+    const [alertMessage, setAlertMessage] = useState<string | null>(null);
+    const [pendingDeleteId, setPendingDeleteId] = useState<number | null>(null);
+
 
     const handleDelete = (id: number) => {
-        setCategories(categories.filter(cat => cat.id !== id));
+        const categoryToDelete = categories.find(cat => cat.id === id);
+        if (categoryToDelete) {
+            setPendingDeleteId(id);
+            setAlertMessage(`¿Está seguro de que quiere eliminar la categoría "${categoryToDelete.name}" y sus ${categoryToDelete.subcategories.length} subcategoría${categoryToDelete.subcategories.length !== 1 ? 's' : ''}?`);
+        }
+    };
+
+    const confirmDelete = () => {
+        if (pendingDeleteId) {
+            setCategories(categories.filter(cat => cat.id !== pendingDeleteId));
+            setPendingDeleteId(null);
+            setAlertMessage(null);
+        }
+    };
+
+    const cancelDelete = () => {
+        setPendingDeleteId(null);
+        setAlertMessage(null);
     };
 
     const handleEdit = (id: number) => {
@@ -122,10 +143,11 @@ export default function CategoryCard() {
 
     const handleSaveEdit = () => {
         if (editingCategory) {
-            setCategories(categories.map(cat => 
+            setCategories(categories.map(cat =>
                 cat.id === editingCategory.id ? editingCategory : cat
             ));
             setEditingCategory(null);
+            setAlertMessage("La categoría se ha editado correctamente");
         }
     };
 
@@ -147,6 +169,7 @@ export default function CategoryCard() {
             };
             setCategories([...categories, newCategory]);
             setIsAddingCategory(false);
+            setAlertMessage("La categoría se ha creado correctamente");
         }
     };
 
@@ -273,7 +296,7 @@ export default function CategoryCard() {
                 <div className={styles.modalOverlay}>
                     <div className={styles.modal}>
                         <h3 className={styles.modalTitle}>Editar Categoría</h3>
-                        
+
                         <div className={styles.inputGroup}>
                             <label className={styles.label}>Nombre de la categoría:</label>
                             <input
@@ -296,7 +319,7 @@ export default function CategoryCard() {
                                     + Agregar subcategoría
                                 </button>
                             </div>
-                            
+
                             <div className={styles.subcategoryList}>
                                 {editingCategory.subcategories.map((subcat) => (
                                     <div key={subcat.id} className={styles.subcategoryItem}>
@@ -343,7 +366,7 @@ export default function CategoryCard() {
                 <div className={styles.modalOverlay}>
                     <div className={styles.modal}>
                         <h3 className={styles.modalTitle}>Nueva Categoría</h3>
-                        
+
                         <div className={styles.inputGroup}>
                             <label className={styles.label}>Nombre de la categoría:</label>
                             <input
@@ -366,7 +389,7 @@ export default function CategoryCard() {
                                     + Agregar subcategoría
                                 </button>
                             </div>
-                            
+
                             <div className={styles.subcategoryList}>
                                 {newSubcategories.map((subcat, index) => (
                                     <div key={index} className={styles.subcategoryItem}>
@@ -408,6 +431,33 @@ export default function CategoryCard() {
                             </button>
                         </div>
                     </div>
+                </div>
+            )}
+
+            {/* AlertCard Component */}
+            {alertMessage && (
+                <div className={styles.alertWrapper}>
+                    {pendingDeleteId ? (
+                        <div className={styles.confirmDialog}>
+                            <AlertCard message={alertMessage} />
+                            <div className={styles.confirmActions}>
+                                <button
+                                    onClick={cancelDelete}
+                                    className={styles.cancelBtn}
+                                >
+                                    Cancelar
+                                </button>
+                                <button
+                                    onClick={confirmDelete}
+                                    className={styles.deleteConfirmBtn}
+                                >
+                                    Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    ) : (
+                        <AlertCard message={alertMessage} />
+                    )}
                 </div>
             )}
         </div>
