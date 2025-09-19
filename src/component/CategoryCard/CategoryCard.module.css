@@ -337,32 +337,14 @@
 }
 
 @media (min-width: 901px) {
-  .gridWrapper {
-    display: grid;
-    grid-template-columns: 1fr auto; 
-    align-items: start; 
-  }
-
-  .card {
-    max-width: 100px;
-  }
-
   .container {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--10px); 
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+    gap: var(--24px);
   }
-
-  .addBtn {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    justify-self: start; 
-    align-self: start; 
-    margin: 0;
-    width: auto;
-    max-width: var(--220px);
+  
+  .card {
+    max-width: none;
   }
 }
 

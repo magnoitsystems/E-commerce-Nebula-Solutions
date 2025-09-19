@@ -20,35 +20,79 @@ export default function CategoryCard() {
             id: 1, 
             name: "Maquillaje", 
             subcategories: [
-                { id: 101, name: "Base" },
-                { id: 102, name: "Labial" },
-                { id: 103, name: "Sombras" }
+                { id: 101, name: "Artístico" },
+                { id: 102, name: "Social" }
             ]
         },
         { 
             id: 2, 
-            name: "Skincare", 
+            name: "Deportivo", 
             subcategories: [
-                { id: 201, name: "Limpieza" },
-                { id: 202, name: "Hidratación" }
+                { id: 201, name: "Fútbol" },
+                { id: 202, name: "Running" },
+                { id: 203, name: "Natación" }
             ]
         },
         { 
             id: 3, 
-            name: "Fragancias", 
+            name: "Electrodomésticos", 
             subcategories: [
-                { id: 301, name: "Perfumes" },
-                { id: 302, name: "Colonias" },
-                { id: 303, name: "Body Splash" }
+                { id: 301, name: "Cocina" },
+                { id: 302, name: "Limpieza" }
             ]
         },
         { 
             id: 4, 
-            name: "Accesorios", 
+            name: "Decoración", 
             subcategories: [
-                { id: 401, name: "Pinceles" }
+                { id: 401, name: "Muebles" },
+                { id: 402, name: "Adornos" }
             ]
         },
+        { 
+            id: 5, 
+            name: "Vehículos", 
+            subcategories: [
+                { id: 501, name: "Autos" },
+                { id: 502, name: "Camionetas" },
+                { id: 503, name: "Útiles" }
+            ]
+        },
+        { 
+            id: 6, 
+            name: "Mochilas", 
+            subcategories: [
+                { id: 601, name: "Escolares" },
+                { id: 602, name: "Tote Bags" },
+                { id: 603, name: "Carteras" }
+            ]
+        },
+        { 
+            id: 7, 
+            name: "Indumentaria", 
+            subcategories: [
+                { id: 701, name: "Remeras" },
+                { id: 702, name: "Jeans" },
+                { id: 703, name: "Zapatillas" }
+            ]
+        },
+        { 
+            id: 8, 
+            name: "Tecnología", 
+            subcategories: [
+                { id: 801, name: "Celulares" },
+                { id: 802, name: "Computadoras" },
+                { id: 803, name: "Periféricos" }
+            ]
+        },
+        { 
+            id: 9, 
+            name: "Música", 
+            subcategories: [
+                { id: 901, name: "Instrumentos" },
+                { id: 902, name: "Discos" }
+            ]
+        }
     ]);
 
     const [editingCategory, setEditingCategory] = useState<Category | null>(null);
