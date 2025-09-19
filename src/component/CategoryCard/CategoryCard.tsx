@@ -2,31 +2,167 @@
 
 import { useState } from "react";
 import styles from "./CategoryCard.module.css";
-// import '@fontsource/open-sans/600.css';
-// import '@fontsource/open-sans/700.css';
 
-interface Category {
+interface Subcategory {
     id: number;
     name: string;
 }
 
+interface Category {
+    id: number;
+    name: string;
+    subcategories: Subcategory[];
+}
+
 export default function CategoryCard() {
-    const [categories] = useState<Category[]>([
-        { id: 1, name: "Maquillaje" },
-        { id: 2, name: "Maquillaje" },
-        { id: 3, name: "Maquillaje" },
-        { id: 4, name: "Maquillaje" },
+    const [categories, setCategories] = useState<Category[]>([
+        { 
+            id: 1, 
+            name: "Maquillaje", 
+            subcategories: [
+                { id: 101, name: "Base" },
+                { id: 102, name: "Labial" },
+                { id: 103, name: "Sombras" }
+            ]
+        },
+        { 
+            id: 2, 
+            name: "Skincare", 
+            subcategories: [
+                { id: 201, name: "Limpieza" },
+                { id: 202, name: "Hidratación" }
+            ]
+        },
+        { 
+            id: 3, 
+            name: "Fragancias", 
+            subcategories: [
+                { id: 301, name: "Perfumes" },
+                { id: 302, name: "Colonias" },
+                { id: 303, name: "Body Splash" }
+            ]
+        },
+        { 
+            id: 4, 
+            name: "Accesorios", 
+            subcategories: [
+                { id: 401, name: "Pinceles" }
+            ]
+        },
     ]);
 
-     //FUTURE METHODS THAT WILL HANDLE THE ADMIN OPERAIONS
+    const [editingCategory, setEditingCategory] = useState<Category | null>(null);
+    const [isAddingCategory, setIsAddingCategory] = useState(false);
+    const [newCategoryName, setNewCategoryName] = useState("");
+    const [newSubcategories, setNewSubcategories] = useState<string[]>([""]);
+
     const handleDelete = (id: number) => {
+        setCategories(categories.filter(cat => cat.id !== id));
     };
 
     const handleEdit = (id: number) => {
-
+        const category = categories.find(cat => cat.id === id);
+        if (category) {
+            setEditingCategory({
+                ...category,
+                subcategories: [...category.subcategories]
+            });
+        }
     };
 
     const handleAdd = () => {
+        setIsAddingCategory(true);
+        setNewCategoryName("");
+        setNewSubcategories([""]);
+    };
+
+    const handleSaveEdit = () => {
+        if (editingCategory) {
+            setCategories(categories.map(cat => 
+                cat.id === editingCategory.id ? editingCategory : cat
+            ));
+            setEditingCategory(null);
+        }
+    };
+
+    const handleCancelEdit = () => {
+        setEditingCategory(null);
+    };
+
+    const handleSaveNew = () => {
+        if (newCategoryName.trim()) {
+            const newCategory: Category = {
+                id: Date.now(),
+                name: newCategoryName.trim(),
+                subcategories: newSubcategories
+                    .filter(sub => sub.trim() !== "")
+                    .map((sub, index) => ({
+                        id: Date.now() + index,
+                        name: sub.trim()
+                    }))
+            };
+            setCategories([...categories, newCategory]);
+            setIsAddingCategory(false);
+        }
+    };
+
+    const handleCancelNew = () => {
+        setIsAddingCategory(false);
+        setNewCategoryName("");
+        setNewSubcategories([""]);
+    };
+
+    const updateEditingCategoryName = (name: string) => {
+        if (editingCategory) {
+            setEditingCategory({ ...editingCategory, name });
+        }
+    };
+
+    const addSubcategoryToEdit = () => {
+        if (editingCategory) {
+            const newSubcat: Subcategory = {
+                id: Date.now(),
+                name: ""
+            };
+            setEditingCategory({
+                ...editingCategory,
+                subcategories: [...editingCategory.subcategories, newSubcat]
+            });
+        }
+    };
+
+    const updateSubcategoryInEdit = (subcatId: number, name: string) => {
+        if (editingCategory) {
+            setEditingCategory({
+                ...editingCategory,
+                subcategories: editingCategory.subcategories.map(sub =>
+                    sub.id === subcatId ? { ...sub, name } : sub
+                )
+            });
+        }
+    };
+
+    const removeSubcategoryFromEdit = (subcatId: number) => {
+        if (editingCategory) {
+            setEditingCategory({
+                ...editingCategory,
+                subcategories: editingCategory.subcategories.filter(sub => sub.id !== subcatId)
+            });
+        }
+    };
+
+    const addNewSubcategory = () => {
+        setNewSubcategories([...newSubcategories, ""]);
+    };
+
+    const updateNewSubcategory = (index: number, value: string) => {
+        const updated = [...newSubcategories];
+        updated[index] = value;
+        setNewSubcategories(updated);
+    };
+
+    const removeNewSubcategory = (index: number) => {
+        setNewSubcategories(newSubcategories.filter((_, i) => i !== index));
     };
 
     return (
@@ -39,7 +175,6 @@ export default function CategoryCard() {
             </h3>
 
             <div className={styles.gridWrapper}>
-
                 <button className={styles.addBtn} onClick={handleAdd} aria-label="Nueva categoría">
                     Nueva categoría
                     <span className={styles.plus}>+</span>
@@ -48,7 +183,14 @@ export default function CategoryCard() {
                 <div className={styles.container}>
                     {categories.map((cat) => (
                         <div key={cat.id} className={styles.card}>
-                            <span className={styles.name} style={{ fontFamily: 'Open Sans, sans-serif', fontWeight: 600 }}>{cat.name}</span>
+                            <div className={styles.cardContent}>
+                                <span className={styles.name} style={{ fontFamily: 'Open Sans, sans-serif', fontWeight: 600 }}>
+                                    {cat.name}
+                                </span>
+                                <div className={styles.subcategoryCount}>
+                                    {cat.subcategories.length} subcategoría{cat.subcategories.length !== 1 ? 's' : ''}
+                                </div>
+                            </div>
 
                             <div className={styles.actions}>
                                 <button
@@ -81,6 +223,149 @@ export default function CategoryCard() {
                     ))}
                 </div>
             </div>
+
+            {/* Modal de Edición */}
+            {editingCategory && (
+                <div className={styles.modalOverlay}>
+                    <div className={styles.modal}>
+                        <h3 className={styles.modalTitle}>Editar Categoría</h3>
+                        
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label}>Nombre de la categoría:</label>
+                            <input
+                                type="text"
+                                value={editingCategory.name}
+                                onChange={(e) => updateEditingCategoryName(e.target.value)}
+                                className={styles.input}
+                                placeholder="Nombre de la categoría"
+                            />
+                        </div>
+
+                        <div className={styles.inputGroup}>
+                            <div className={styles.subcategoryHeader}>
+                                <label className={styles.label}>Subcategorías:</label>
+                                <button
+                                    type="button"
+                                    onClick={addSubcategoryToEdit}
+                                    className={styles.addSubBtn}
+                                >
+                                    + Agregar subcategoría
+                                </button>
+                            </div>
+                            
+                            <div className={styles.subcategoryList}>
+                                {editingCategory.subcategories.map((subcat) => (
+                                    <div key={subcat.id} className={styles.subcategoryItem}>
+                                        <input
+                                            type="text"
+                                            value={subcat.name}
+                                            onChange={(e) => updateSubcategoryInEdit(subcat.id, e.target.value)}
+                                            className={styles.subcategoryInput}
+                                            placeholder="Nombre de subcategoría"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => removeSubcategoryFromEdit(subcat.id)}
+                                            className={styles.removeBtn}
+                                            aria-label="Eliminar subcategoría"
+                                        >
+                                            ✕
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className={styles.modalActions}>
+                            <button
+                                onClick={handleCancelEdit}
+                                className={styles.cancelBtn}
+                            >
+                                Cancelar
+                            </button>
+                            <button
+                                onClick={handleSaveEdit}
+                                className={styles.saveBtn}
+                            >
+                                Guardar Cambios
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Modal de Nueva Categoría */}
+            {isAddingCategory && (
+                <div className={styles.modalOverlay}>
+                    <div className={styles.modal}>
+                        <h3 className={styles.modalTitle}>Nueva Categoría</h3>
+                        
+                        <div className={styles.inputGroup}>
+                            <label className={styles.label}>Nombre de la categoría:</label>
+                            <input
+                                type="text"
+                                value={newCategoryName}
+                                onChange={(e) => setNewCategoryName(e.target.value)}
+                                className={styles.input}
+                                placeholder="Nombre de la categoría"
+                            />
+                        </div>
+
+                        <div className={styles.inputGroup}>
+                            <div className={styles.subcategoryHeader}>
+                                <label className={styles.label}>Subcategorías:</label>
+                                <button
+                                    type="button"
+                                    onClick={addNewSubcategory}
+                                    className={styles.addSubBtn}
+                                >
+                                    + Agregar subcategoría
+                                </button>
+                            </div>
+                            
+                            <div className={styles.subcategoryList}>
+                                {newSubcategories.map((subcat, index) => (
+                                    <div key={index} className={styles.subcategoryItem}>
+                                        <input
+                                            type="text"
+                                            value={subcat}
+                                            onChange={(e) => updateNewSubcategory(index, e.target.value)}
+                                            className={styles.subcategoryInput}
+                                            placeholder="Nombre de subcategoría"
+                                        />
+                                        {newSubcategories.length > 1 && (
+                                            <button
+                                                type="button"
+                                                onClick={() => removeNewSubcategory(index)}
+                                                className={styles.removeBtn}
+                                                aria-label="Eliminar subcategoría"
+                                            >
+                                                ✕
+                                            </button>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className={styles.modalActions}>
+                            <button
+                                onClick={handleCancelNew}
+                                className={styles.cancelBtn}
+                            >
+                                Cancelar
+                            </button>
+                            <button
+                                onClick={handleSaveNew}
+                                className={styles.saveBtn}
+                                disabled={!newCategoryName.trim()}
+                            >
+                                Crear Categoría
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
