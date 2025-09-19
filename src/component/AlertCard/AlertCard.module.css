@@ -13,6 +13,18 @@
     z-index: 50;
 }
 
+.messageAndLogoProperties{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.messageAndLogoProperties img{
+    width: 150px;
+    height: 80px;
+}
+
 .alertCardContainerProperties span{
     color: var(--orange-3);
     font-size: var(--30px);

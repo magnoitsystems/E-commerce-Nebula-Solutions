@@ -17,8 +17,10 @@ function AlertCard({message}: Prop){
                 <div className={styles.closeButtonProperties}>
                     <button onClick={handleClose}><img src={"/icons/closeButton.png"} alt={"Botón para cerrar"}/></button>
                 </div>
-                <span>{message}</span>
-                <img src={"/logos/logoSitio.png"} alt={"logo del sitio"}/>
+                <div className={styles.messageAndLogoProperties}>
+                    <span>{message}</span>
+                    <img src={"/logos/logoSitio.png"} alt={"logo del sitio"}/>
+                </div>
             </div>
         )
     );
