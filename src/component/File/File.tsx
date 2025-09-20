@@ -4,7 +4,6 @@ import Commentary from "./Commentary/Commentary.tsx";
 import {useState} from "react";
 import EditableTextFiel from "./EditableFile/EditableTextFiel.tsx";
 import AlertCard from "../AlertCard/AlertCard.tsx";
-// import AlertCard from "../AlertCard/AlertCard.tsx";
 
 type ProductProps = {
     mode: 'view' | 'create' | 'edit';
@@ -72,7 +71,7 @@ function File({ mode, images, productId }: ProductProps){
     return(
         <div className={styles.containerProperties}>
             {show && (
-                <AlertCard message={message} />
+                <AlertCard message={message}/>
             )}
             <div className={styles.titleAndCarruselProperties}>
                 <div className={styles.titleAndEditButtonProperties}>
