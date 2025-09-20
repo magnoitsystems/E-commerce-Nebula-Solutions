@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./ProductCard.module.css";
 import { useNavigate } from 'react-router-dom';
+import AlertCard from "../AlertCard/AlertCard.tsx";
 
 interface Product {
     id: number;
@@ -29,9 +30,26 @@ export default function ProductList() {
 
     const navigate = useNavigate();
 
+    const [alertMessage, setAlertMessage] = useState<string | null>(null);
+    const [pendingDeleteId, setPendingDeleteId] = useState<number | null>(null);
+
     //FUTURE METHODS THAT WILL HANDLE THE ADMIN OPERAIONS
     const handleDelete = (id: number) => {
+        setAlertMessage(`¿Está seguro de que quiere eliminar el producto? "`);
+        setPendingDeleteId(id);
         console.log(id)
+    };
+
+    const confirmDelete = () => {
+        if (pendingDeleteId) {
+            setPendingDeleteId(null);
+            setAlertMessage(null);
+        }
+    };
+
+    const cancelDelete = () => {
+        setPendingDeleteId(null);
+        setAlertMessage(null);
     };
 
     const handleEdit = (id: number) => {
@@ -112,6 +130,21 @@ export default function ProductList() {
                 Nueva publicación
                 <span className={styles.plus}>+</span>
             </button>
+            {alertMessage && (
+                <div className={styles.alertWrapper}>
+                    {pendingDeleteId ? (
+                        <AlertCard
+                            message={alertMessage}
+                            buttonText1="Cancelar"
+                            buttonText2="Eliminar"
+                            onAction1={cancelDelete}
+                            onAction2={confirmDelete}
+                        />
+                    ) : (
+                        <AlertCard message={alertMessage} />
+                    )}
+                </div>
+            )}
         </div>
     );
 }
