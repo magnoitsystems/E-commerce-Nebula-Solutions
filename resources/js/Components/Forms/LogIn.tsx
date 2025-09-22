@@ -1,7 +1,7 @@
 import styles from './Log.module.css';
-import Field from "./Field/Field.tsx";
-import LogButton from './Buttons/LogButton.tsx';
-import GoogleButton from './Buttons/GoogleButton.tsx';
+import Field from "./Field/Field";
+import LogButton from './Buttons/LogButton';
+import GoogleButton from './Buttons/GoogleButton';
 import { Link } from "react-router-dom";
 
 export default function LogIn() {

@@ -14,6 +14,8 @@
     "@inertiajs/inertia": "^0.11.1",
     "@inertiajs/inertia-react": "^0.8.1",
     "@inertiajs/progress": "^0.2.7",
+    "@inertiajs/react": "^2.1.10",
+    "axios": "^1.12.2",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

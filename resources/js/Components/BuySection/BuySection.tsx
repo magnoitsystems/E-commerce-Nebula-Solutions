@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from './BuySection.module.css';
 import PaymentBar from './PaymentBar/PaymentBar';
-import BuyButton from "./BuyButtons/BuyButtons.tsx";
-import Field from "../Forms/Field/Field.tsx";
+import BuyButton from "./BuyButtons/BuyButtons";
+import Field from "../Forms/Field/Field";
 
 type Props = {
     productsQuantity: number,

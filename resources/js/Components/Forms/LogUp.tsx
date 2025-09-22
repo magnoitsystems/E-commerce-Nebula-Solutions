@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from './Log.module.css';
-import Field from "./Field/Field.tsx";
-import LogButton from "./Buttons/LogButton.tsx";
+import Field from "./Field/Field";
+import LogButton from "./Buttons/LogButton";
 import { Link } from "react-router-dom";
 
 export default function LogUp() {

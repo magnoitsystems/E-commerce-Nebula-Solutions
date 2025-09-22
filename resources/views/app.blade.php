@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title inertia>{{ config('app.name', 'Laravel') }}</title>
-    
-    @routes
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
-    @inertiaHead
+    <title>Debug</title>
+    @vite(['resources/js/app.js'])
 </head>
 <body>
-    @inertia
+    <div id="app" data-page="{{ json_encode($page) }}"></div>
 </body>
 </html>
