@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "./ProductCard.module.css";
 import { useNavigate } from 'react-router-dom';
-import AlertCard from "../AlertCard/AlertCard.tsx";
+import AlertCard from "../AlertCard/AlertCard";
 
 interface Product {
     id: number;

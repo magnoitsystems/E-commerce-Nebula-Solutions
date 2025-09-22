@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import { Link } from 'react-router-dom';
+import { Link } from '@inertiajs/react';
 
 interface FooterProps {
   className?: string;
@@ -61,16 +61,16 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
         <div className={styles.footerSection}>
           <h3 className={styles.sectionTitle}>Unirte</h3>
           <ul className={styles.linksList}>
-            <li><Link to="/login" className={styles.link}>Iniciar sesión</Link></li>
-            <li><Link to="/logup" className={styles.link}>Registrate</Link></li>
+            <li><Link href="/login" className={styles.link}>Iniciar sesión</Link></li>
+            <li><Link href="/logup" className={styles.link}>Registrate</Link></li>
           </ul>
         </div>
 
         <div className={styles.footerSection}>
           <h3 className={styles.sectionTitle}>Comprar</h3>
           <ul className={styles.linksList}>
-            <li><Link to="/purchases" className={styles.link}>Mis compras</Link></li>
-            <li><Link to="/micarrito" className={styles.link}>Mi carrito</Link></li>
+            <li><Link href="/purchases" className={styles.link}>Mis compras</Link></li>
+            <li><Link href="/micarrito" className={styles.link}>Mi carrito</Link></li>
           </ul>
         </div>
 
