@@ -1,11 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'; // tu CSS global
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
 
-import app from './app.tsx'
+import App from "./app";
 
-createRoot(document.getElementById('root')!).render(
+const el = document.getElementById("app");
+
+createRoot(el!).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-)
+  </StrictMode>
+);

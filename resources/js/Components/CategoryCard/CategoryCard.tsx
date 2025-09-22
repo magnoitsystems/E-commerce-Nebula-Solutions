@@ -3,7 +3,6 @@
 import { useState } from "react";
 import styles from "./CategoryCard.module.css";
 import AlertCard from "../AlertCard/AlertCard";
-import AlertCardWithActions from "../AlertCardWithActions/AlertCardWithActions";
 
 interface Subcategory {
     id: number;
@@ -434,10 +433,11 @@ export default function CategoryCard() {
                 </div>
             )}
 
+            {/* AlertCard Component */}
             {alertMessage && (
                 <div className={styles.alertWrapper}>
                     {pendingDeleteId ? (
-                        <AlertCardWithActions
+                        <AlertCard
                             message={alertMessage}
                             buttonText1="Cancelar"
                             buttonText2="Eliminar"
@@ -445,14 +445,10 @@ export default function CategoryCard() {
                             onAction2={confirmDelete}
                         />
                     ) : (
-                        <AlertCard
-                            message={alertMessage}
-                            onClose={() => setAlertMessage(null)}
-                        />
+                        <AlertCard message={alertMessage} />
                     )}
                 </div>
             )}
-
         </div>
     );
 }

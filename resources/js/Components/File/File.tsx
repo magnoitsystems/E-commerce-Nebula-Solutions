@@ -1,10 +1,9 @@
-import Carrusel from "./Carrusel/Carrusel";
+import Carrusel from "./Carrusel/Carrusel.jsx";
 import styles from "./File.module.css";
-import Commentary from "./Commentary/Commentary";
+import Commentary from "./Commentary/Commentary.jsx";
 import {useState} from "react";
-import EditableTextFiel from "./EditableFile/EditableTextFiel";
-import AlertCard from "../AlertCard/AlertCard";
-// import AlertCard from "../AlertCard/AlertCard.tsx";
+import EditableTextFiel from "./EditableFile/EditableTextFiel.jsx";
+import AlertCard from "../AlertCard/AlertCard.jsx";
 
 type ProductProps = {
     mode: 'view' | 'create' | 'edit';
@@ -72,9 +71,7 @@ function File({ mode, images, productId }: ProductProps){
     return(
         <div className={styles.containerProperties}>
             {show && (
-                <AlertCard message={message} onClose={function (): void {
-                    throw new Error("Function not implemented.");
-                } } />
+                <AlertCard message={message}/>
             )}
             <div className={styles.titleAndCarruselProperties}>
                 <div className={styles.titleAndEditButtonProperties}>
