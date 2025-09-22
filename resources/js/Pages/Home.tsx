@@ -1,9 +1,9 @@
-import Footer from "../component/Footer/Footer.tsx";
-import NavBar from "../component/NavBar/NavBar.tsx";
-import Carrusel from "../component/File/Carrusel/Carrusel.tsx";
-import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs.tsx";
-import CategoryList from "../component/CategoriesList/CategoryList.tsx";
-import HomeProducts from "../component/HomeProducts/HomeProducts.tsx";
+import Footer from "../Components/Footer/Footer";
+import NavBar from "../Components/NavBar/NavBar";
+import Carrusel from "../Components/File/Carrusel/Carrusel";
+import Breadcrumbs from "../Components/Breadcrumbs/Breadcrumbs";
+import CategoryList from "../Components/CategoriesList/CategoryList";
+import HomeProducts from "../Components/HomeProducts/HomeProducts";
 import styles from "./styles/HomeStyles.module.css"
 
 function Home() {

@@ -1,8 +1,8 @@
-import CartCard from "../component/CartCard/CartCard";
-import NavBar from "../component/NavBar/NavBar";
+import CartCard from "../Components/CartCard/CartCard";
+import NavBar from "../Components/NavBar/NavBar";
 import styles from './styles/Cart.module.css';
-import BuySection from "../component/BuySection/BuySection.tsx";
-import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs.tsx";
+import BuySection from "../Components/BuySection/BuySection";
+import Breadcrumbs from "../Components/Breadcrumbs/Breadcrumbs";
 
 export default function Cart () {
     return (

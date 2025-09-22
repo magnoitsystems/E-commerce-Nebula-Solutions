@@ -1,8 +1,8 @@
-import NavBar from "../component/NavBar/NavBar";
-import LogUp from "../component/Forms/LogUp.tsx";
+import NavBar from "../Components/NavBar/NavBar";
+import LogUp from "../Components/Forms/LogUp";
 import styles from './styles/Log.module.css';
-import Footer from "../component/Footer/Footer.tsx";
-import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs.tsx";
+import Footer from "../Components/Footer/Footer";
+import Breadcrumbs from "../Components/Breadcrumbs/Breadcrumbs";
 
 export default function Logup() {
     return(

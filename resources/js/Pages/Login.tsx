@@ -1,8 +1,8 @@
-import NavBar from "../component/NavBar/NavBar";
-import LogIn from "../component/Forms/LogIn.tsx";
+import NavBar from "../Components/NavBar/NavBar";
+import LogIn from "../Components/Forms/LogIn";
 import styles from './styles/Log.module.css';
-import Footer from "../component/Footer/Footer.tsx";
-import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs.tsx";
+import Footer from "../Components/Footer/Footer";
+import Breadcrumbs from "../Components/Breadcrumbs/Breadcrumbs";
 
 export default function Login() {
     return(

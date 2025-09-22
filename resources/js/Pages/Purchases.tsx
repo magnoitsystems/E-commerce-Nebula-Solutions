@@ -1,7 +1,7 @@
-import Footer from "../component/Footer/Footer";
-import NavBar from "../component/NavBar/NavBar";
-import PurchaseList from "../component/PurchaseList/PurchaseList";
-import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs.tsx";
+import Footer from "../Components/Footer/Footer";
+import NavBar from "../Components/NavBar/NavBar";
+import PurchaseList from "../Components/PurchaseList/PurchaseList";
+import Breadcrumbs from "../Components/Breadcrumbs/Breadcrumbs";
 
 function Purchases(){
     return(

@@ -1,7 +1,7 @@
-import AllProducts from "../component/AllProducts/AllProducts";
-import CategoryList from "../component/CategoriesList/CategoryList";
-import Footer from "../component/Footer/Footer";
-import NavBar from "../component/NavBar/NavBar";
+import AllProducts from "../Components/AllProducts/AllProducts";
+import CategoryList from "../Components/CategoriesList/CategoryList";
+import Footer from "../Components/Footer/Footer";
+import NavBar from "../Components/NavBar/NavBar";
 import styles from "./styles/HomeStyles.module.css";
 
 export default function Allproducts() {

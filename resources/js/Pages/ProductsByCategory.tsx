@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
-import Footer from "../component/Footer/Footer";
-import NavBar from "../component/NavBar/NavBar";
-import ProductGrid from "../component/ProductCard/ProductGrid";
+import Footer from "../Components/Footer/Footer";
+import NavBar from "../Components/NavBar/NavBar";
+import ProductGrid from "../Components/ProductCard/ProductGrid";
 import styles from "./styles/ProductsByCategory.module.css";
 
-// Datos hardcodeados por categoría - en el futuro vendrían del backend
 const productsByCategory: { [key: string]: any[] } = {
   'maquillaje': [
     {

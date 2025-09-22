@@ -1,8 +1,8 @@
-import ProductList from "../component/AdminProductsCard/ProductList";
-import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs";
-import CategoryCard from "../component/CategoryCard/CategoryCard";
-import Footer from "../component/Footer/Footer";
-import NavBar from "../component/NavBar/NavBar";
+import ProductList from "../Components/AdminProductsCard/ProductList";
+import Breadcrumbs from "../Components/Breadcrumbs/Breadcrumbs";
+import CategoryCard from "../Components/CategoryCard/CategoryCard";
+import Footer from "../Components/Footer/Footer";
+import NavBar from "../Components/NavBar/NavBar";
 
 function Admin(){
 return (

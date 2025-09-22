@@ -1,8 +1,8 @@
-import File from "../component/File/File.tsx";
-import NavBar from "../component/NavBar/NavBar.tsx";
-import Footer from "../component/Footer/Footer.tsx";
+import File from "../Components/File/File";
+import NavBar from "../Components/NavBar/NavBar";
+import Footer from "../Components/Footer/Footer";
 import {useLocation, useParams} from "react-router-dom";
-import Breadcrumbs from "../component/Breadcrumbs/Breadcrumbs.tsx";
+import Breadcrumbs from "../Components/Breadcrumbs/Breadcrumbs";
 
 type Prop = {
     image?: string[];
