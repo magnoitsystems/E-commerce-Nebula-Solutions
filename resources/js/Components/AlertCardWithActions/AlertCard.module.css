@@ -1,0 +1,78 @@
+.alertCardContainerProperties {
+  display: flex;
+  flex-direction: column;
+  width: 750px;   
+  min-height: 250px;        
+  padding: 30px 40px;        
+  background-color: rgba(39, 37, 36, 0.95);
+  border-radius: var(--10px);
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  position: absolute;
+  z-index: 50;
+  text-align: center; 
+  box-sizing: border-box;   
+}
+
+.messageAndLogoProperties {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;               
+}
+
+.messageAndLogoProperties img {
+  width: 150px;
+  height: 80px;
+}
+
+.alertCardContainerProperties span {
+  color: var(--orange-3);
+  font-size: var(--30px);
+  line-height: 1.4;          
+  text-align: center;
+  word-wrap: break-word;  
+}
+
+.closeButtonProperties {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.closeButtonProperties button {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  color: var(--orange-3);
+  cursor: pointer;
+}
+
+.actionsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.actionButton {
+  min-width: 140px;        
+  padding: 14px 24px;
+  border: none;
+  border-radius: var(--10px);
+  background-color: var(--orange-3);
+  color: white;
+  font-size: var(--18px);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.actionButton:hover {
+  background-color: var(--orange-2);
+}

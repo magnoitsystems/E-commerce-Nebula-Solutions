@@ -1,0 +1,169 @@
+.titleAndCarruselProperties{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonEditProperties{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.titleAndEditButtonProperties {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.containerProperties{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    width: 90%;
+    position: relative;
+}
+
+.titleAndCarruselProperties h1{
+    color: var(--orange-5);
+    width: fit-content;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.titleAndEditButtonProperties h1{
+    font-size: var(--30px);
+}
+
+.inputSizer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    height: auto;
+    width: auto;
+    white-space: pre;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 10px;
+    padding-inline: 20px;
+    border: 1px solid transparent;
+}
+
+.inputSizer.inputProperties {
+    font-size: 20px;
+    padding: 10px;
+    padding-inline: 20px;
+    border: 1px solid transparent;
+}
+
+.priceAndCartButtonProperties{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.priceAndCartButtonProperties span{
+    font-size: 50px;
+}
+
+.priceAndCartButtonProperties span, .cartButtonProperties, .titleAndCarruselProperties, .titleDescriptionProperties, .descriptionProperties span{
+    font-family: 'Arial';
+}
+
+.cartButtonProperties{
+    background-color: rgba(0, 23, 211, 1);
+    width: 20%;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: var(--15px);
+    cursor: pointer;
+}
+
+.cartButtonProperties span{
+    font-size: var(--25px);
+}
+
+.titleDescriptionProperties{
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(179, 75, 0, 1);
+}
+
+.underlineProperties{
+    width: 100%;
+    background-color: rgba(179, 75, 0, 1);
+    margin-bottom: 10px;
+    height: 2px;
+}
+
+.descriptionProperties{
+    width: 100%;
+    height: fit-content;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.inputProperties{
+    width: fit-content;
+    max-width: 800px;
+    height: 40px;
+    border-radius: 20px;
+    border: #C25B00 1px solid;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.commentarySectionProperties{
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionSectionProperties{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.commentarySectionProperties h2, .descriptionSectionProperties h2{
+    color: var(--orange-6);
+}
+
+.containerInputProperties{
+    max-width: 800px;
+}
+
+.descriptionSpanProperties{
+    max-width: 800px;
+}
+
+@media (min-width: 1500px) {
+    .titleAndEditButtonProperties h1{
+        font-size: var(--50px);
+    }
+
+    .descriptionProperties{
+        width: 800px;
+    }
+
+    .commentarySectionProperties{
+        width: 50%;
+    }
+
+    .cartButtonProperties{
+        background-color: rgba(0, 23, 211, 1);
+        width: 270px;
+        height: 60px;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        font-size: 25px;
+    }
+}

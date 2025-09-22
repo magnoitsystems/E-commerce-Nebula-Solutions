@@ -1,0 +1,17 @@
+.log {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: var(--5px);
+
+    background-image: url("/logWhite.png");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 768px) {
+    gap: var(--30px);
+}
