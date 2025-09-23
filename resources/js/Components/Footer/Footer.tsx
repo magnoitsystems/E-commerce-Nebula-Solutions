@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Footer.module.css';
 import { Link } from '@inertiajs/react';
+import oneshopLogo from '../../../../public/logos/oneshop.png';
+
 
 interface FooterProps {
   className?: string;
@@ -11,17 +13,17 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
     <footer className={`${styles.footerContainer} ${className}`}>
       <div className={styles.footerHeader}>
         <div className={styles.logoSection}>
-          <img src="/logos/oneshop.png" alt="OneShop"/>
+          <img src={oneshopLogo} alt="OneShop" />
         </div>
-        
+
         <div className={styles.socialSection}>
-  <p className={styles.socialText}>Seguinos en</p>
-  <div className={styles.socialIcons}>
-    <img src="/logos/instagram.png" alt="Instagram" className={styles.socialIcon} />
-    <img src="/logos/facebook.png" alt="Facebook" className={styles.socialIcon} />
-    <img src="/logos/twitter.png" alt="Twitter" className={styles.socialIcon} />
-  </div>
-</div>
+          <p className={styles.socialText}>Seguinos en</p>
+          <div className={styles.socialIcons}>
+            <img src="/logos/instagram.png" alt="Instagram" className={styles.socialIcon} />
+            <img src="/logos/facebook.png" alt="Facebook" className={styles.socialIcon} />
+            <img src="/logos/twitter.png" alt="Twitter" className={styles.socialIcon} />
+          </div>
+        </div>
 
       </div>
 
@@ -29,8 +31,8 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
         <div className={styles.footerSection}>
           <h3 className={styles.sectionTitle}>Sobre nosotros</h3>
           <p className={styles.aboutText}>
-            OneShop everything you need in one place, argentinian startup 
-            following the goal of bringing people help to find what they're 
+            OneShop everything you need in one place, argentinian startup
+            following the goal of bringing people help to find what they're
             looking for in a safety place
           </p>
         </div>
