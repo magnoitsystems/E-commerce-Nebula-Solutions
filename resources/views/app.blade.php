@@ -7,6 +7,7 @@
 </head>
 <body>
     <div id="app" data-page="{{ json_encode($page) }}"></div>
+@viteReactRefresh
 @vite('resources/js/app.tsx')
 
 </body>

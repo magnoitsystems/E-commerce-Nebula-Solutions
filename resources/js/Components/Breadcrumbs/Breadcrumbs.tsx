@@ -1,5 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styles from "./Breadcrumbs.module.css";
+import { Link } from "@inertiajs/react";
 
 export default function Breadcrumbs() {
     const location = useLocation();
@@ -8,7 +9,7 @@ export default function Breadcrumbs() {
 
     return (
         <nav className={styles.breadcrumbs}>
-            <Link to="/">Home</Link>
+            <Link href="/">Home</Link>
             {pathnames.map((name, index) => {
                 const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
                 const isLast = index === pathnames.length - 1;
@@ -21,7 +22,7 @@ export default function Breadcrumbs() {
                     <span key={routeTo}> / {displayName}</span>
                 ) : (
                     <span key={routeTo}>
-            {" "} / <Link to={routeTo}>{displayName}</Link>
+            {" "} / <Link href={routeTo}>{displayName}</Link>
           </span>
                 );
             })}
