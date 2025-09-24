@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./NavBar.module.css";
-import { Link } from "react-router-dom";
+import { Link } from "@inertiajs/react";
 
 export default function NavBar() {
     const [openCategories, setOpenCategories] = useState(false);
@@ -15,13 +15,13 @@ export default function NavBar() {
                 borderRadius: active ? "20px 20px 0 0" : "20px",
             }}>
                 <div className={styles.logo}>
-                    <Link to="/">
+                    <Link href="/">
                         <img src={"/logos/oneshop.png"} alt="OneShop logo" />
                     </Link>
                 </div>
 
                 <div className={styles.categories}>
-                    <Link to="/">
+                    <Link href="/">
                         <h5>Inicio</h5>
                     </Link>
                     <h5 onClick={() => {
@@ -33,7 +33,7 @@ export default function NavBar() {
                         Productos
                     </h5>
                     <h5>
-                        <Link to="/micarrito">Mi carrito</Link>
+                        <Link href="/micarrito">Mi carrito</Link>
                     </h5>
                     <div className={styles.user}>
                         <img
@@ -63,25 +63,25 @@ export default function NavBar() {
             {openCategories && (
                 <div className={styles.allCategories}>
                     <div className={styles.category}>
-                        <Link to="/productsByCategory/maquillaje">
+                        <Link href="/productsByCategory/maquillaje">
                             <h6>Maquillaje</h6>
                         </Link>
-                        <Link to="/productsByCategory/artístico">
+                        <Link href="/productsByCategory/artístico">
                             <p>Artístico</p>
                         </Link>
-                        <Link to="/productsByCategory/social">
+                        <Link href="/productsByCategory/social">
                             <p>Social</p>
                         </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <Link to="/productsByCategory/electrodomesticos">
+                        <Link href="/productsByCategory/electrodomesticos">
                             <h6>Electrodomésticos</h6>
                         </Link>
-                        <Link to="/productsByCategory/cocina">
+                        <Link href="/productsByCategory/cocina">
                             <p>Cocina</p>
                         </Link>
-                        <Link to="/productsByCategory/limpieza">
+                        <Link href="/productsByCategory/limpieza">
                             <p>Limpieza</p>
                         </Link>
                     </div>
