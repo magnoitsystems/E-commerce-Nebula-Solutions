@@ -1,8 +1,11 @@
-import { useParams } from "react-router-dom";
 import Footer from "../Components/Footer/Footer";
 import NavBar from "../Components/NavBar/NavBar";
 import ProductGrid from "../Components/ProductCard/ProductGrid";
 import styles from "./styles/ProductsByCategory.module.css";
+
+type Props = {
+  category: string;
+};
 
 const productsByCategory: { [key: string]: any[] } = {
   'maquillaje': [
@@ -614,50 +617,43 @@ const productsByCategory: { [key: string]: any[] } = {
   ],
 };
 
-// Función para capitalizar y formatear el nombre de categoría para mostrar
 const formatCategoryName = (category: string): string => {
   return category
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 };
 
-export default function ProductsByCategory() {
-    const { category } = useParams<{ category: string }>();
-    
-    // Obtener productos de la categoría (en el futuro sería un hook)
-    const products = category ? productsByCategory[category] || [] : [];
-    
-    // Nombre formateado para el título
-    const categoryDisplayName = category ? formatCategoryName(category) : 'Categoría no encontrada';
+export default function ProductsByCategory({ category }: Props) {
+  // Obtener productos de la categoría
+  const products = category ? productsByCategory[category] || [] : [];
 
-    return (
-        <main>
-            <NavBar />
-            
-            <div className={styles.container}>
-                <h1 className={styles.pageTitle}>
-                    {categoryDisplayName}
-                </h1>
-                
-                {products.length > 0 ? (
-                    <ProductGrid 
-                        products={products}
-                        showViewAllButton={false}
-                    />
-                ) : (
-                    <div className={styles.emptyState}>
-                        <h2 className={styles.emptyTitle}>
-                            No se encontraron productos
-                        </h2>
-                        <p className={styles.emptyDescription}>
-                            La categoría "{categoryDisplayName}" no tiene productos disponibles en este momento.
-                        </p>
-                    </div>
-                )}
-            </div>
-            
-            <Footer />
-        </main>
-    );
+  // Nombre formateado para el título
+  const categoryDisplayName = category
+    ? formatCategoryName(category)
+    : "Categoría no encontrada";
+
+  return (
+    <main>
+      <NavBar />
+
+      <div className={styles.container}>
+        <h1 className={styles.pageTitle}>{categoryDisplayName}</h1>
+
+        {products.length > 0 ? (
+          <ProductGrid products={products} showViewAllButton={false} />
+        ) : (
+          <div className={styles.emptyState}>
+            <h2 className={styles.emptyTitle}>No se encontraron productos</h2>
+            <p className={styles.emptyDescription}>
+              La categoría "{categoryDisplayName}" no tiene productos
+              disponibles en este momento.
+            </p>
+          </div>
+        )}
+      </div>
+
+      <Footer />
+    </main>
+  );
 }
