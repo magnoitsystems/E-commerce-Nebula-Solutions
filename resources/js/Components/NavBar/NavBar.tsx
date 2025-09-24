@@ -87,100 +87,100 @@ export default function NavBar() {
                     </div>
 
                     <div className={styles.category}>
-                        <Link to="/productsByCategory/deportivo">
+                        <Link href="/productsByCategory/deportivo">
                             <h6>Deportivo</h6>
                         </Link>
-                        <Link to="/productsByCategory/fútbol">
+                        <Link href="/productsByCategory/fútbol">
                             <p>Fútbol</p>
                         </Link>
-                        <Link to="/productsByCategory/running">
+                        <Link href="/productsByCategory/running">
                             <p>Running</p>
                         </Link>
-                        <Link to="/productsByCategory/natación">
+                        <Link href="/productsByCategory/natación">
                             <p>Natación</p>
                         </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <Link to="/productsByCategory/vehiculos">
+                        <Link href="/productsByCategory/vehiculos">
                             <h6>Vehículos</h6>
                         </Link>
-                        <Link to="/productsByCategory/camionetas">
+                        <Link href="/productsByCategory/camionetas">
                             <p>Camionetas</p>
                         </Link>
-                        <Link to="/productsByCategory/autos">
+                        <Link href="/productsByCategory/autos">
                             <p>Autos</p>
                         </Link>
-                        <Link to="/productsByCategory/útiles">
+                        <Link href="/productsByCategory/útiles">
                             <p>Útiles</p>
                         </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <Link to="/productsByCategory/decoración">
+                        <Link href="/productsByCategory/decoración">
                             <h6>Decoración</h6>
                         </Link>
-                        <Link to="/productsByCategory/muebles">
+                        <Link href="/productsByCategory/muebles">
                             <p>Muebles</p>
                         </Link>
-                        <Link to="/productsByCategory/adornos">
+                        <Link href="/productsByCategory/adornos">
                             <p>Adornos</p>
                         </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <Link to="/productsByCategory/mochilas">
+                        <Link href="/productsByCategory/mochilas">
                             <h6>Mochilas</h6>
                         </Link>
-                        <Link to="/productsByCategory/escolares">
+                        <Link href="/productsByCategory/escolares">
                             <p>Escolares</p>
                         </Link>
-                        <Link to="/productsByCategory/tote-bags">
+                        <Link href="/productsByCategory/tote-bags">
                             <p>Tote Bags</p>
                         </Link>
-                        <Link to="/productsByCategory/carteras">
+                        <Link href="/productsByCategory/carteras">
                             <p>Carteras</p>
                         </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <Link to="/productsByCategory/indumentaria">
+                        <Link href="/productsByCategory/indumentaria">
                             <h6>Indumentaria</h6>
                         </Link>
-                        <Link to="/productsByCategory/remeras">
+                        <Link href="/productsByCategory/remeras">
                             <p>Remeras</p>
                         </Link>
-                        <Link to="/productsByCategory/jeans">
+                        <Link href="/productsByCategory/jeans">
                             <p>Jeans</p>
                         </Link>
-                        <Link to="/productsByCategory/zapatillas">
+                        <Link href="/productsByCategory/zapatillas">
                             <p>Zapatillas</p>
                         </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <Link to="/productsByCategory/tecnología">
+                        <Link href="/productsByCategory/tecnología">
                             <h6>Tecnología</h6>
                         </Link>
-                        <Link to="/productsByCategory/celulares">
+                        <Link href="/productsByCategory/celulares">
                             <p>Celulares</p>
                         </Link>
-                        <Link to="/productsByCategory/computadoras">
+                        <Link href="/productsByCategory/computadoras">
                             <p>Computadoras</p>
                         </Link>
-                        <Link to="/productsByCategory/periféricos">
+                        <Link href="/productsByCategory/periféricos">
                             <p>Periféricos</p>
                         </Link>
                     </div>
 
                     <div className={styles.category}>
-                        <Link to="/productsByCategory/música">
+                        <Link href="/productsByCategory/música">
                             <h6>Música</h6>
                         </Link>
-                        <Link to="/productsByCategory/instrumentos">
+                        <Link href="/productsByCategory/instrumentos">
                             <p>Instrumentos</p>
                         </Link>
-                        <Link to="/productsByCategory/discos">
+                        <Link href="/productsByCategory/discos">
                             <p>Discos</p>
                         </Link>
                     </div>
@@ -190,10 +190,10 @@ export default function NavBar() {
             {/* desplegable User */}
             {openUser && (
                 <div className={styles.log}>
-                    <Link to="/purchases">
+                    <Link href="/purchases">
                         <h5>Mis compras</h5>
                     </Link>
-                    <Link to="/login">
+                    <Link href="/login">
                         <h5>Iniciar sesión</h5>
                     </Link>
                 </div>

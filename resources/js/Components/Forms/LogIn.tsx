@@ -2,7 +2,7 @@ import styles from './Log.module.css';
 import Field from "./Field/Field";
 import LogButton from './Buttons/LogButton';
 import GoogleButton from './Buttons/GoogleButton';
-import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/react';
 
 export default function LogIn() {
     return (
@@ -25,7 +25,7 @@ export default function LogIn() {
 
             <div className={styles.logup}>
                 <h6>¿Aún no tenés cuenta?</h6>
-                <Link to="/logup">
+                <Link href="/logup">
                     <h5><span>Registrarse</span></h5>
                 </Link>
             </div>

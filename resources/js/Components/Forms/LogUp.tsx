@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from './Log.module.css';
 import Field from "./Field/Field";
 import LogButton from "./Buttons/LogButton";
-import { Link } from "react-router-dom";
+import { Link } from "@inertiajs/react";
 
 export default function LogUp() {
     const [step, setStep] = useState(1); // 1 = datos personales, 2 = cuenta
@@ -42,7 +42,7 @@ export default function LogUp() {
 
             <div className={styles.logup}>
                 <h6>¿Ya tenés una cuenta?</h6>
-                <Link to="/login">
+                <Link href="/login">
                     <h5><span>Iniciar sesión</span></h5>
                 </Link>
             </div>
